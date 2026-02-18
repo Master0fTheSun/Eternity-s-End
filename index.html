@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternity's End &mdash; A Dark Fantasy Trilogy by Bryce Charette</title>
+    <meta name="description" content="Enter the world of Eternity's End, a dark fantasy trilogy by Bryce Charette. Discover ancient prophecies, demonic creatures, and a Realm haunted beneath a bleeding wound in the sky.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Ambient Particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="nav-brand">
+            <span class="nav-logo">E</span>
+            <span class="nav-title">Eternity's End</span>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#books">The Trilogy</a></li>
+            <li><a href="#world">The World</a></li>
+            <li><a href="#creatures">Creatures</a></li>
+            <li><a href="#characters">Characters</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#author">Author</a></li>
+            <li><a href="#" class="nav-cta" id="nav-join-btn">Join the Alliance</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- HERO / HOME SECTION -->
+    <!-- ============================================ -->
+    <section id="home" class="hero-section">
+        <div class="parallax-container">
+            <div class="parallax-layer parallax-stars" data-speed="0.1"></div>
+            <div class="parallax-layer parallax-wound" data-speed="0.2"></div>
+            <div class="parallax-layer parallax-mountains-far" data-speed="0.3"></div>
+            <div class="parallax-layer parallax-mountains-mid" data-speed="0.5"></div>
+            <div class="parallax-layer parallax-ruins" data-speed="0.7"></div>
+            <div class="parallax-layer parallax-fog" data-speed="0.4"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-sigil"></div>
+            <h1 class="hero-title">
+                <span class="title-line title-sub">The World Will Bleed</span>
+                <span class="title-line title-main">Eternity's End</span>
+                <span class="title-line title-tagline">A Dark Fantasy Trilogy</span>
+            </h1>
+            <p class="hero-description">
+                In a Realm haunted beneath a bleeding wound in the sky, three young men must unravel the mystery of an ancient cosmic scar before eternity itself falls.
+            </p>
+            <div class="hero-buttons">
+                <a href="#books" class="btn btn-primary">Discover the Trilogy</a>
+                <a href="https://www.amazon.com/Eternitys-End-ZeilGalia-Bryce-Charette/dp/B0FKSRVHNC" class="btn btn-secondary" target="_blank" rel="noopener">Read Book One</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Descend</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- BOOKS / TRILOGY SECTION -->
+    <!-- ============================================ -->
+    <section id="books" class="section books-section">
+        <div class="section-header">
+            <div class="section-ornament"></div>
+            <h2>The Trilogy</h2>
+            <p class="section-subtitle">Three books. One Realm. An eternity at stake.</p>
+        </div>
+
+        <div class="books-tabs">
+            <button class="book-tab active" data-book="1">Book I</button>
+            <button class="book-tab" data-book="2">Book II</button>
+            <button class="book-tab" data-book="3">Book III</button>
+        </div>
+
+        <div class="books-container">
+            <!-- Book 1 -->
+            <div class="book-card active" data-book="1">
+                <div class="book-cover-wrapper">
+                    <div class="book-cover">
+                        <div class="book-spine"></div>
+                        <div class="book-cover-front">
+                            <div class="book-cover-placeholder">
+                                <div class="cover-sigil"></div>
+                                <span class="cover-number">I</span>
+                                <h3>The Call of<br>Zeil'Galia</h3>
+                                <span class="cover-series">Eternity's End</span>
+                                <span class="cover-author">Bryce Charette</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-details">
+                    <span class="book-label">Book One</span>
+                    <h3 class="book-title">The Call of Zeil'Galia</h3>
+                    <div class="book-meta">
+                        <span class="book-status available">Available Now</span>
+                    </div>
+                    <p class="book-synopsis">
+                        Thrust into a world of shadow politics and ancient prophecies, Aden Roadson must flee the only home he's ever known. Hunted by demonic creatures and strange alien assassins, he must unravel the truth about his past&mdash;secrets tied to a mad king and a cosmic wound that bleeds sterile light across the sky.
+                    </p>
+                    <p class="book-synopsis">
+                        With friendships fracturing under the weight of secrets and betrayals, Aden must decide who to trust before the forces hunting him tear the world apart.
+                    </p>
+                    <blockquote class="book-quote">
+                        "Captures the character-focused wonder of magical discovery from Harry Potter, plunges it into the cynical and brutal political landscape of Game of Thrones, and sets it on a stage with the epic, world-defining stakes of Lord of the Rings."
+                    </blockquote>
+                    <div class="book-actions">
+                        <a href="https://www.amazon.com/Eternitys-End-ZeilGalia-Bryce-Charette/dp/B0FKSRVHNC" class="btn btn-primary" target="_blank" rel="noopener">Buy on Amazon</a>
+                        <a href="https://www.amazon.com/Eternitys-End-ZeilGalia-Bryce-Charette-ebook/dp/B0FJPN883L" class="btn btn-outline" target="_blank" rel="noopener">Kindle Edition</a>
+                        <a href="https://www.goodreads.com/book/show/239228520-eternity-s-end" class="btn btn-outline" target="_blank" rel="noopener">Goodreads</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book 2 -->
+            <div class="book-card" data-book="2">
+                <div class="book-cover-wrapper">
+                    <div class="book-cover">
+                        <div class="book-spine"></div>
+                        <div class="book-cover-front">
+                            <div class="book-cover-placeholder book-2-cover">
+                                <div class="cover-sigil"></div>
+                                <span class="cover-number">II</span>
+                                <h3>The<br>Soothsayer</h3>
+                                <span class="cover-series">Eternity's End</span>
+                                <span class="cover-author">Bryce Charette</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-details">
+                    <span class="book-label">Book Two</span>
+                    <h3 class="book-title">The Soothsayer</h3>
+                    <div class="book-meta">
+                        <span class="book-status upcoming">Coming Soon</span>
+                    </div>
+                    <p class="book-synopsis">
+                        The war deepens. As the truth behind the celestial scar begins to surface, alliances shift and old enemies reveal themselves. A Soothsayer emerges from the shadows, wielding prophecies that could save the Realm&mdash;or damn it forever.
+                    </p>
+                    <p class="book-synopsis">
+                        The stakes rise as friendships are tested by fear, tragedy, envy, and the corrupting allure of power. Nothing is as it seems, and trust becomes the most dangerous weapon of all.
+                    </p>
+                    <div class="book-actions">
+                        <button class="btn btn-primary" id="book2-notify">Notify Me on Release</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Book 3 -->
+            <div class="book-card" data-book="3">
+                <div class="book-cover-wrapper">
+                    <div class="book-cover">
+                        <div class="book-spine"></div>
+                        <div class="book-cover-front">
+                            <div class="book-cover-placeholder book-3-cover">
+                                <div class="cover-sigil"></div>
+                                <span class="cover-number">III</span>
+                                <h3>Wrath of the<br>Prime Mover</h3>
+                                <span class="cover-series">Eternity's End</span>
+                                <span class="cover-author">Bryce Charette</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-details">
+                    <span class="book-label">Book Three</span>
+                    <h3 class="book-title">Wrath of the Prime Mover</h3>
+                    <div class="book-meta">
+                        <span class="book-status upcoming">Coming Soon</span>
+                    </div>
+                    <p class="book-synopsis">
+                        The final reckoning has arrived. The Prime Mover stirs, and its wrath will reshape the very fabric of reality. The bleeding wound in the sky tears wider, and the Realm's last hope rests on the shoulders of those who have already lost everything.
+                    </p>
+                    <p class="book-synopsis">
+                        Eternity hangs in the balance. The end is not what anyone expected.
+                    </p>
+                    <div class="book-actions">
+                        <button class="btn btn-primary" id="book3-notify">Notify Me on Release</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- WORLD LORE SECTION -->
+    <!-- ============================================ -->
+    <section id="world" class="section world-section">
+        <div class="parallax-bg world-parallax"></div>
+        <div class="section-header">
+            <div class="section-ornament"></div>
+            <h2>The World</h2>
+            <p class="section-subtitle">A Realm scarred by cosmic forces and ancient magic</p>
+        </div>
+
+        <div class="world-content">
+            <div class="world-intro">
+                <div class="world-text">
+                    <h3>The Bleeding Sky</h3>
+                    <p>Above the Realm hangs a wound&mdash;a jagged scar across the heavens that bleeds sterile light. No one alive remembers how it came to be, but its presence shapes everything: the politics, the magic, the wars, and the faith of every living soul beneath it.</p>
+                    <p>The Realm is a place of harsh beauty and unforgiving danger, where workers' communes grind beneath the heel of noble houses, demonic forces press at the borders of reality, and forbidden magic whispers promises of power to those desperate enough to listen.</p>
+                </div>
+                <div class="world-map-placeholder">
+                    <div class="map-frame">
+                        <div class="map-content">
+                            <span class="map-label">Realm Map</span>
+                            <span class="map-coming">Coming Soon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="world-locations">
+                <h3 class="locations-title">Key Locations</h3>
+                <div class="locations-grid">
+                    <div class="location-card">
+                        <div class="location-image-placeholder">
+                            <div class="location-icon">&#9876;</div>
+                        </div>
+                        <h4>The Workers' Commune</h4>
+                        <p>Where our heroes begin&mdash;a harsh settlement where the forgotten toil under brutal conditions, dreaming of escape.</p>
+                    </div>
+                    <div class="location-card">
+                        <div class="location-image-placeholder">
+                            <div class="location-icon">&#9813;</div>
+                        </div>
+                        <h4>The Capital</h4>
+                        <p>Seat of the mad king's power, where shadow politics and ancient conspiracies intertwine in gilded halls.</p>
+                    </div>
+                    <div class="location-card">
+                        <div class="location-image-placeholder">
+                            <div class="location-icon">&#10038;</div>
+                        </div>
+                        <h4>The Celestial Scar</h4>
+                        <p>The bleeding wound in the sky&mdash;a cosmic mystery that holds the key to the Realm's salvation or its final destruction.</p>
+                    </div>
+                    <div class="location-card">
+                        <div class="location-image-placeholder">
+                            <div class="location-icon">&#9760;</div>
+                        </div>
+                        <h4>The Borderlands</h4>
+                        <p>Where the veil between worlds grows thin and demonic creatures seep through the cracks in reality.</p>
+                    </div>
+                </div>
+                <p class="gallery-note">Full location art gallery coming soon&mdash;stay tuned for detailed illustrations of the Realm.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CREATURE INDEX SECTION -->
+    <!-- ============================================ -->
+    <section id="creatures" class="section creatures-section">
+        <div class="section-header">
+            <div class="section-ornament"></div>
+            <h2>Creature Index</h2>
+            <p class="section-subtitle">The horrors and wonders that stalk the Realm</p>
+        </div>
+
+        <div class="creatures-grid">
+            <div class="creature-card" data-creature="dragons">
+                <div class="creature-visual">
+                    <div class="creature-silhouette dragon-silhouette"></div>
+                    <div class="creature-aura"></div>
+                </div>
+                <div class="creature-info">
+                    <h3>Dragons</h3>
+                    <span class="creature-class">Apex Predator</span>
+                    <p>Ancient and terrifying, the dragons of the Realm are not mere beasts. They are living engines of destruction, bound to forces older than the kingdoms they terrorize. Their fire is said to carry echoes of the world's creation.</p>
+                    <div class="creature-stats">
+                        <div class="stat"><span class="stat-label">Threat</span><div class="stat-bar"><div class="stat-fill" style="width: 100%"></div></div></div>
+                        <div class="stat"><span class="stat-label">Intelligence</span><div class="stat-bar"><div class="stat-fill" style="width: 85%"></div></div></div>
+                        <div class="stat"><span class="stat-label">Rarity</span><div class="stat-bar"><div class="stat-fill" style="width: 30%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="creature-card" data-creature="hellshudiin">
+                <div class="creature-visual">
+                    <div class="creature-silhouette hellshudiin-silhouette"></div>
+                    <div class="creature-aura aura-crimson"></div>
+                </div>
+                <div class="creature-info">
+                    <h3>Hell'Shudiin</h3>
+                    <span class="creature-class">Demonic Entity</span>
+                    <p>Nightmarish beings from beyond the veil, the Hell'Shudiin are the demonic forces that hunt our heroes across the Realm. Their forms shift and writhe, and their presence warps the very air around them into something toxic and wrong.</p>
+                    <div class="creature-stats">
+                        <div class="stat"><span class="stat-label">Threat</span><div class="stat-bar"><div class="stat-fill threat-crimson" style="width: 95%"></div></div></div>
+                        <div class="stat"><span class="stat-label">Intelligence</span><div class="stat-bar"><div class="stat-fill threat-crimson" style="width: 75%"></div></div></div>
+                        <div class="stat"><span class="stat-label">Rarity</span><div class="stat-bar"><div class="stat-fill threat-crimson" style="width: 50%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="creature-card" data-creature="cadessi">
+                <div class="creature-visual">
+                    <div class="creature-silhouette cadessi-silhouette"></div>
+                    <div class="creature-aura aura-blood"></div>
+                </div>
+                <div class="creature-info">
+                    <h3>Cadessi</h3>
+                    <span class="creature-class">Blood-Weavers</span>
+                    <p>Known as the Blood-Weavers, the Cadessi practice a forbidden and revolting form of magic&mdash;manipulating the vital essence of living things. They are feared even among the Realm's most dangerous denizens, for their art twists life itself into a weapon.</p>
+                    <div class="creature-stats">
+                        <div class="stat"><span class="stat-label">Threat</span><div class="stat-bar"><div class="stat-fill threat-blood" style="width: 85%"></div></div></div>
+                        <div class="stat"><span class="stat-label">Intelligence</span><div class="stat-bar"><div class="stat-fill threat-blood" style="width: 90%"></div></div></div>
+                        <div class="stat"><span class="stat-label">Rarity</span><div class="stat-bar"><div class="stat-fill threat-blood" style="width: 40%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="creature-card" data-creature="tulari">
+                <div class="creature-visual">
+                    <div class="creature-silhouette tulari-silhouette"></div>
+                    <div class="creature-aura aura-spectral"></div>
+                </div>
+                <div class="creature-info">
+                    <h3>Tulari</h3>
+                    <span class="creature-class">Ethereal Being</span>
+                    <p>Mysterious and otherworldly, the Tulari exist between states of being. They shimmer at the edge of perception, and those who encounter them are never quite the same. Some say they are messengers; others say they are warnings.</p>
+                    <div class="creature-stats">
+                        <div class="stat"><span class="stat-label">Threat</span><div class="stat-bar"><div class="stat-fill threat-spectral" style="width: 60%"></div></div></div>
+                        <div class="stat"><span class="stat-label">Intelligence</span><div class="stat-bar"><div class="stat-fill threat-spectral" style="width: 95%"></div></div></div>
+                        <div class="stat"><span class="stat-label">Rarity</span><div class="stat-bar"><div class="stat-fill threat-spectral" style="width: 20%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="creature-card" data-creature="icuguar">
+                <div class="creature-visual">
+                    <div class="creature-silhouette icuguar-silhouette"></div>
+                    <div class="creature-aura aura-frost"></div>
+                </div>
+                <div class="creature-info">
+                    <h3>Icuguar</h3>
+                    <span class="creature-class">Predator Beast</span>
+                    <p>Sleek, savage, and relentless, the Icuguar is a predator adapted to the harshest environments of the Realm. With frost-laced fur and eyes that gleam like frozen starlight, they hunt in silence and strike without mercy.</p>
+                    <div class="creature-stats">
+                        <div class="stat"><span class="stat-label">Threat</span><div class="stat-bar"><div class="stat-fill threat-frost" style="width: 70%"></div></div></div>
+                        <div class="stat"><span class="stat-label">Intelligence</span><div class="stat-bar"><div class="stat-fill threat-frost" style="width: 50%"></div></div></div>
+                        <div class="stat"><span class="stat-label">Rarity</span><div class="stat-bar"><div class="stat-fill threat-frost" style="width: 55%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="creature-card" data-creature="imps">
+                <div class="creature-visual">
+                    <div class="creature-silhouette imp-silhouette"></div>
+                    <div class="creature-aura aura-ember"></div>
+                </div>
+                <div class="creature-info">
+                    <h3>Imps</h3>
+                    <span class="creature-class">Minor Demon</span>
+                    <p>Small, cunning, and endlessly malicious, Imps are the foot soldiers of the demonic forces. What they lack in size they make up for in numbers and cruelty. Underestimate them at your peril&mdash;a swarm of Imps has brought down more than one careless warrior.</p>
+                    <div class="creature-stats">
+                        <div class="stat"><span class="stat-label">Threat</span><div class="stat-bar"><div class="stat-fill threat-ember" style="width: 40%"></div></div></div>
+                        <div class="stat"><span class="stat-label">Intelligence</span><div class="stat-bar"><div class="stat-fill threat-ember" style="width: 45%"></div></div></div>
+                        <div class="stat"><span class="stat-label">Rarity</span><div class="stat-bar"><div class="stat-fill threat-ember" style="width: 80%"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CHARACTERS SECTION -->
+    <!-- ============================================ -->
+    <section id="characters" class="section characters-section">
+        <div class="parallax-bg characters-parallax"></div>
+        <div class="section-header">
+            <div class="section-ornament"></div>
+            <h2>Characters</h2>
+            <p class="section-subtitle">The heroes, villains, and everything in between</p>
+        </div>
+
+        <div class="characters-gallery">
+            <div class="character-card">
+                <div class="character-portrait">
+                    <div class="portrait-placeholder">
+                        <div class="portrait-silhouette hero-silhouette"></div>
+                    </div>
+                    <div class="character-nameplate">
+                        <h3>Aden Roadson</h3>
+                        <span>Protagonist</span>
+                    </div>
+                </div>
+                <p class="character-desc">A young man from the workers' commune, thrust into a world of shadow politics when a brush with forbidden magic reveals a secret lineage that ties him to the Realm's darkest mysteries.</p>
+            </div>
+
+            <div class="character-card">
+                <div class="character-portrait">
+                    <div class="portrait-placeholder">
+                        <div class="portrait-silhouette companion-silhouette"></div>
+                    </div>
+                    <div class="character-nameplate">
+                        <h3>More Characters</h3>
+                        <span>Coming Soon</span>
+                    </div>
+                </div>
+                <p class="character-desc">Detailed character profiles and original artwork are being crafted. Stay tuned to meet the full cast of allies, enemies, and the morally ambiguous figures caught in between.</p>
+            </div>
+
+            <div class="character-card">
+                <div class="character-portrait">
+                    <div class="portrait-placeholder">
+                        <div class="portrait-silhouette villain-silhouette"></div>
+                    </div>
+                    <div class="character-nameplate">
+                        <h3>The Antagonists</h3>
+                        <span>Coming Soon</span>
+                    </div>
+                </div>
+                <p class="character-desc">The forces of darkness are gathering. From demonic lords to corrupt kings, the enemies of the Realm will be revealed. Join the Alliance to be the first to know.</p>
+            </div>
+        </div>
+        <p class="gallery-note">Character art gallery will be updated with original illustrations. Check back soon.</p>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- REVIEWS / SOCIAL PROOF SECTION -->
+    <!-- ============================================ -->
+    <section id="reviews" class="section reviews-section">
+        <div class="section-header">
+            <div class="section-ornament"></div>
+            <h2>Dispatches from Readers</h2>
+            <p class="section-subtitle">What the citizens of the Realm are saying</p>
+        </div>
+
+        <div class="reviews-stream">
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">"A dark, epic world that grabs you by the throat and doesn't let go. The character work is stunning and the political intrigue kept me turning pages well past midnight."</p>
+                <div class="review-source">
+                    <span class="reviewer-name">&mdash; Reader Review</span>
+                    <span class="review-platform">Amazon</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">"If you love the darkness of Joe Abercrombie mixed with the epic scope of Tolkien, this is your next obsession. The bleeding sky alone is one of the most haunting images I've encountered in fantasy."</p>
+                <div class="review-source">
+                    <span class="reviewer-name">&mdash; Reader Review</span>
+                    <span class="review-platform">Goodreads</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                <p class="review-text">"Charette has crafted something special here. The magic system is unlike anything I've read before, and the way friendships fracture under pressure feels painfully real."</p>
+                <div class="review-source">
+                    <span class="reviewer-name">&mdash; Reader Review</span>
+                    <span class="review-platform">Amazon</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="reviews-cta">
+            <p>Have you read <em>The Call of Zeil'Galia</em>?</p>
+            <div class="review-links">
+                <a href="https://www.amazon.com/Eternitys-End-ZeilGalia-Bryce-Charette/dp/B0FKSRVHNC" class="btn btn-outline" target="_blank" rel="noopener">Leave a Review on Amazon</a>
+                <a href="https://www.goodreads.com/book/show/239228520-eternity-s-end" class="btn btn-outline" target="_blank" rel="noopener">Rate on Goodreads</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- AUTHOR SECTION -->
+    <!-- ============================================ -->
+    <section id="author" class="section author-section">
+        <div class="parallax-bg author-parallax"></div>
+        <div class="section-header">
+            <div class="section-ornament"></div>
+            <h2>The Author</h2>
+        </div>
+
+        <div class="author-content">
+            <div class="author-portrait-wrapper">
+                <div class="author-portrait-placeholder">
+                    <div class="author-icon">&#9998;</div>
+                </div>
+            </div>
+            <div class="author-bio">
+                <h3>Bryce Charette</h3>
+                <p>A lifelong enthusiast of storytelling and epic fantasy, Bryce Charette crafts character-driven stories set against grim, unforgiving landscapes. His works explore deep themes of life and death, the ego, and control.</p>
+                <p>His stories promise strong emotional character work and complex relationships&mdash;the kind that stay with you long after you've turned the last page.</p>
+                <p>He lives in Virginia, where he is currently working on the next saga in the Eternity's End series.</p>
+                <div class="author-links">
+                    <a href="https://www.amazon.com/Eternitys-End-ZeilGalia-Bryce-Charette/dp/B0FKSRVHNC" class="btn btn-outline" target="_blank" rel="noopener">Amazon Author Page</a>
+                    <a href="https://www.goodreads.com/book/show/239228520-eternity-s-end" class="btn btn-outline" target="_blank" rel="noopener">Goodreads</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">E</span>
+                <span class="footer-title">Eternity's End</span>
+                <p class="footer-tagline">A Dark Fantasy Trilogy by Bryce Charette</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="#books">The Trilogy</a>
+                    <a href="#world">The World</a>
+                    <a href="#creatures">Creatures</a>
+                    <a href="#characters">Characters</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Buy the Book</h4>
+                    <a href="https://www.amazon.com/Eternitys-End-ZeilGalia-Bryce-Charette/dp/B0FKSRVHNC" target="_blank" rel="noopener">Amazon (Paperback)</a>
+                    <a href="https://www.amazon.com/Eternitys-End-ZeilGalia-Bryce-Charette-ebook/dp/B0FJPN883L" target="_blank" rel="noopener">Kindle Edition</a>
+                    <a href="https://www.goodreads.com/book/show/239228520-eternity-s-end" target="_blank" rel="noopener">Goodreads</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <a href="#" class="join-trigger">Join the Alliance</a>
+                    <a href="#reviews">Reader Reviews</a>
+                    <a href="#author">About the Author</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bryce Charette. All rights reserved. Eternity's End is a trademark of Bryce Charette.</p>
+        </div>
+    </footer>
+
+    <!-- ============================================ -->
+    <!-- JOIN THE ALLIANCE POPUP -->
+    <!-- ============================================ -->
+    <div class="modal-overlay" id="alliance-modal">
+        <div class="modal-container alliance-modal">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <div class="modal-seal">
+                <div class="seal-outer">
+                    <div class="seal-inner">
+                        <span class="seal-icon">&#9876;</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-content">
+                <h2 class="modal-title">Join the Alliance</h2>
+                <p class="modal-subtitle">A sealed summons from the Realm</p>
+                <div class="contract-scroll">
+                    <div class="scroll-top"></div>
+                    <div class="scroll-body">
+                        <p class="contract-text">By placing your mark upon this contract, you pledge your allegiance to the cause. In return, you shall receive:</p>
+                        <ul class="contract-perks">
+                            <li><span class="perk-icon">&#9733;</span> Early access to Book II &amp; III release dates</li>
+                            <li><span class="perk-icon">&#9733;</span> Exclusive lore &amp; behind-the-scenes content</li>
+                            <li><span class="perk-icon">&#9733;</span> Character art reveals before anyone else</li>
+                            <li><span class="perk-icon">&#9733;</span> A free digital map of the Realm</li>
+                        </ul>
+                        <form class="alliance-form" id="alliance-form">
+                            <div class="form-group">
+                                <label for="alliance-name">Your Name, Ally</label>
+                                <input type="text" id="alliance-name" name="name" placeholder="Enter your name..." required>
+                            </div>
+                            <div class="form-group">
+                                <label for="alliance-email">Your Raven Address</label>
+                                <input type="email" id="alliance-email" name="email" placeholder="Enter your email..." required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-seal">
+                                <span class="seal-stamp">&#9883;</span>
+                                Seal Your Oath
+                            </button>
+                        </form>
+                    </div>
+                    <div class="scroll-bottom"></div>
+                </div>
+            </div>
+            <div class="modal-success" id="alliance-success" style="display:none;">
+                <div class="success-icon">&#10003;</div>
+                <h3>The Oath is Sealed</h3>
+                <p>Welcome to the Alliance, warrior. Watch your raven for dispatches from the Realm.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
