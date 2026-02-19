@@ -184,6 +184,15 @@
     var dotsContainer = document.querySelector('.carousel-dots');
 
     if (track && cards.length) {
+        // Shuffle review cards so platforms aren't grouped
+        for (var i = cards.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            track.appendChild(cards[j]);
+            var temp = cards[i];
+            cards[i] = cards[j];
+            cards[j] = temp;
+        }
+
         var currentPage = 0;
 
         function getCardsPerPage() {
@@ -215,8 +224,8 @@
         }
 
         function updateArrows() {
-            if (arrowLeft) arrowLeft.disabled = (currentPage === 0);
-            if (arrowRight) arrowRight.disabled = (currentPage >= getTotalPages() - 1);
+            if (arrowLeft) arrowLeft.disabled = false;
+            if (arrowRight) arrowRight.disabled = false;
         }
 
         function updateDots() {
@@ -229,8 +238,9 @@
 
         function goToPage(page) {
             var totalPages = getTotalPages();
-            if (page < 0) page = 0;
-            if (page >= totalPages) page = totalPages - 1;
+            // Loop around
+            if (page < 0) page = totalPages - 1;
+            if (page >= totalPages) page = 0;
             currentPage = page;
 
             var perPage = getCardsPerPage();
