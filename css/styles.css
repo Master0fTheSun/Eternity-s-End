@@ -1160,15 +1160,21 @@ img {
 }
 
 .location-desc {
-    display: -webkit-box;
+    display: -webkit-box !important;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    transition: all 0.4s ease;
+}
+
+.location-card.expanded {
+    overflow: visible;
+    z-index: 10;
 }
 
 .location-card.expanded .location-desc {
+    display: block !important;
     -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
     overflow: visible;
 }
 
