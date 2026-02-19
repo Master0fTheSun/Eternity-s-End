@@ -1081,12 +1081,6 @@ img {
     letter-spacing: 3px;
 }
 
-a.location-card-link {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-}
-
 .location-card {
     background: rgba(26, 26, 46, 0.5);
     border: 1px solid rgba(201, 168, 76, 0.1);
@@ -1163,6 +1157,40 @@ a.location-card-link {
     font-size: 0.85rem;
     color: var(--ash);
     line-height: 1.6;
+}
+
+.location-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.location-card.expanded .location-desc {
+    -webkit-line-clamp: unset;
+    overflow: visible;
+}
+
+.location-expand {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    margin-top: 8px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.location-expand:hover {
+    opacity: 1;
+    letter-spacing: 2px;
+}
+
+.location-card[data-href] {
+    cursor: pointer;
 }
 
 .gallery-note {
