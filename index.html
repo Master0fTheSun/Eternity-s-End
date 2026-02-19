@@ -298,12 +298,14 @@
             mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
         }
         .ethergems-track {
-            display: inline-flex;
-            white-space: nowrap;
+            display: flex;
+            width: max-content;
             animation: ethergemsScroll 30s linear infinite;
+            will-change: transform;
         }
         .ethergems-set {
-            display: inline-flex;
+            display: flex;
+            align-items: center;
             gap: 60px;
             padding-right: 60px;
             flex-shrink: 0;
@@ -335,22 +337,26 @@
         <div class="ethergems-label">Ethergems</div>
         <div class="ethergems-track-wrapper">
             <div class="ethergems-track">
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Luminite</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Deepthane</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Pryoclast</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Umbralith</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Psionite</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Terramite</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Vitaspark</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Nullstone</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Luminite</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Deepthane</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Pryoclast</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Umbralith</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Psionite</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Terramite</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Vitaspark</span>
-                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Nullstone</span>
+                <div class="ethergems-set">
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Luminite</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Deepthane</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Pryoclast</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Umbralith</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Psionite</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Terramite</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Vitaspark</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Nullstone</span>
+                </div>
+                <div class="ethergems-set" aria-hidden="true">
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Luminite</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Deepthane</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Pryoclast</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Umbralith</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Psionite</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Terramite</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Vitaspark</span>
+                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Nullstone</span>
+                </div>
             </div>
         </div>
     </section>
