@@ -309,9 +309,37 @@
         });
     });
 
+    // ---- Character Portrait Carousel ----
+    var charCards = document.querySelectorAll('.char-page-card');
+    charCards.forEach(function (card) {
+        var imgs = card.querySelectorAll('.char-page-img');
+        var dots = card.querySelectorAll('.char-dot');
+        var leftBtn = card.querySelector('.char-arrow-left');
+        var rightBtn = card.querySelector('.char-arrow-right');
+        var current = 0;
+
+        function showImage(idx) {
+            imgs[current].classList.remove('active');
+            dots[current].classList.remove('active');
+            current = (idx + imgs.length) % imgs.length;
+            imgs[current].classList.add('active');
+            dots[current].classList.add('active');
+        }
+
+        if (leftBtn) {
+            leftBtn.addEventListener('click', function () { showImage(current - 1); });
+        }
+        if (rightBtn) {
+            rightBtn.addEventListener('click', function () { showImage(current + 1); });
+        }
+        dots.forEach(function (dot, i) {
+            dot.addEventListener('click', function () { showImage(i); });
+        });
+    });
+
     // ---- Scroll Reveal ----
     var revealElements = document.querySelectorAll(
-        '.location-card, .creature-card, .character-card, ' +
+        '.location-card, .creature-card, .character-card, .char-page-card, ' +
         '.world-intro, .author-content, .book-card.active, .lore-block'
     );
 

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Characters &mdash; Eternity's End</title>
+    <meta name="description" content="Meet the characters of Eternity's End. Heroes, villains, and the morally ambiguous figures caught in between.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <nav id="main-nav">
+        <div class="nav-brand">
+            <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+                <span class="nav-logo">E</span>
+                <span class="nav-title">Eternity's End</span>
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#books">The Trilogy</a></li>
+            <li><a href="index.html#world">The World</a></li>
+            <li><a href="index.html#creatures">Creatures</a></li>
+            <li><a href="index.html#characters" class="active">Characters</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="index.html#author">Author</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- CHARACTERS HERO -->
+    <!-- ============================================ -->
+    <section class="location-hero">
+        <div class="location-hero-bg"></div>
+        <div class="location-hero-overlay"></div>
+        <div class="location-hero-content">
+            <p class="location-hook">The Cast</p>
+            <h1 class="location-hero-title">Characters</h1>
+            <p class="location-hero-subtitle">Heroes, Villains &amp; the Shadows Between</p>
+        </div>
+        <div class="scroll-indicator">
+            <span>Descend</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- CHARACTER CARDS -->
+    <!-- ============================================ -->
+    <section class="section characters-page-section">
+        <div class="characters-page-grid">
+
+            <div class="char-page-card">
+                <div class="char-page-portrait">
+                    <div class="char-page-images">
+                        <img src="images/Rune1.png" alt="Rune - Portrait 1" class="char-page-img active">
+                        <img src="images/rune2.png" alt="Rune - Portrait 2" class="char-page-img">
+                        <img src="images/rune3.png" alt="Rune - Portrait 3" class="char-page-img">
+                    </div>
+                    <div class="char-page-dots">
+                        <button class="char-dot active" aria-label="Image 1"></button>
+                        <button class="char-dot" aria-label="Image 2"></button>
+                        <button class="char-dot" aria-label="Image 3"></button>
+                    </div>
+                    <button class="char-page-arrow char-arrow-left" aria-label="Previous image">&#8249;</button>
+                    <button class="char-page-arrow char-arrow-right" aria-label="Next image">&#8250;</button>
+                </div>
+                <div class="char-page-info">
+                    <h3>Rune</h3>
+                    <p class="char-page-desc">Description coming soon.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="index.html#characters" class="other-locations-link">&larr; Back to Characters</a>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">E</span>
+                <span class="footer-title">Eternity's End</span>
+                <p class="footer-tagline">A Dark Fantasy Trilogy by Bryce Charette</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="index.html#books">The Trilogy</a>
+                    <a href="index.html#world">The World</a>
+                    <a href="index.html#creatures">Creatures</a>
+                    <a href="index.html#characters">Characters</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Buy the Book</h4>
+                    <a href="https://www.amazon.com/Eternitys-End-ZeilGalia-Bryce-Charette/dp/B0FKSRVHNC" target="_blank" rel="noopener">Amazon (Paperback)</a>
+                    <a href="https://www.amazon.com/Eternitys-End-ZeilGalia-Bryce-Charette-ebook/dp/B0FJPN883L" target="_blank" rel="noopener">Kindle Edition</a>
+                    <a href="https://www.goodreads.com/book/show/239228520-eternity-s-end" target="_blank" rel="noopener">Goodreads</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <a href="index.html#reviews">Reader Reviews</a>
+                    <a href="index.html#author">About the Author</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bryce Charette. All rights reserved. Eternity's End is a trademark of Bryce Charette.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

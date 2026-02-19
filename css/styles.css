@@ -2164,6 +2164,152 @@ img {
     opacity: 0.6;
 }
 
+/* ============================================
+   CHARACTERS PAGE
+   ============================================ */
+.characters-page-section {
+    background: linear-gradient(180deg, var(--void) 0%, var(--void-purple) 30%, var(--midnight) 70%, var(--void) 100%);
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.characters-page-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.char-page-card {
+    background: rgba(26, 26, 46, 0.5);
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.char-page-card:hover {
+    border-color: rgba(201, 168, 76, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+}
+
+/* -- Portrait image carousel -- */
+.char-page-portrait {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: rgba(10, 10, 15, 0.6);
+}
+
+.char-page-images {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.char-page-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.char-page-img.active {
+    opacity: 1;
+}
+
+/* -- Arrow buttons -- */
+.char-page-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(10, 10, 15, 0.6);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    color: var(--gold);
+    font-size: 1.6rem;
+    width: 36px;
+    height: 48px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease, background 0.3s ease;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    padding: 0;
+}
+
+.char-page-portrait:hover .char-page-arrow {
+    opacity: 1;
+}
+
+.char-page-arrow:hover {
+    background: rgba(201, 168, 76, 0.15);
+}
+
+.char-arrow-left {
+    left: 0;
+}
+
+.char-arrow-right {
+    right: 0;
+}
+
+/* -- Dot indicators -- */
+.char-page-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+}
+
+.char-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 168, 76, 0.5);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s ease;
+}
+
+.char-dot.active {
+    background: var(--gold);
+}
+
+/* -- Info section -- */
+.char-page-info {
+    padding: 20px 25px 25px;
+    text-align: center;
+}
+
+.char-page-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--bone);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.char-page-desc {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--ash);
+    line-height: 1.7;
+    font-style: italic;
+}
+
 /* -- Location page responsive -- */
 @media (max-width: 768px) {
     .location-hero-title {
@@ -2333,6 +2479,12 @@ img {
     .reviews-carousel {
         gap: 8px;
         padding: 0 10px;
+    }
+
+    .characters-page-grid {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+        margin: 0 auto;
     }
 
     .author-content {
