@@ -160,6 +160,14 @@
         });
     });
 
+    // ---- Book Cover Flip (click/tap toggle) ----
+    var bookFlip = document.querySelector('.book-flip');
+    if (bookFlip) {
+        bookFlip.addEventListener('click', function () {
+            this.classList.toggle('flipped');
+        });
+    }
+
     // ---- Scroll Reveal ----
     var revealElements = document.querySelectorAll(
         '.location-card, .creature-card, .character-card, .review-card, ' +
