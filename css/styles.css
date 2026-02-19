@@ -1408,6 +1408,7 @@ a.location-card-link {
 
 .reviews-track {
     display: flex;
+    flex-wrap: nowrap;
     gap: 25px;
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -1421,6 +1422,12 @@ a.location-card-link {
     flex: 0 0 calc((100% - 50px) / 3);
     min-width: 0;
     box-sizing: border-box;
+}
+
+/* Prevent scroll-reveal from interfering with carousel cards */
+.reviews-track .review-card.reveal {
+    opacity: 1;
+    transform: none;
 }
 .review-card::before {
     content: '\201C';
