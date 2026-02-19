@@ -280,6 +280,16 @@ img {
     background: rgba(201, 168, 76, 0.25) !important;
 }
 
+.nav-brand .nav-cta {
+    margin-left: 16px;
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-family: var(--font-display);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
 .nav-links a.nav-reviews {
     color: var(--gold);
     text-shadow: 0 0 8px rgba(201, 168, 76, 0.6), 0 0 20px rgba(201, 168, 76, 0.3);
