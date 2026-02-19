@@ -160,11 +160,19 @@
         });
     });
 
-    // ---- Book Cover Flip (click/tap toggle) ----
+    // ---- Book Cover Flip (tap toggle for touch devices only) ----
     var bookFlip = document.querySelector('.book-flip');
     if (bookFlip) {
+        var isTouchDevice = false;
+        window.addEventListener('touchstart', function onFirstTouch() {
+            isTouchDevice = true;
+            window.removeEventListener('touchstart', onFirstTouch);
+        }, { passive: true });
+
         bookFlip.addEventListener('click', function () {
-            this.classList.toggle('flipped');
+            if (isTouchDevice) {
+                this.classList.toggle('flipped');
+            }
         });
     }
 

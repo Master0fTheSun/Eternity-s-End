@@ -736,6 +736,7 @@ img {
     -webkit-transform-style: preserve-3d;
 }
 
+.book-flip:hover .book-flip-inner,
 .book-flip.flipped .book-flip-inner {
     transform: rotateY(180deg);
 }
