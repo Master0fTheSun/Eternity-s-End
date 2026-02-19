@@ -975,7 +975,7 @@ img {
 
 .locations-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 25px;
     margin-bottom: 30px;
 }
@@ -1018,24 +1018,42 @@ img {
     align-items: center;
     justify-content: center;
     margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 50%;
 }
 
-.location-icon {
-    font-size: 2.5rem;
-    color: var(--gold-dim);
-    opacity: 0.5;
+.location-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: saturate(0.85);
+}
+
+.location-card:hover .location-img {
+    transform: scale(1.08);
+    filter: saturate(1) brightness(1.1);
 }
 
 .location-card h4 {
     font-family: var(--font-display);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--bone);
     letter-spacing: 2px;
+    margin-bottom: 6px;
+}
+
+.location-quote {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-style: italic;
     margin-bottom: 10px;
+    line-height: 1.5;
 }
 
 .location-card p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--ash);
     line-height: 1.6;
 }
@@ -1803,6 +1821,12 @@ img {
 /* ============================================
    RESPONSIVE
    ============================================ */
+@media (max-width: 1200px) {
+    .locations-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 1024px) {
     .creatures-grid {
         grid-template-columns: 1fr;
