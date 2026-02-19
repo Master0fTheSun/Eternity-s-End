@@ -1032,14 +1032,12 @@ img {
 .locations-prompt {
     font-family: var(--font-body);
     font-size: 1.1rem;
-    color: var(--gold);
+    color: var(--ash);
     font-style: italic;
     text-align: center;
     width: 100%;
     margin-bottom: 40px;
     letter-spacing: 0.5px;
-    text-shadow: 0 0 8px rgba(201, 168, 76, 0.6), 0 0 20px rgba(201, 168, 76, 0.3);
-    animation: navGlow 2.5s ease-in-out infinite;
 }
 
 .locations-grid {
@@ -1190,10 +1188,16 @@ a.location-card-link {
 
 .ethergems-track {
     display: flex;
-    gap: 60px;
-    white-space: nowrap;
-    animation: ethergemsScroll 30s linear infinite;
     width: max-content;
+}
+
+.ethergems-set {
+    display: flex;
+    gap: 60px;
+    padding-right: 60px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    animation: ethergemsScroll 30s linear infinite;
 }
 
 .ethergem {
@@ -1203,10 +1207,10 @@ a.location-card-link {
     text-transform: uppercase;
     color: var(--gold);
     text-shadow: 0 0 8px rgba(201, 168, 76, 0.4);
-    transition: text-shadow 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0;
 }
 
 .ethergem-icon {
@@ -1220,7 +1224,7 @@ a.location-card-link {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-100%);
     }
 }
 
