@@ -282,20 +282,19 @@ img {
 
 .nav-brand .nav-cta {
     margin-left: 16px;
-    font-family: var(--font-display);
-    font-size: 0.7rem;
-    font-weight: 400;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    text-decoration: none;
+    font-family: 'Cinzel', serif !important;
+    font-size: 0.7rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
     white-space: nowrap;
-    color: var(--gold);
-    padding: 8px 20px;
+    line-height: 1 !important;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
 .nav-arcane-mobile {
-    display: none;
+    display: none !important;
 }
 
 .nav-links a.nav-reviews {
@@ -2274,11 +2273,11 @@ a.location-card-link {
     }
 
     .nav-brand .nav-cta {
-        display: none;
+        display: none !important;
     }
 
     .nav-arcane-mobile {
-        display: list-item;
+        display: list-item !important;
     }
 
     .title-main {
