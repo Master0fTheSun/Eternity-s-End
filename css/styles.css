@@ -2280,6 +2280,12 @@ a.location-card-link {
         display: list-item !important;
     }
 
+    .nav-links .nav-cta {
+        background: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+    }
+
     .title-main {
         font-size: 2.8rem;
         letter-spacing: 6px;
