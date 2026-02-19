@@ -280,6 +280,21 @@ img {
     background: rgba(201, 168, 76, 0.25) !important;
 }
 
+.nav-links a.nav-reviews {
+    color: var(--gold);
+    text-shadow: 0 0 8px rgba(201, 168, 76, 0.6), 0 0 20px rgba(201, 168, 76, 0.3);
+    animation: navGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes navGlow {
+    0%, 100% {
+        text-shadow: 0 0 8px rgba(201, 168, 76, 0.6), 0 0 20px rgba(201, 168, 76, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 12px rgba(201, 168, 76, 0.9), 0 0 30px rgba(201, 168, 76, 0.5), 0 0 50px rgba(201, 168, 76, 0.2);
+    }
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
