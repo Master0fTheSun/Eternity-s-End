@@ -204,7 +204,7 @@
 
         function getTotalPages() {
             var perPage = getCardsPerPage();
-            return Math.ceil(cards.length / perPage);
+            return Math.max(1, cards.length - perPage + 1);
         }
 
         function buildDots() {
@@ -243,11 +243,10 @@
             if (page >= totalPages) page = 0;
             currentPage = page;
 
-            var perPage = getCardsPerPage();
             var gap = 25;
             var card = cards[0];
             var cardWidth = card.getBoundingClientRect().width;
-            var offset = currentPage * perPage * (cardWidth + gap);
+            var offset = currentPage * (cardWidth + gap);
 
             track.style.transform = 'translateX(-' + offset + 'px)';
             updateArrows();
