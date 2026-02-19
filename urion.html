@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urion &mdash; The Mountain Stronghold &mdash; Eternity's End</title>
+    <meta name="description" content="Explore Urion, the proud mountain city clinging to the High Mountain pass. Where iron shackles rattle above and the Deepmarket thrives below.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <nav id="main-nav">
+        <div class="nav-brand">
+            <a href="index.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+                <span class="nav-logo">E</span>
+                <span class="nav-title">Eternity's End</span>
+            </a>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#books">The Trilogy</a></li>
+            <li><a href="index.html#world">The World</a></li>
+            <li><a href="index.html#creatures">Creatures</a></li>
+            <li><a href="index.html#characters">Characters</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="index.html#author">Author</a></li>
+        </ul>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- LOCATION HERO -->
+    <!-- ============================================ -->
+    <section class="location-hero">
+        <div class="location-hero-bg"></div>
+        <div class="location-hero-overlay"></div>
+        <div class="location-hero-content">
+            <div class="location-coin-frame">
+                <img src="images/hawk-coin.png" alt="The Hawk Coin of Urion" class="location-coin-img">
+            </div>
+            <p class="location-hook">Step Through the Gates</p>
+            <h1 class="location-hero-title">Welcome to Urion</h1>
+            <p class="location-hero-subtitle">The Mountain Stronghold</p>
+            <p class="location-hero-quote">"Unbowed by Wind, Unbroken by Time."</p>
+        </div>
+        <div class="scroll-indicator">
+            <span>Descend</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- LOCATION LORE -->
+    <!-- ============================================ -->
+    <section class="section location-lore-section">
+        <div class="location-lore-content">
+            <div class="lore-block">
+                <p>Urion clings to the throat of the High Mountain pass. Jagged granite teeth shield the terraces from northern gales, while western breezes drag the heavy brine of the Tallenbriar Sea through the streets. Carts reeking of gutted cod and salt-crusted timber rattle up from the allied coastal villages, their stench mingling with the thick smoke of roasting meats from the inland farms.</p>
+            </div>
+
+            <div class="lore-divider">
+                <span></span>
+                <span class="lore-divider-icon">&#9830;</span>
+                <span></span>
+            </div>
+
+            <div class="lore-block">
+                <p>The city's bounty demands a toll of sweat. The Yoke&mdash;a sprawling encampment of branded exiles, fleeing desperate and fractured vagabonds&mdash;chokes the lower districts. These laborers trade blistered hands and aching spines for a cot and a full trencher.</p>
+            </div>
+
+            <div class="lore-divider">
+                <span></span>
+                <span class="lore-divider-icon">&#9830;</span>
+                <span></span>
+            </div>
+
+            <div class="lore-block">
+                <p>Above the muck, Wallow-Rise Chapel bleeds fractured sunlight through its stained-glass canopy, painting the cobblestones in bruised purples and feverish golds. Higher still looms Urion's Crown. The ancestral fortress of the Udias bloodline gouges the sky, a brutal monolith of dark stone pressing its weight down upon the populace.</p>
+            </div>
+
+            <div class="lore-divider">
+                <span></span>
+                <span class="lore-divider-icon">&#9830;</span>
+                <span></span>
+            </div>
+
+            <div class="lore-block">
+                <p>The shadowed alleys still harbor the chill of the Cadessi. Once, they huddled in the damp recesses, drawing sneers and tightened cloaks from passersby. When the Great War severed their Anchor Key and bled the magic from their veins, the outcasts crawled to King Udias for salvation. The crown answered with iron shackles. The thoroughfares still remember the crimson tide of the Blood-Weaver rebellion, a slaughter that scoured the last of their kind from the mountain.</p>
+            </div>
+
+            <div class="lore-divider">
+                <span></span>
+                <span class="lore-divider-icon">&#9830;</span>
+                <span></span>
+            </div>
+
+            <div class="lore-block">
+                <p>Today, the Dominion's grip suffocates the city. Valoria Alistar, the Black-Widow, spins her webs from the upper spires. Her cadence drips with venomous grace. Her Ardent Praetorians&mdash;gargantuan slabs of plate steel and brute muscle&mdash;prowl the wards. Their heavy, synchronized footfalls crush treasonous whispers into the dirt.</p>
+            </div>
+
+            <div class="lore-divider">
+                <span></span>
+                <span class="lore-divider-icon">&#9830;</span>
+                <span></span>
+            </div>
+
+            <div class="lore-block">
+                <p>Yet, Urion breathes beneath the earth. The old mining veins, bored deep into the bedrock, have fractured into a subterranean labyrinth. The damp, lightless hollows harbor fugitives, cutpurses, and older things that skitter in the absolute darkness. Somewhere within that winding abyss, the Deepmarket thrives. A phantom bazaar trading in smuggled poisons, stolen relics, and dangerous secrets, it shifts like subterranean tides, opening its heavy iron doors only to those holding the right invitation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- BACK LINK -->
+    <!-- ============================================ -->
+    <section class="section" style="padding-top: 0; padding-bottom: 100px;">
+        <div style="text-align: center;">
+            <a href="index.html#world" class="other-locations-link">&larr; Back to the World</a>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">E</span>
+                <span class="footer-title">Eternity's End</span>
+                <p class="footer-tagline">A Dark Fantasy Trilogy by Bryce Charette</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="index.html#books">The Trilogy</a>
+                    <a href="index.html#world">The World</a>
+                    <a href="index.html#creatures">Creatures</a>
+                    <a href="index.html#characters">Characters</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Buy the Book</h4>
+                    <a href="https://www.amazon.com/Eternitys-End-ZeilGalia-Bryce-Charette/dp/B0FKSRVHNC" target="_blank" rel="noopener">Amazon (Paperback)</a>
+                    <a href="https://www.amazon.com/Eternitys-End-ZeilGalia-Bryce-Charette-ebook/dp/B0FJPN883L" target="_blank" rel="noopener">Kindle Edition</a>
+                    <a href="https://www.goodreads.com/book/show/239228520-eternity-s-end" target="_blank" rel="noopener">Goodreads</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <a href="index.html#reviews">Reader Reviews</a>
+                    <a href="index.html#author">About the Author</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bryce Charette. All rights reserved. Eternity's End is a trademark of Bryce Charette.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
