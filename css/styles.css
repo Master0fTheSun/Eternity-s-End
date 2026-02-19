@@ -1031,12 +1031,15 @@ img {
 
 .locations-prompt {
     font-family: var(--font-body);
-    font-size: 0.95rem;
-    color: var(--ash);
+    font-size: 1.1rem;
+    color: var(--gold);
     font-style: italic;
     text-align: center;
+    width: 100%;
     margin-bottom: 40px;
     letter-spacing: 0.5px;
+    text-shadow: 0 0 8px rgba(201, 168, 76, 0.6), 0 0 20px rgba(201, 168, 76, 0.3);
+    animation: navGlow 2.5s ease-in-out infinite;
 }
 
 .locations-grid {
