@@ -1035,17 +1035,12 @@ img {
     filter: saturate(1) brightness(1.1);
 }
 
-.grey-haven-img {
-    background: #1a1a15;
-}
-
 .grey-haven-img .location-img {
-    mix-blend-mode: multiply;
-    transform: scale(1.15);
+    transform: scale(1.35);
 }
 
 .location-card:hover .grey-haven-img .location-img {
-    transform: scale(1.25);
+    transform: scale(1.45);
 }
 
 .location-card h4 {
