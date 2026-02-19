@@ -726,6 +726,45 @@ img {
     transform: rotateY(-15deg);
 }
 
+/* Book 1 flip effect */
+.book-flip {
+    perspective: 1000px;
+}
+
+.book-flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+.book-flip:hover .book-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.book-flip-front,
+.book-flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 2px;
+    overflow: hidden;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.6);
+}
+
+.book-flip-front img,
+.book-flip-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.book-flip-back {
+    transform: rotateY(180deg);
+}
+
 .book-cover-placeholder {
     width: 100%;
     height: 100%;
