@@ -1038,6 +1038,12 @@ img {
     letter-spacing: 3px;
 }
 
+a.location-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
 .location-card {
     background: rgba(26, 26, 46, 0.5);
     border: 1px solid rgba(201, 168, 76, 0.1);
@@ -1861,6 +1867,207 @@ img {
 .modal-success p {
     color: var(--ash);
     font-style: italic;
+}
+
+/* ============================================
+   LOCATION PAGES
+   ============================================ */
+
+/* -- Location Hero -- */
+.location-hero {
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.location-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% 40%, rgba(26, 10, 46, 0.6), transparent),
+        radial-gradient(ellipse 60% 30% at 30% 70%, rgba(139, 26, 26, 0.15), transparent),
+        radial-gradient(ellipse 50% 40% at 70% 30%, rgba(22, 33, 62, 0.3), transparent),
+        linear-gradient(180deg, var(--void) 0%, var(--charcoal) 50%, var(--void) 100%);
+}
+
+.location-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse 400px 60px at 50% 15%,
+            rgba(139, 26, 26, 0.3) 0%,
+            rgba(139, 26, 26, 0.1) 40%,
+            transparent 100%);
+    animation: wound-pulse 8s ease-in-out infinite;
+}
+
+.location-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 800px;
+    animation: hero-fade-in 2s ease-out;
+}
+
+.location-coin-frame {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    border: 2px solid var(--gold-dim);
+    overflow: hidden;
+    box-shadow:
+        0 0 40px rgba(201, 168, 76, 0.2),
+        0 0 80px rgba(201, 168, 76, 0.08),
+        inset 0 0 30px rgba(0, 0, 0, 0.4);
+    animation: seal-glow 3s ease-in-out infinite;
+}
+
+.location-coin-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.location-hook {
+    font-family: var(--font-accent);
+    font-size: 1rem;
+    color: var(--crimson-bright);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    text-shadow: 0 0 30px rgba(196, 32, 32, 0.4);
+}
+
+.location-hero-title {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--bone);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    text-shadow:
+        0 0 60px rgba(201, 168, 76, 0.2),
+        0 2px 4px rgba(0, 0, 0, 0.8);
+    line-height: 1.15;
+    margin-bottom: 8px;
+}
+
+.location-hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    color: var(--gold);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.location-hero-quote {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    color: var(--ash);
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* -- Location Lore -- */
+.location-lore-section {
+    background: linear-gradient(180deg, var(--void) 0%, var(--midnight) 20%, var(--void-purple) 50%, var(--midnight) 80%, var(--void) 100%);
+}
+
+.location-lore-content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.lore-block {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.lore-block.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lore-block p {
+    font-size: 1.15rem;
+    color: var(--bone);
+    line-height: 2;
+    text-align: justify;
+    text-indent: 2em;
+}
+
+.lore-divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 40px 0;
+}
+
+.lore-divider span:first-child,
+.lore-divider span:last-child {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.25), transparent);
+}
+
+.lore-divider-icon {
+    color: var(--gold-dim);
+    font-size: 0.6rem;
+    opacity: 0.6;
+}
+
+/* -- Location page responsive -- */
+@media (max-width: 768px) {
+    .location-hero-title {
+        font-size: 2.2rem;
+        letter-spacing: 3px;
+    }
+
+    .location-hero-subtitle {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .location-coin-frame {
+        width: 120px;
+        height: 120px;
+    }
+
+    .lore-block p {
+        font-size: 1.05rem;
+        text-align: left;
+        text-indent: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .location-hero-title {
+        font-size: 1.7rem;
+        letter-spacing: 2px;
+    }
+
+    .location-hook {
+        font-size: 0.85rem;
+        letter-spacing: 3px;
+    }
 }
 
 /* ============================================
