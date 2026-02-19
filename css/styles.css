@@ -1159,43 +1159,7 @@ img {
     line-height: 1.6;
 }
 
-.location-desc {
-    display: -webkit-box !important;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
-.location-card.expanded {
-    overflow: visible;
-    z-index: 10;
-}
-
-.location-card.expanded .location-desc {
-    display: block !important;
-    -webkit-line-clamp: unset;
-    -webkit-box-orient: unset;
-    overflow: visible;
-}
-
-.location-expand {
-    display: inline-block;
-    font-family: var(--font-display);
-    font-size: 0.7rem;
-    color: var(--gold);
-    letter-spacing: 1.5px;
-    cursor: pointer;
-    margin-top: 8px;
-    opacity: 0.7;
-    transition: opacity 0.3s ease, letter-spacing 0.3s ease;
-}
-
-.location-expand:hover {
-    opacity: 1;
-    letter-spacing: 2px;
-}
-
-.location-card[data-href] {
+.location-card {
     cursor: pointer;
 }
 

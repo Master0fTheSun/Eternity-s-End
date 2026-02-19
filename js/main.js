@@ -298,32 +298,10 @@
         goToPage(0);
     }
 
-    // ---- Location Card Expand / Navigate ----
+    // ---- Location Card Navigate ----
     var locationCards = document.querySelectorAll('.location-card');
     locationCards.forEach(function (card) {
-        var expandBtn = card.querySelector('.location-expand');
-        var clickTimer = null;
-
-        function toggleExpand() {
-            var isExpanded = card.classList.toggle('expanded');
-            if (expandBtn) {
-                expandBtn.textContent = isExpanded ? 'Read less' : 'Read more';
-            }
-        }
-
-        card.addEventListener('click', function (e) {
-            if (clickTimer) {
-                clearTimeout(clickTimer);
-                clickTimer = null;
-                return;
-            }
-            clickTimer = setTimeout(function () {
-                clickTimer = null;
-                toggleExpand();
-            }, 250);
-        });
-
-        card.addEventListener('dblclick', function (e) {
+        card.addEventListener('click', function () {
             var href = card.getAttribute('data-href');
             if (href) {
                 window.location.href = href;
