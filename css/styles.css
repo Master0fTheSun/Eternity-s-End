@@ -1543,13 +1543,8 @@ a.location-card-link {
 
 .review-source {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-}
-
-.reviewer-name {
-    font-size: 0.85rem;
-    color: var(--ash);
 }
 
 .review-platform {
