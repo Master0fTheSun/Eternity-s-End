@@ -980,6 +980,23 @@ img {
     margin-bottom: 30px;
 }
 
+.other-locations-link {
+    display: block;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.other-locations-link:hover {
+    color: var(--bone);
+    letter-spacing: 3px;
+}
+
 .location-card {
     background: rgba(26, 26, 46, 0.5);
     border: 1px solid rgba(201, 168, 76, 0.1);
