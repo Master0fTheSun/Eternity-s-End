@@ -1390,13 +1390,26 @@ a.location-card-link {
     padding-top: 120px;
 }
 
-.reviews-stream {
-    max-width: 1000px;
-    margin: 0 auto 50px;
+/* -- Carousel layout -- */
+.reviews-carousel {
+    max-width: 1100px;
+    margin: 0 auto 30px;
     padding: 0 30px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.reviews-viewport {
+    flex: 1;
+    overflow: hidden;
+}
+
+.reviews-track {
+    display: flex;
     gap: 25px;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .review-card {
@@ -1404,10 +1417,13 @@ a.location-card-link {
     border: 1px solid rgba(201, 168, 76, 0.08);
     padding: 30px 25px;
     position: relative;
-    transition: all 0.4s ease;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    flex: 0 0 calc((100% - 50px) / 3);
+    min-width: 0;
+    box-sizing: border-box;
 }
 .review-card::before {
-    content: '"';
+    content: '\201C';
     position: absolute;
     top: 10px;
     left: 15px;
@@ -1418,10 +1434,76 @@ a.location-card-link {
 }
 .review-card:hover {
     border-color: rgba(201, 168, 76, 0.2);
-    transform: translateY(-4px);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
 }
 
+/* -- Carousel arrows -- */
+.carousel-arrow {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 168, 76, 0.25);
+    background: rgba(26, 26, 46, 0.6);
+    color: var(--gold);
+    font-size: 1.6rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    line-height: 1;
+    padding: 0 0 2px 0;
+}
+
+.carousel-arrow:hover {
+    border-color: var(--gold);
+    background: rgba(201, 168, 76, 0.12);
+    box-shadow: 0 0 20px rgba(201, 168, 76, 0.15);
+}
+
+.carousel-arrow:disabled {
+    opacity: 0.25;
+    cursor: default;
+    border-color: rgba(201, 168, 76, 0.1);
+}
+
+.carousel-arrow:disabled:hover {
+    background: rgba(26, 26, 46, 0.6);
+    box-shadow: none;
+}
+
+/* -- Carousel dots -- */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot:hover {
+    border-color: var(--gold);
+}
+
+.carousel-dot.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    box-shadow: 0 0 8px rgba(201, 168, 76, 0.4);
+}
+
+/* -- Review card content -- */
 .review-stars {
     color: var(--gold);
     font-size: 0.9rem;
@@ -2099,6 +2181,9 @@ a.location-card-link {
     .locations-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .review-card {
+        flex: 0 0 calc((100% - 25px) / 2);
+    }
 }
 
 @media (max-width: 768px) {
@@ -2173,8 +2258,19 @@ a.location-card-link {
         max-width: 350px;
     }
 
-    .reviews-stream {
-        grid-template-columns: 1fr;
+    .review-card {
+        flex: 0 0 100%;
+    }
+
+    .carousel-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 1.2rem;
+    }
+
+    .reviews-carousel {
+        gap: 8px;
+        padding: 0 10px;
     }
 
     .author-content {

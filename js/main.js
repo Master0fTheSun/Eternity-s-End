@@ -176,6 +176,119 @@
         });
     }
 
+    // ---- Reviews Carousel ----
+    var track = document.querySelector('.reviews-track');
+    var cards = track ? Array.prototype.slice.call(track.querySelectorAll('.review-card')) : [];
+    var arrowLeft = document.querySelector('.carousel-arrow-left');
+    var arrowRight = document.querySelector('.carousel-arrow-right');
+    var dotsContainer = document.querySelector('.carousel-dots');
+
+    if (track && cards.length) {
+        var currentPage = 0;
+
+        function getCardsPerPage() {
+            var viewportWidth = window.innerWidth;
+            if (viewportWidth <= 768) return 1;
+            if (viewportWidth <= 1024) return 2;
+            return 3;
+        }
+
+        function getTotalPages() {
+            var perPage = getCardsPerPage();
+            return Math.ceil(cards.length / perPage);
+        }
+
+        function buildDots() {
+            if (!dotsContainer) return;
+            dotsContainer.innerHTML = '';
+            var total = getTotalPages();
+            for (var i = 0; i < total; i++) {
+                var dot = document.createElement('button');
+                dot.className = 'carousel-dot' + (i === currentPage ? ' active' : '');
+                dot.setAttribute('aria-label', 'Go to page ' + (i + 1));
+                dot.dataset.page = i;
+                dot.addEventListener('click', function () {
+                    goToPage(parseInt(this.dataset.page, 10));
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateArrows() {
+            if (arrowLeft) arrowLeft.disabled = (currentPage === 0);
+            if (arrowRight) arrowRight.disabled = (currentPage >= getTotalPages() - 1);
+        }
+
+        function updateDots() {
+            if (!dotsContainer) return;
+            var dots = dotsContainer.querySelectorAll('.carousel-dot');
+            dots.forEach(function (dot, i) {
+                dot.classList.toggle('active', i === currentPage);
+            });
+        }
+
+        function goToPage(page) {
+            var totalPages = getTotalPages();
+            if (page < 0) page = 0;
+            if (page >= totalPages) page = totalPages - 1;
+            currentPage = page;
+
+            var perPage = getCardsPerPage();
+            var gap = 25;
+            var card = cards[0];
+            var cardWidth = card.getBoundingClientRect().width;
+            var offset = currentPage * perPage * (cardWidth + gap);
+
+            track.style.transform = 'translateX(-' + offset + 'px)';
+            updateArrows();
+            updateDots();
+        }
+
+        if (arrowLeft) {
+            arrowLeft.addEventListener('click', function () {
+                goToPage(currentPage - 1);
+            });
+        }
+
+        if (arrowRight) {
+            arrowRight.addEventListener('click', function () {
+                goToPage(currentPage + 1);
+            });
+        }
+
+        // Touch / swipe support
+        var touchStartX = 0;
+        var touchEndX = 0;
+        track.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        track.addEventListener('touchend', function (e) {
+            touchEndX = e.changedTouches[0].screenX;
+            var diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) goToPage(currentPage + 1);
+                else goToPage(currentPage - 1);
+            }
+        }, { passive: true });
+
+        // Recalculate on resize
+        var resizeTimer;
+        window.addEventListener('resize', function () {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                if (currentPage >= getTotalPages()) {
+                    currentPage = getTotalPages() - 1;
+                }
+                buildDots();
+                goToPage(currentPage);
+            }, 200);
+        });
+
+        // Init
+        buildDots();
+        goToPage(0);
+    }
+
     // ---- Scroll Reveal ----
     var revealElements = document.querySelectorAll(
         '.location-card, .creature-card, .character-card, .review-card, ' +
