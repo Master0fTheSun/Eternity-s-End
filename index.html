@@ -273,30 +273,84 @@
     <!-- ============================================ -->
     <!-- ETHERGEMS MARQUEE -->
     <!-- ============================================ -->
+    <style>
+        .ethergems-section {
+            position: relative;
+            padding: 40px 0;
+            overflow: hidden;
+            background: linear-gradient(180deg, #0a0a0f 0%, rgba(26, 10, 46, 0.3) 50%, #0a0a0f 100%);
+            border-top: 1px solid rgba(201, 168, 76, 0.15);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+        }
+        .ethergems-label {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #8a7034;
+            margin-bottom: 20px;
+        }
+        .ethergems-track-wrapper {
+            width: 100%;
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+            mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+        }
+        .ethergems-track {
+            display: inline-flex;
+            white-space: nowrap;
+            animation: ethergemsScroll 30s linear infinite;
+        }
+        .ethergems-set {
+            display: inline-flex;
+            gap: 60px;
+            padding-right: 60px;
+            flex-shrink: 0;
+        }
+        .ethergem {
+            font-family: 'Cinzel', serif;
+            font-size: 1.05rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #c9a84c;
+            text-shadow: 0 0 8px rgba(201, 168, 76, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+            white-space: nowrap;
+        }
+        .ethergem-icon {
+            font-size: 0.6rem;
+            color: #8a7034;
+            text-shadow: 0 0 6px rgba(201, 168, 76, 0.3);
+        }
+        @keyframes ethergemsScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+    </style>
     <section class="ethergems-section">
         <div class="ethergems-label">Ethergems</div>
         <div class="ethergems-track-wrapper">
             <div class="ethergems-track">
-                <div class="ethergems-set">
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Luminite</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Deepthane</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Pryoclast</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Umbralith</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Psionite</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Terramite</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Vitaspark</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Nullstone</span>
-                </div>
-                <div class="ethergems-set" aria-hidden="true">
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Luminite</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Deepthane</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Pryoclast</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Umbralith</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Psionite</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Terramite</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Vitaspark</span>
-                    <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Nullstone</span>
-                </div>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Luminite</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Deepthane</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Pryoclast</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Umbralith</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Psionite</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Terramite</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Vitaspark</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Nullstone</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Luminite</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Deepthane</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Pryoclast</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Umbralith</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Psionite</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Terramite</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Vitaspark</span>
+                <span class="ethergem"><span class="ethergem-icon">&#9670;</span> Nullstone</span>
             </div>
         </div>
     </section>

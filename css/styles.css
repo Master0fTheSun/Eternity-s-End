@@ -1159,74 +1159,7 @@ a.location-card-link {
 /* ============================================
    ETHERGEMS MARQUEE
    ============================================ */
-.ethergems-section {
-    position: relative;
-    padding: 40px 0;
-    overflow: hidden;
-    background: linear-gradient(180deg, var(--void) 0%, rgba(26, 10, 46, 0.3) 50%, var(--void) 100%);
-    border-top: 1px solid rgba(201, 168, 76, 0.15);
-    border-bottom: 1px solid rgba(201, 168, 76, 0.15);
-}
-
-.ethergems-label {
-    text-align: center;
-    font-family: var(--font-display);
-    font-size: 0.75rem;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: var(--gold-dim);
-    margin-bottom: 20px;
-}
-
-.ethergems-track-wrapper {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-}
-
-.ethergems-track {
-    display: flex;
-    width: max-content;
-}
-
-.ethergems-set {
-    display: flex;
-    gap: 60px;
-    padding-right: 60px;
-    white-space: nowrap;
-    flex-shrink: 0;
-    animation: ethergemsScroll 30s linear infinite;
-}
-
-.ethergem {
-    font-family: var(--font-display);
-    font-size: 1.05rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-shadow: 0 0 8px rgba(201, 168, 76, 0.4);
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-}
-
-.ethergem-icon {
-    font-size: 0.6rem;
-    color: var(--gold-dim);
-    text-shadow: 0 0 6px rgba(201, 168, 76, 0.3);
-}
-
-@keyframes ethergemsScroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
+/* styles are inlined in index.html for reliability */
 
 /* ============================================
    CREATURES SECTION
