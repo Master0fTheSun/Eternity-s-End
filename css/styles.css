@@ -1035,14 +1035,6 @@ img {
     filter: saturate(1) brightness(1.1);
 }
 
-.grey-haven-img .location-img {
-    transform: scale(1.35);
-}
-
-.location-card:hover .grey-haven-img .location-img {
-    transform: scale(1.45);
-}
-
 .location-card h4 {
     font-family: var(--font-display);
     font-size: 0.9rem;
