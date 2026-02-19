@@ -282,12 +282,20 @@ img {
 
 .nav-brand .nav-cta {
     margin-left: 16px;
+    font-family: var(--font-display);
     font-size: 0.7rem;
+    font-weight: 400;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    font-family: var(--font-display);
     text-decoration: none;
     white-space: nowrap;
+    color: var(--gold);
+    padding: 8px 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-arcane-mobile {
+    display: none;
 }
 
 .nav-links a.nav-reviews {
@@ -2263,6 +2271,14 @@ a.location-card-link {
     .nav-links a {
         padding: 12px 20px;
         font-size: 0.8rem;
+    }
+
+    .nav-brand .nav-cta {
+        display: none;
+    }
+
+    .nav-arcane-mobile {
+        display: list-item;
     }
 
     .title-main {
