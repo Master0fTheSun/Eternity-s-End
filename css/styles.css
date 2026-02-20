@@ -2227,6 +2227,84 @@ a.btn.arcane-btn .arcane-subtitle {
 }
 
 /* ============================================
+   CREATURE PAGES
+   ============================================ */
+
+/* -- Creature Hero Icon (replaces coin frame) -- */
+.creature-hero-icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    position: relative;
+    background: rgba(10, 10, 15, 0.8);
+    border: 2px solid rgba(201, 168, 76, 0.15);
+}
+
+.creature-hero-icon::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    animation: aura-pulse 3s ease-in-out infinite;
+}
+
+/* -- Tulari Hero Theme (spectral green / desert) -- */
+.creature-hero-bg-tulari {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% 40%, rgba(45, 139, 78, 0.15), transparent),
+        radial-gradient(ellipse 60% 30% at 30% 70%, rgba(139, 120, 26, 0.12), transparent),
+        radial-gradient(ellipse 50% 40% at 70% 30%, rgba(45, 139, 78, 0.1), transparent),
+        linear-gradient(180deg, var(--void) 0%, var(--charcoal) 50%, var(--void) 100%);
+}
+
+.creature-hero-overlay-tulari {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse 400px 60px at 50% 15%,
+            rgba(45, 139, 78, 0.25) 0%,
+            rgba(45, 139, 78, 0.08) 40%,
+            transparent 100%);
+    animation: wound-pulse 8s ease-in-out infinite;
+}
+
+.tulari-hero-icon {
+    border-color: rgba(45, 139, 78, 0.3);
+    box-shadow:
+        0 0 40px rgba(45, 139, 78, 0.15),
+        0 0 80px rgba(45, 139, 78, 0.06),
+        inset 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+.tulari-hero-icon::before {
+    background: radial-gradient(circle, rgba(45, 139, 78, 0.2), transparent 70%);
+}
+
+.creature-hook-tulari {
+    color: var(--spectral-bright) !important;
+    text-shadow: 0 0 30px rgba(45, 139, 78, 0.4) !important;
+}
+
+/* -- Clickable creature cards -- */
+.creature-card[data-href] {
+    cursor: pointer;
+}
+
+/* ============================================
    CHARACTERS PAGE
    ============================================ */
 .characters-page-section {

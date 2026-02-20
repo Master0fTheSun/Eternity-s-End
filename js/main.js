@@ -309,6 +309,17 @@
         });
     });
 
+    // ---- Creature Card Navigate ----
+    var creatureCards = document.querySelectorAll('.creature-card[data-href]');
+    creatureCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+            var href = card.getAttribute('data-href');
+            if (href) {
+                window.location.href = href;
+            }
+        });
+    });
+
     // ---- Character Portrait Carousel ----
     var charCards = document.querySelectorAll('.char-page-card');
     charCards.forEach(function (card) {
