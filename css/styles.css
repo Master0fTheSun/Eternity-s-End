@@ -1244,24 +1244,23 @@ img {
 .creature-silhouette {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
     background: rgba(10, 10, 15, 0.8);
-    border: 1px solid rgba(201, 168, 76, 0.15);
     position: relative;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
 }
 
 .creature-aura {
     position: absolute;
     width: 120px;
     height: 120px;
-    border-radius: 50%;
     background: radial-gradient(circle, rgba(201, 168, 76, 0.15), transparent 70%);
     animation: aura-pulse 3s ease-in-out infinite;
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
 }
 .aura-crimson { background: radial-gradient(circle, rgba(196, 32, 32, 0.2), transparent 70%); }
 .aura-blood { background: radial-gradient(circle, rgba(139, 26, 26, 0.2), transparent 70%); }
@@ -1285,7 +1284,6 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
     z-index: 1;
 }
 
