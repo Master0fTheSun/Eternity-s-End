@@ -2184,6 +2184,13 @@ img {
     background: var(--void);
 }
 
+.arcane-subtitle {
+    display: block;
+    font-size: 0.55em;
+    text-decoration: underline;
+    margin-top: 4px;
+}
+
 /* ============================================
    CHARACTERS PAGE
    ============================================ */
