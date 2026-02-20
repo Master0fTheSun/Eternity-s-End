@@ -612,6 +612,8 @@ img {
     text-align: center;
     z-index: 2;
     animation: scroll-bounce 2s ease-in-out infinite;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .scroll-indicator span {
