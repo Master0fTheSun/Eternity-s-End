@@ -1243,17 +1243,33 @@ img {
     position: relative;
 }
 
+.creature-visual::before {
+    content: '';
+    position: absolute;
+    width: 106px;
+    height: 106px;
+    background: var(--gold);
+    clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    z-index: 1;
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
+}
+
+.creature-card:hover .creature-visual::before {
+    opacity: 0.8;
+}
+
 .creature-silhouette {
     width: 100px;
     height: 100px;
     background: rgba(10, 10, 15, 0.8);
     position: relative;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    transform: translateZ(0);
 }
 
 .creature-aura {
@@ -1263,6 +1279,7 @@ img {
     background: radial-gradient(circle, rgba(201, 168, 76, 0.15), transparent 70%);
     animation: aura-pulse 3s ease-in-out infinite;
     clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+    transform: translateZ(0);
 }
 .aura-crimson { background: radial-gradient(circle, rgba(196, 32, 32, 0.2), transparent 70%); }
 .aura-blood { background: radial-gradient(circle, rgba(139, 26, 26, 0.2), transparent 70%); }
