@@ -397,9 +397,15 @@
         });
     }
 
-    // Close modal on Escape key
+    // Close modal/lightbox on Escape key
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeModal();
+        if (e.key === 'Escape') {
+            closeModal();
+            if (mapLightbox && mapLightbox.classList.contains('active')) {
+                mapLightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
     });
 
     // Alliance form submission
@@ -480,6 +486,30 @@
     if (backToTopBtn) {
         backToTopBtn.addEventListener('click', function () {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    // ---- Map Lightbox ----
+    var mapImg = document.querySelector('.realm-map-img');
+    var mapLightbox = document.getElementById('map-lightbox');
+    var mapLightboxClose = mapLightbox ? mapLightbox.querySelector('.map-lightbox-close') : null;
+
+    if (mapImg && mapLightbox) {
+        mapImg.addEventListener('click', function () {
+            mapLightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mapLightboxClose.addEventListener('click', function () {
+            mapLightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        mapLightbox.addEventListener('click', function (e) {
+            if (e.target === mapLightbox) {
+                mapLightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         });
     }
 

@@ -983,9 +983,68 @@ img {
 }
 
 .realm-map-img {
-    width: 100%;
+    width: 135%;
     border: 2px solid var(--gold-dim);
     display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.realm-map-img:hover {
+    transform: scale(1.02);
+}
+
+/* Map Lightbox */
+.map-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    cursor: zoom-out;
+}
+
+.map-lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.map-lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border: 2px solid var(--gold-dim);
+    box-shadow: 0 0 60px rgba(201, 168, 76, 0.15);
+    transform: scale(0.9);
+    transition: transform 0.35s ease;
+}
+
+.map-lightbox.active img {
+    transform: scale(1);
+}
+
+.map-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    font-size: 2rem;
+    color: var(--gold-dim);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    line-height: 1;
+}
+
+.map-lightbox-close:hover {
+    color: var(--gold);
 }
 
 /* Locations grid */
