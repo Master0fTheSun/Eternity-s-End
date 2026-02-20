@@ -2180,7 +2180,7 @@ img {
 .arcane-btn-wrapper {
     display: flex;
     justify-content: center;
-    padding: 24px 0 0;
+    padding: 8px 0 16px;
     background: var(--void);
 }
 
