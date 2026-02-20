@@ -2184,24 +2184,26 @@ img {
     background: var(--void);
 }
 
-.arcane-btn.btn {
+a.btn.arcane-btn {
     font-size: 0.7rem;
     padding: 10px 28px;
-    text-align: center;
     line-height: 1.4;
+    text-transform: none;
 }
 
-.arcane-btn .arcane-main {
+a.btn.arcane-btn .arcane-main {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-.arcane-subtitle {
+a.btn.arcane-btn .arcane-subtitle {
     display: block;
     font-size: 0.6em;
     text-decoration: underline;
+    text-transform: none;
     margin-top: 2px;
     font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 /* ============================================
