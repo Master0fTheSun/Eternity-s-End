@@ -2154,8 +2154,9 @@ img {
 
 /* -- Uncork the Arcane button (below ethergems) -- */
 .arcane-btn-wrapper {
-    text-align: center;
-    padding: 32px 0 0;
+    display: flex;
+    justify-content: center;
+    padding: 24px 0 0;
     background: var(--void);
 }
 
