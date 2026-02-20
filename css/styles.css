@@ -982,46 +982,10 @@ img {
     line-height: 1.8;
 }
 
-.map-frame {
+.realm-map-img {
     width: 100%;
-    aspect-ratio: 4 / 3;
     border: 2px solid var(--gold-dim);
-    background: rgba(10, 10, 15, 0.8);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.map-frame::before {
-    content: '';
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
-    border: 1px solid rgba(201, 168, 76, 0.15);
-}
-
-.map-content {
-    text-align: center;
-}
-
-.map-label {
     display: block;
-    font-family: var(--font-display);
-    font-size: 1rem;
-    color: var(--gold-dim);
-    letter-spacing: 4px;
-    text-transform: uppercase;
-}
-
-.map-coming {
-    display: block;
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    color: var(--ash);
-    margin-top: 8px;
-    font-style: italic;
 }
 
 /* Locations grid */
