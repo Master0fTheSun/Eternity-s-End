@@ -1213,7 +1213,7 @@ img {
     background: rgba(26, 26, 46, 0.4);
     border: 1px solid rgba(201, 168, 76, 0.08);
     padding: 30px;
-    transition: all 0.4s ease;
+    transition: border-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease, opacity 0.8s ease, transform 0.8s ease;
     position: relative;
     overflow: hidden;
 }
