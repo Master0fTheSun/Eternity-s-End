@@ -2562,3 +2562,42 @@ img {
         border-radius: 4px !important;
     }
 }
+
+/* ============================================
+   BACK TO TOP BUTTON
+   ============================================ */
+#back-to-top {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    z-index: 900;
+    background: rgba(201, 168, 76, 0.12);
+    color: var(--gold-dim);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease,
+                background 0.2s ease, color 0.2s ease;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+#back-to-top.visible {
+    opacity: 0.6;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+#back-to-top:hover {
+    opacity: 1;
+    background: rgba(201, 168, 76, 0.25);
+    color: var(--gold);
+    border-color: rgba(201, 168, 76, 0.45);
+}

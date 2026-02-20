@@ -465,6 +465,23 @@
         });
     });
 
+    // ---- Back to Top Button ----
+    var backToTopBtn = document.getElementById('back-to-top');
+
+    function updateBackToTop() {
+        if (window.scrollY > window.innerHeight) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    }
+
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // ---- Combined Scroll Handler (throttled) ----
     var ticking = false;
 
@@ -476,6 +493,7 @@
                 updateActiveLink();
                 checkReveal();
                 animateStats();
+                updateBackToTop();
                 ticking = false;
             });
             ticking = true;
@@ -488,5 +506,6 @@
     updateNav();
     checkReveal();
     animateStats();
+    updateBackToTop();
 
 })();
