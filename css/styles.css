@@ -1277,7 +1277,14 @@ img {
 .dragon-silhouette::after { content: '🐉'; font-size: 2.5rem; filter: grayscale(0.5) brightness(0.8); }
 .hellshudiin-silhouette::after { content: '👹'; font-size: 2.5rem; filter: grayscale(0.3) brightness(0.8); }
 .cadessi-silhouette::after { content: '🩸'; font-size: 2.5rem; filter: brightness(0.8); }
-.tulari-silhouette::after { content: '👁'; font-size: 2.5rem; filter: grayscale(0.4) brightness(0.8); }
+.tulari-silhouette::after { content: none; }
+
+.creature-silhouette-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
 .icuguar-silhouette::after { content: '❄'; font-size: 2.5rem; filter: brightness(0.9); }
 .imp-silhouette::after { content: '🔥'; font-size: 2.5rem; filter: brightness(0.8); }
 
