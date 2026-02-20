@@ -961,7 +961,7 @@ img {
 
 .world-intro {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.35fr;
     gap: 50px;
     align-items: start;
     margin-bottom: 80px;
@@ -983,7 +983,7 @@ img {
 }
 
 .realm-map-img {
-    width: 135%;
+    width: 100%;
     border: 2px solid var(--gold-dim);
     display: block;
     cursor: pointer;
