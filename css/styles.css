@@ -1285,7 +1285,7 @@ img {
     object-fit: cover;
     border-radius: 50%;
 }
-.icuguar-silhouette::after { content: '❄'; font-size: 2.5rem; filter: brightness(0.9); }
+.icuguar-silhouette::after { content: none; }
 .imp-silhouette::after { content: '🔥'; font-size: 2.5rem; filter: brightness(0.8); }
 
 .creature-info h3 {
