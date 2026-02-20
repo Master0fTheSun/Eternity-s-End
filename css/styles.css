@@ -2594,9 +2594,11 @@ img {
     pointer-events: auto;
 }
 
-#back-to-top:hover {
-    opacity: 1;
-    background: rgba(201, 168, 76, 0.25);
-    color: var(--gold);
-    border-color: rgba(201, 168, 76, 0.45);
+@media (hover: hover) {
+    #back-to-top:hover {
+        opacity: 1;
+        background: rgba(201, 168, 76, 0.25);
+        color: var(--gold);
+        border-color: rgba(201, 168, 76, 0.45);
+    }
 }
