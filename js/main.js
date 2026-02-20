@@ -469,6 +469,7 @@
     var backToTopBtn = document.getElementById('back-to-top');
 
     function updateBackToTop() {
+        if (!backToTopBtn) return;
         if (window.scrollY > window.innerHeight) {
             backToTopBtn.classList.add('visible');
         } else {
