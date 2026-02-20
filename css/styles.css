@@ -1341,6 +1341,23 @@ img {
     gap: 6px;
 }
 
+.creature-card .creature-info::after {
+    content: 'click to learn more';
+    display: block;
+    text-align: right;
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-size: 0.75rem;
+    color: var(--gold);
+    opacity: 0.4;
+    margin-top: 12px;
+    transition: opacity 0.4s ease;
+}
+
+.creature-card:hover .creature-info::after {
+    opacity: 0.8;
+}
+
 .stat {
     display: grid;
     grid-template-columns: 80px 1fr;
