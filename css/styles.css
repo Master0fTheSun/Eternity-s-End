@@ -40,7 +40,7 @@
     --font-accent: 'MedievalSharp', cursive;
 
     --nav-height: 70px;
-    --section-padding: 60px 0;
+    --section-padding: 30px 0;
 }
 
 /* ---- Reset & Base ---- */
@@ -643,7 +643,7 @@ img {
    ============================================ */
 .books-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--charcoal) 20%, var(--charcoal) 80%, var(--void) 100%);
-    padding-top: 80px;
+    padding-top: 40px;
 }
 
 .books-tabs {
@@ -942,7 +942,7 @@ img {
    ============================================ */
 .world-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--midnight) 15%, var(--void-purple) 50%, var(--midnight) 85%, var(--void) 100%);
-    padding-top: 80px;
+    padding-top: 40px;
 }
 
 .world-parallax {
@@ -1192,7 +1192,7 @@ img {
    ============================================ */
 .creatures-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--charcoal) 15%, var(--charcoal) 85%, var(--void) 100%);
-    padding-top: 80px;
+    padding-top: 40px;
 }
 
 .creatures-grid {
@@ -1350,7 +1350,7 @@ img {
    ============================================ */
 .characters-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--void-purple) 30%, var(--midnight) 70%, var(--void) 100%);
-    padding-top: 80px;
+    padding-top: 40px;
 }
 
 .characters-parallax {
@@ -1445,7 +1445,7 @@ img {
    ============================================ */
 .reviews-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--charcoal) 20%, var(--charcoal) 80%, var(--void) 100%);
-    padding-top: 80px;
+    padding-top: 40px;
 }
 
 /* -- Carousel layout -- */
@@ -1624,7 +1624,7 @@ img {
    ============================================ */
 .author-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--midnight) 30%, var(--midnight) 70%, var(--void) 100%);
-    padding-top: 80px;
+    padding-top: 40px;
 }
 
 .author-parallax {
@@ -2428,7 +2428,7 @@ a.btn.arcane-btn .arcane-subtitle {
 @media (max-width: 768px) {
     :root {
         --nav-height: 60px;
-        --section-padding: 50px 0;
+        --section-padding: 25px 0;
     }
 
     .nav-toggle {
