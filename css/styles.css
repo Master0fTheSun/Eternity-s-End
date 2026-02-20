@@ -1215,7 +1215,6 @@ img {
     padding: 30px;
     transition: border-color 0.4s ease, background 0.4s ease, box-shadow 0.4s ease, opacity 0.8s ease, transform 0.8s ease;
     position: relative;
-    overflow: hidden;
 }
 .creature-card::after {
     content: '';
@@ -1253,6 +1252,7 @@ img {
     z-index: 1;
     opacity: 0.5;
     transition: opacity 0.4s ease;
+    transform: translateZ(0);
 }
 
 .creature-card:hover .creature-visual::before {
