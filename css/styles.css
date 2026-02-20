@@ -2156,6 +2156,26 @@ img {
     text-indent: 2em;
 }
 
+.lore-image {
+    margin: 35px 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.lore-image.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.lore-image img {
+    max-width: 100%;
+    border-radius: 6px;
+    border: 1px solid rgba(201, 168, 76, 0.15);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
 .lore-divider {
     display: flex;
     align-items: center;

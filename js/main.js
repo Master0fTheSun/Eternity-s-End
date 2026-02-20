@@ -340,7 +340,7 @@
     // ---- Scroll Reveal ----
     var revealElements = document.querySelectorAll(
         '.location-card, .creature-card, .character-card, .char-page-card, ' +
-        '.world-intro, .author-content, .book-card.active, .lore-block'
+        '.world-intro, .author-content, .book-card.active, .lore-block, .lore-image'
     );
 
     // Add reveal class to elements
