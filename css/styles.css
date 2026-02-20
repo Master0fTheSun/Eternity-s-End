@@ -40,7 +40,7 @@
     --font-accent: 'MedievalSharp', cursive;
 
     --nav-height: 70px;
-    --section-padding: 100px 0;
+    --section-padding: 60px 0;
 }
 
 /* ---- Reset & Base ---- */
@@ -321,7 +321,7 @@ img {
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 35px;
     position: relative;
     z-index: 2;
 }
@@ -643,14 +643,14 @@ img {
    ============================================ */
 .books-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--charcoal) 20%, var(--charcoal) 80%, var(--void) 100%);
-    padding-top: 120px;
+    padding-top: 80px;
 }
 
 .books-tabs {
     display: flex;
     justify-content: center;
     gap: 4px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .book-tab {
@@ -942,7 +942,7 @@ img {
    ============================================ */
 .world-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--midnight) 15%, var(--void-purple) 50%, var(--midnight) 85%, var(--void) 100%);
-    padding-top: 120px;
+    padding-top: 80px;
 }
 
 .world-parallax {
@@ -964,7 +964,7 @@ img {
     grid-template-columns: 1fr 1.35fr;
     gap: 50px;
     align-items: start;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 .world-text h3 {
@@ -1192,7 +1192,7 @@ img {
    ============================================ */
 .creatures-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--charcoal) 15%, var(--charcoal) 85%, var(--void) 100%);
-    padding-top: 120px;
+    padding-top: 80px;
 }
 
 .creatures-grid {
@@ -1350,7 +1350,7 @@ img {
    ============================================ */
 .characters-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--void-purple) 30%, var(--midnight) 70%, var(--void) 100%);
-    padding-top: 120px;
+    padding-top: 80px;
 }
 
 .characters-parallax {
@@ -1360,12 +1360,12 @@ img {
 }
 
 .characters-gallery {
-    max-width: 1000px;
+    max-width: 700px;
     margin: 0 auto;
     padding: 0 30px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 25px;
     justify-content: center;
 }
 
@@ -1445,7 +1445,7 @@ img {
    ============================================ */
 .reviews-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--charcoal) 20%, var(--charcoal) 80%, var(--void) 100%);
-    padding-top: 120px;
+    padding-top: 80px;
 }
 
 /* -- Carousel layout -- */
@@ -1624,7 +1624,7 @@ img {
    ============================================ */
 .author-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--midnight) 30%, var(--midnight) 70%, var(--void) 100%);
-    padding-top: 120px;
+    padding-top: 80px;
 }
 
 .author-parallax {
@@ -2428,7 +2428,7 @@ a.btn.arcane-btn .arcane-subtitle {
 @media (max-width: 768px) {
     :root {
         --nav-height: 60px;
-        --section-padding: 70px 0;
+        --section-padding: 50px 0;
     }
 
     .nav-toggle {
@@ -2500,7 +2500,7 @@ a.btn.arcane-btn .arcane-subtitle {
 
     .characters-gallery {
         grid-template-columns: 1fr;
-        max-width: 350px;
+        max-width: 250px;
     }
 
     .review-card {
