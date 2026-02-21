@@ -2357,13 +2357,12 @@ a.btn.arcane-btn .arcane-subtitle {
 }
 
 .characters-page-grid {
-    max-width: 100%;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    box-sizing: border-box;
+    gap: 30px;
 }
 
 .char-page-card {
@@ -2567,6 +2566,7 @@ a.btn.arcane-btn .arcane-subtitle {
     }
     .characters-page-grid {
         grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
     }
 }
 
