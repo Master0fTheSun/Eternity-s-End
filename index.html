@@ -42,6 +42,58 @@
         <div class="parallax-container">
             <div class="parallax-layer parallax-stars" data-speed="0.1"></div>
             <div class="parallax-layer parallax-wound" data-speed="0.2"></div>
+            <!-- Silver Celestial Scar -->
+            <div class="parallax-layer celestial-scar-layer" id="celestial-scar" data-speed="0.15">
+                <svg class="celestial-scar-svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Wide atmospheric glow -->
+                        <filter id="scar-glow-wide" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="38" />
+                        </filter>
+                        <!-- Medium glow halo -->
+                        <filter id="scar-glow-med" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="14" />
+                        </filter>
+                        <!-- Tight core glow -->
+                        <filter id="scar-glow-core" x="-30%" y="-30%" width="160%" height="160%">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+                        </filter>
+                        <!-- Fracture displacement -->
+                        <filter id="scar-fracture" x="-10%" y="-10%" width="120%" height="120%">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="3" seed="42" result="noise" />
+                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+                        </filter>
+                    </defs>
+
+                    <!-- Layer 1: Wide atmospheric silver wash -->
+                    <path d="M 120,80 C 340,130 520,200 760,260 Q 960,310 1160,340 C 1380,370 1580,310 1800,240"
+                          stroke="rgba(192,205,220,0.08)" stroke-width="90" fill="none"
+                          filter="url(#scar-glow-wide)" stroke-linecap="round" />
+
+                    <!-- Layer 2: Medium halo with slight blue tint -->
+                    <path d="M 130,85 C 350,140 530,205 770,265 Q 960,312 1155,338 C 1370,365 1575,308 1790,235"
+                          stroke="rgba(180,200,225,0.12)" stroke-width="40" fill="none"
+                          filter="url(#scar-glow-med)" stroke-linecap="round" />
+
+                    <!-- Layer 3: Core bright line with fracture distortion -->
+                    <path d="M 140,88 C 355,142 535,208 775,268 Q 960,314 1150,336 C 1365,360 1570,305 1785,232"
+                          stroke="rgba(215,225,240,0.22)" stroke-width="8" fill="none"
+                          filter="url(#scar-glow-core)" stroke-linecap="round" />
+
+                    <!-- Layer 4: Ultra-bright thin center crack -->
+                    <path d="M 145,90 C 360,145 540,210 778,270 Q 960,315 1148,335 C 1360,358 1568,303 1782,230"
+                          stroke="rgba(235,240,250,0.18)" stroke-width="2.5" fill="none"
+                          filter="url(#scar-glow-core)" stroke-linecap="round" />
+
+                    <!-- Layer 5: Fractured edge detail — branching cracks -->
+                    <g filter="url(#scar-fracture)" opacity="0.1">
+                        <path d="M 480,230 L 510,215 L 525,225" stroke="rgba(200,210,230,0.6)" stroke-width="1.5" fill="none" stroke-linecap="round" />
+                        <path d="M 820,280 L 845,265 L 870,275" stroke="rgba(200,210,230,0.5)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+                        <path d="M 1100,340 L 1130,325 L 1145,338" stroke="rgba(200,210,230,0.5)" stroke-width="1.2" fill="none" stroke-linecap="round" />
+                        <path d="M 1400,350 L 1420,335 L 1440,345" stroke="rgba(200,210,230,0.4)" stroke-width="1" fill="none" stroke-linecap="round" />
+                    </g>
+                </svg>
+            </div>
             <div class="parallax-layer parallax-mountains-far" data-speed="0.3"></div>
             <div class="parallax-layer parallax-mountains-mid" data-speed="0.5"></div>
             <div class="parallax-layer parallax-ruins" data-speed="0.7"></div>

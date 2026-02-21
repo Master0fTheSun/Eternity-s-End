@@ -73,6 +73,7 @@
 
     // ---- Parallax Scrolling ----
     const parallaxLayers = document.querySelectorAll('.parallax-layer');
+    const celestialScar = document.getElementById('celestial-scar');
 
     function updateParallax() {
         const scrollY = window.scrollY;
@@ -80,6 +81,13 @@
             var layer = parallaxLayers[i];
             var speed = parseFloat(layer.getAttribute('data-speed')) || 0;
             layer.style.transform = 'translateY(' + (scrollY * speed * -0.5) + 'px)';
+        }
+
+        // Fade the celestial scar as user scrolls — fully gone by 40% of viewport
+        if (celestialScar) {
+            var fadeEnd = window.innerHeight * 0.4;
+            var scarOpacity = 1 - Math.min(scrollY / fadeEnd, 1);
+            celestialScar.style.opacity = scarOpacity;
         }
     }
 

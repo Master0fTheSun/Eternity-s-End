@@ -448,6 +448,23 @@ img {
     50% { opacity: 1; }
 }
 
+/* Silver celestial scar */
+.celestial-scar-layer {
+    z-index: 1;
+    mix-blend-mode: screen;
+    opacity: 1;
+    transition: opacity 0.05s linear;
+    pointer-events: none;
+}
+
+.celestial-scar-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 /* Far mountains */
 .parallax-mountains-far {
     background:
