@@ -2350,9 +2350,15 @@ a.btn.arcane-btn .arcane-subtitle {
 /* ============================================
    CHARACTERS PAGE
    ============================================ */
+.characters-hero {
+    height: auto;
+    min-height: unset;
+    padding: 140px 20px 60px;
+}
+
 .characters-page-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--void-purple) 30%, var(--midnight) 70%, var(--void) 100%);
-    padding-top: 80px;
+    padding-top: 40px;
     padding-bottom: 100px;
 }
 
