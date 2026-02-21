@@ -2359,8 +2359,7 @@ a.btn.arcane-btn .arcane-subtitle {
 /* -- Scroll nudge arrows -- */
 .scroll-nudge {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 260px;
     z-index: 2;
     animation: nudge-pulse 2.5s ease-in-out infinite;
 }
@@ -2383,12 +2382,12 @@ a.btn.arcane-btn .arcane-subtitle {
 
 @keyframes nudge-pulse {
     0%, 100% {
-        transform: translateY(-50%);
+        transform: translateY(0);
         opacity: 0.4;
         text-shadow: 0 0 8px rgba(201, 168, 76, 0.15);
     }
     50% {
-        transform: translateY(calc(-50% + 8px));
+        transform: translateY(8px);
         opacity: 1;
         text-shadow: 0 4px 16px rgba(201, 168, 76, 0.5), 0 2px 8px rgba(201, 168, 76, 0.3);
     }
