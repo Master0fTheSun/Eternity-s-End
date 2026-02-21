@@ -607,10 +607,10 @@ img {
 }
 .venture-img {
     display: block;
-    max-width: 180px;
+    max-width: 90px;
     height: auto;
     margin: 0 auto;
-    mix-blend-mode: screen;
+    mix-blend-mode: multiply;
 }
 
 .title-main {
