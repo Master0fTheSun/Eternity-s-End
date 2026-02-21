@@ -596,7 +596,7 @@ img {
 
 .venture-link {
     display: inline-block;
-    margin-bottom: 12px;
+    margin-bottom: 4px;
     text-decoration: none;
     cursor: pointer;
     transition: transform 0.4s ease, filter 0.4s ease;
@@ -607,10 +607,10 @@ img {
 }
 .venture-img {
     display: block;
-    max-width: 90px;
+    max-width: 113px;
     height: auto;
     margin: 0 auto;
-    mix-blend-mode: multiply;
+    border-radius: 9999px;
 }
 
 .title-main {
