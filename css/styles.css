@@ -588,10 +588,6 @@ img {
 
 .hero-title {
     margin-bottom: 24px;
-    text-shadow:
-        0 0 80px rgba(139, 26, 26, 0.4),
-        0 0 160px rgba(139, 26, 26, 0.2),
-        0 0 300px rgba(139, 26, 26, 0.15);
 }
 
 .title-line {
@@ -608,7 +604,10 @@ img {
     text-shadow:
         0 0 60px rgba(201, 168, 76, 0.3),
         0 0 120px rgba(201, 168, 76, 0.1),
-        0 2px 4px rgba(0, 0, 0, 0.8);
+        0 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 80px rgba(139, 26, 26, 0.5),
+        0 0 160px rgba(139, 26, 26, 0.3),
+        0 0 300px rgba(139, 26, 26, 0.2);
     line-height: 1.1;
 }
 
@@ -620,6 +619,10 @@ img {
     text-transform: uppercase;
     margin-top: 8px;
     font-style: italic;
+    text-shadow:
+        0 0 80px rgba(139, 26, 26, 0.5),
+        0 0 160px rgba(139, 26, 26, 0.3),
+        0 0 300px rgba(139, 26, 26, 0.2);
 }
 
 .hero-description {
