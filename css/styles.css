@@ -588,6 +588,10 @@ img {
 
 .hero-title {
     margin-bottom: 24px;
+    text-shadow:
+        0 0 80px rgba(139, 26, 26, 0.4),
+        0 0 160px rgba(139, 26, 26, 0.2),
+        0 0 300px rgba(139, 26, 26, 0.15);
 }
 
 .title-line {
