@@ -2356,6 +2356,43 @@ a.btn.arcane-btn .arcane-subtitle {
     padding: 140px 20px 60px;
 }
 
+/* -- Scroll nudge arrows -- */
+.scroll-nudge {
+    position: absolute;
+    bottom: 24px;
+    z-index: 2;
+    animation: nudge-pulse 2.5s ease-in-out infinite;
+}
+
+.scroll-nudge-left {
+    left: 36px;
+}
+
+.scroll-nudge-right {
+    right: 36px;
+}
+
+.nudge-arrow {
+    display: block;
+    font-size: 2rem;
+    color: rgba(201, 168, 76, 0.5);
+    text-shadow: 0 0 12px rgba(201, 168, 76, 0.3);
+    line-height: 1;
+}
+
+@keyframes nudge-pulse {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+        text-shadow: 0 0 8px rgba(201, 168, 76, 0.15);
+    }
+    50% {
+        transform: translateY(8px);
+        opacity: 1;
+        text-shadow: 0 4px 16px rgba(201, 168, 76, 0.5), 0 2px 8px rgba(201, 168, 76, 0.3);
+    }
+}
+
 .characters-page-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--void-purple) 30%, var(--midnight) 70%, var(--void) 100%);
     padding-top: 40px;
