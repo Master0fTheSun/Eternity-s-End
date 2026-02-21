@@ -588,6 +588,22 @@ img {
 
 .hero-title {
     margin-bottom: 24px;
+    position: relative;
+}
+
+.hero-title::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(ellipse at center, rgba(180, 30, 30, 0.35) 0%, rgba(139, 26, 26, 0.15) 40%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    pointer-events: none;
+    z-index: -1;
 }
 
 .title-line {
@@ -604,10 +620,7 @@ img {
     text-shadow:
         0 0 60px rgba(201, 168, 76, 0.3),
         0 0 120px rgba(201, 168, 76, 0.1),
-        0 2px 4px rgba(0, 0, 0, 0.8),
-        0 0 80px rgba(139, 26, 26, 0.5),
-        0 0 160px rgba(139, 26, 26, 0.3),
-        0 0 300px rgba(139, 26, 26, 0.2);
+        0 2px 4px rgba(0, 0, 0, 0.8);
     line-height: 1.1;
 }
 
@@ -619,10 +632,6 @@ img {
     text-transform: uppercase;
     margin-top: 8px;
     font-style: italic;
-    text-shadow:
-        0 0 80px rgba(139, 26, 26, 0.5),
-        0 0 160px rgba(139, 26, 26, 0.3),
-        0 0 300px rgba(139, 26, 26, 0.2);
 }
 
 .hero-description {
