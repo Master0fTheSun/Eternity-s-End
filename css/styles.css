@@ -453,8 +453,8 @@ img {
     z-index: 1;
     mix-blend-mode: screen;
     opacity: 1;
-    transition: opacity 0.05s linear;
     pointer-events: none;
+    animation: scar-breathe 10s ease-in-out infinite;
 }
 
 .celestial-scar-svg {
@@ -463,6 +463,11 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+@keyframes scar-breathe {
+    0%, 100% { opacity: 0.85; }
+    50% { opacity: 1; }
 }
 
 /* Far mountains */

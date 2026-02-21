@@ -83,11 +83,13 @@
             layer.style.transform = 'translateY(' + (scrollY * speed * -0.5) + 'px)';
         }
 
-        // Fade the celestial scar as user scrolls — fully gone by 40% of viewport
+        // Fade the celestial scar on scroll — fully gone by 50% of viewport
         if (celestialScar) {
-            var fadeEnd = window.innerHeight * 0.4;
+            var fadeEnd = window.innerHeight * 0.5;
             var scarOpacity = 1 - Math.min(scrollY / fadeEnd, 1);
             celestialScar.style.opacity = scarOpacity;
+            // Pause breathing animation once fully faded
+            celestialScar.style.animationPlayState = scarOpacity > 0 ? 'running' : 'paused';
         }
     }
 
