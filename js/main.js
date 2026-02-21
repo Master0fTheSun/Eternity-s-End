@@ -88,8 +88,6 @@
             var fadeEnd = window.innerHeight * 0.5;
             var scarOpacity = 1 - Math.min(scrollY / fadeEnd, 1);
             celestialScar.style.opacity = scarOpacity;
-            // Pause breathing animation once fully faded
-            celestialScar.style.animationPlayState = scarOpacity > 0 ? 'running' : 'paused';
         }
     }
 

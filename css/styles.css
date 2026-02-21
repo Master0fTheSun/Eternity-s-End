@@ -454,20 +454,24 @@ img {
     mix-blend-mode: screen;
     opacity: 1;
     pointer-events: none;
-    animation: scar-breathe 10s ease-in-out infinite;
 }
 
-.celestial-scar-svg {
+.celestial-scar-img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-@keyframes scar-breathe {
-    0%, 100% { opacity: 0.85; }
-    50% { opacity: 1; }
+    object-fit: cover;
+    object-position: center top;
+    -webkit-mask-image:
+        linear-gradient(to bottom, transparent 0%, black 12%, black 55%, transparent 85%),
+        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-composite: destination-in;
+    mask-image:
+        linear-gradient(to bottom, transparent 0%, black 12%, black 55%, transparent 85%),
+        linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-composite: intersect;
 }
 
 /* Far mountains */
