@@ -1475,6 +1475,14 @@ img {
     margin-bottom: 20px;
 }
 
+.portrait-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    display: block;
+}
+
 .portrait-placeholder {
     width: 100%;
     aspect-ratio: 3 / 4;
