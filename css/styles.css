@@ -345,6 +345,24 @@ img {
     background: rgba(201, 168, 76, 0.25) !important;
 }
 
+/* ---- Mobile Hamburger (hidden on desktop) ---- */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+.nav-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--bone);
+    transition: all 0.3s ease;
+}
+
 /* ---- Sections Common ---- */
 .section {
     position: relative;
@@ -2696,16 +2714,102 @@ a.btn.arcane-btn .arcane-subtitle {
         --section-padding: 25px 0;
     }
 
-    /* Logo-nav: smaller on tablets */
+    /* ---- Restore original top-bar mobile nav ---- */
     #main-nav {
-        right: 15px;
+        right: 0;
+        left: 0;
+        height: var(--nav-height);
+        width: 100%;
+        flex-direction: row;
+        justify-content: flex-start;
+        pointer-events: auto;
+        background: rgba(10, 10, 15, 0.95);
+        backdrop-filter: blur(10px);
     }
+
+    .logo-nav-container {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px;
+    }
+
     .logo-nav-trigger {
-        width: 58px;
-        height: 58px;
+        width: 38px;
+        height: 38px;
+        border-width: 1.5px;
+        border-color: var(--gold-dim);
+        background: transparent;
+        backdrop-filter: none;
+        cursor: default;
     }
+    .logo-nav-trigger:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
     .nav-logo-e {
-        font-size: 2rem;
+        font-size: 1.4rem;
+        animation: none;
+        color: var(--gold);
+        text-shadow: 0 0 20px rgba(201, 168, 76, 0.5);
+    }
+
+    .logo-nav-title {
+        margin-top: 0;
+        margin-left: 10px;
+        font-size: 0.85rem;
+        color: var(--bone);
+        letter-spacing: 3px;
+    }
+
+    .nav-toggle {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: var(--nav-height);
+        left: 0;
+        width: 100%;
+        margin-top: 0;
+        background: rgba(10, 10, 15, 0.98);
+        padding: 20px;
+        gap: 5px;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+    }
+
+    .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Override desktop stagger animation on mobile */
+    .nav-links li,
+    .nav-links.expanded li {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        transition-delay: 0s;
+    }
+
+    .nav-links a {
+        padding: 12px 20px;
+        font-size: 0.8rem;
+        text-align: left;
+    }
+
+    .nav-links .nav-cta {
+        background: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+        margin-top: 0;
     }
 
     .title-main {
@@ -2849,25 +2953,6 @@ a.btn.arcane-btn .arcane-subtitle {
         border-radius: 4px !important;
     }
 
-    /* Logo-nav: smaller on phones */
-    #main-nav {
-        right: 10px;
-    }
-    .logo-nav-trigger {
-        width: 50px;
-        height: 50px;
-    }
-    .nav-logo-e {
-        font-size: 1.7rem;
-    }
-    .logo-nav-title {
-        font-size: 0.5rem;
-        letter-spacing: 1.5px;
-    }
-    .nav-links a {
-        font-size: 0.58rem;
-        padding: 6px 14px;
-    }
 }
 
 /* ============================================

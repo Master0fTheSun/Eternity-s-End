@@ -91,17 +91,24 @@
         }
     }
 
-    // ---- Navigation — Logo Hub ----
+    // ---- Navigation — Logo Hub (desktop) + Top Bar (mobile) ----
     const nav = document.getElementById('main-nav');
     const navLogoBtn = document.getElementById('nav-logo-btn');
+    const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     const navAnchors = document.querySelectorAll('.nav-links a:not(.nav-cta)');
     var navExpanded = true;
     var autoCollapseTimer = null;
 
+    // Detect mobile layout (hamburger visible = mobile)
+    function isMobile() {
+        return navToggle && window.getComputedStyle(navToggle).display !== 'none';
+    }
+
     // No-op — kept so the combined scroll handler doesn't break
     function updateNav() {}
 
+    // ---- Desktop: logo-hub expand/collapse ----
     function expandNav() {
         if (!navLinks) return;
         navLinks.classList.add('expanded');
@@ -125,9 +132,10 @@
         }, totalDuration);
     }
 
-    // Toggle on "E" click
+    // Toggle on "E" click (desktop only)
     if (navLogoBtn) {
         navLogoBtn.addEventListener('click', function () {
+            if (isMobile()) return; // On mobile, E is just a logo
             if (autoCollapseTimer) {
                 clearTimeout(autoCollapseTimer);
                 autoCollapseTimer = null;
@@ -140,22 +148,52 @@
         });
     }
 
-    // Collapse nav when a link is clicked (after a short delay so scroll starts)
+    // ---- Mobile: hamburger toggle ----
+    function closeMobileNav() {
+        if (!navLinks || !navToggle) return;
+        navLinks.classList.remove('open');
+        var spans = navToggle.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    }
+
+    if (navToggle) {
+        navToggle.addEventListener('click', function () {
+            navLinks.classList.toggle('open');
+            var spans = navToggle.querySelectorAll('span');
+            if (navLinks.classList.contains('open')) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    }
+
+    // Nav link click — desktop: collapse; mobile: close dropdown
     navAnchors.forEach(function (anchor) {
         anchor.addEventListener('click', function () {
-            setTimeout(function () {
-                if (navExpanded) collapseNav();
-            }, 300);
+            if (isMobile()) {
+                closeMobileNav();
+            } else {
+                setTimeout(function () {
+                    if (navExpanded) collapseNav();
+                }, 300);
+            }
         });
     });
 
-    // Auto-collapse after 6 seconds — only on the home page where nav starts expanded
-    if (navLinks && navLinks.classList.contains('expanded')) {
+    // Auto-collapse after 6 seconds — desktop home page only
+    if (navLinks && navLinks.classList.contains('expanded') && !isMobile()) {
         autoCollapseTimer = setTimeout(function () {
             collapseNav();
             autoCollapseTimer = null;
         }, 6000);
-    } else {
+    } else if (!navLinks || !navLinks.classList.contains('expanded')) {
         // Secondary pages: nav starts collapsed
         navExpanded = false;
     }
