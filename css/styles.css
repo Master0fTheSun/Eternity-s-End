@@ -2463,11 +2463,11 @@ a.btn.arcane-btn .arcane-subtitle {
 }
 
 .scroll-nudge-left {
-    left: 30px;
+    left: calc(50% - 590px);
 }
 
 .scroll-nudge-right {
-    right: 30px;
+    right: calc(50% - 590px);
 }
 
 .nudge-arrow {
@@ -2810,6 +2810,10 @@ a.btn.arcane-btn .arcane-subtitle {
         border: none !important;
         border-radius: 0 !important;
         margin-top: 0;
+    }
+
+    .scroll-nudge {
+        display: none;
     }
 
     .title-main {
