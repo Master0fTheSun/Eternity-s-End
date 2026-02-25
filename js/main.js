@@ -91,47 +91,71 @@
         }
     }
 
-    // ---- Navigation ----
+    // ---- Navigation — Logo Hub ----
     const nav = document.getElementById('main-nav');
-    const navToggle = document.querySelector('.nav-toggle');
+    const navLogoBtn = document.getElementById('nav-logo-btn');
     const navLinks = document.querySelector('.nav-links');
     const navAnchors = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+    var navExpanded = true;
+    var autoCollapseTimer = null;
 
-    function updateNav() {
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
+    // No-op — kept so the combined scroll handler doesn't break
+    function updateNav() {}
+
+    function expandNav() {
+        if (!navLinks) return;
+        navLinks.classList.add('expanded');
+        navExpanded = true;
     }
 
-    // Mobile toggle
-    if (navToggle) {
-        navToggle.addEventListener('click', function () {
-            navLinks.classList.toggle('open');
-            var spans = navToggle.querySelectorAll('span');
-            if (navLinks.classList.contains('open')) {
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    function collapseNav() {
+        if (!navLinks) return;
+        navLinks.classList.remove('expanded');
+        navExpanded = false;
+
+        // After stagger finishes, flash the logo to show tabs were absorbed
+        var totalDuration = 8 * 60 + 350; // items * stagger + transition
+        setTimeout(function () {
+            if (navLogoBtn) {
+                navLogoBtn.classList.add('absorbed');
+                setTimeout(function () {
+                    navLogoBtn.classList.remove('absorbed');
+                }, 900);
+            }
+        }, totalDuration);
+    }
+
+    // Toggle on "E" click
+    if (navLogoBtn) {
+        navLogoBtn.addEventListener('click', function () {
+            if (autoCollapseTimer) {
+                clearTimeout(autoCollapseTimer);
+                autoCollapseTimer = null;
+            }
+            if (navExpanded) {
+                collapseNav();
             } else {
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
+                expandNav();
             }
         });
     }
 
-    // Close mobile nav on link click
+    // Collapse nav when a link is clicked (after a short delay so scroll starts)
     navAnchors.forEach(function (anchor) {
         anchor.addEventListener('click', function () {
-            navLinks.classList.remove('open');
-            var spans = navToggle.querySelectorAll('span');
-            spans[0].style.transform = 'none';
-            spans[1].style.opacity = '1';
-            spans[2].style.transform = 'none';
+            setTimeout(function () {
+                if (navExpanded) collapseNav();
+            }, 300);
         });
     });
+
+    // Auto-collapse after 6 seconds on page load
+    if (navLinks && navLinks.classList.contains('expanded')) {
+        autoCollapseTimer = setTimeout(function () {
+            collapseNav();
+            autoCollapseTimer = null;
+        }, 6000);
+    }
 
     // Active nav link tracking
     var sections = document.querySelectorAll('section[id]');
@@ -480,8 +504,7 @@
             var target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                var navHeight = nav ? nav.offsetHeight : 70;
-                var targetPosition = target.offsetTop - navHeight;
+                var targetPosition = target.offsetTop - 20;
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
