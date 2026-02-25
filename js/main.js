@@ -149,12 +149,15 @@
         });
     });
 
-    // Auto-collapse after 6 seconds on page load
+    // Auto-collapse after 6 seconds — only on the home page where nav starts expanded
     if (navLinks && navLinks.classList.contains('expanded')) {
         autoCollapseTimer = setTimeout(function () {
             collapseNav();
             autoCollapseTimer = null;
         }, 6000);
+    } else {
+        // Secondary pages: nav starts collapsed
+        navExpanded = false;
     }
 
     // Active nav link tracking
