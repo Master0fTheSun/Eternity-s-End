@@ -36,181 +36,105 @@
     </nav>
 
     <!-- ============================================ -->
-    <!-- CHARACTERS HERO -->
+    <!-- CHARACTER CAROUSEL -->
     <!-- ============================================ -->
-    <section class="location-hero characters-hero">
-        <div class="location-hero-bg"></div>
-        <div class="location-hero-overlay"></div>
-        <div class="location-hero-content">
-            <p class="location-hook">The Cast</p>
-            <h1 class="location-hero-title">Characters</h1>
-            <p class="location-hero-subtitle">Heroes, Villains &amp; the Shadows Between</p>
+    <section class="char-carousel-section">
+        <div class="char-intro">
+            <h1 class="char-intro-title">Characters</h1>
+            <p class="char-intro-sub">Heroes, Villains &amp; the Shadows Between</p>
+        </div>
+
+        <div class="char-carousel-wrap">
+            <button class="carousel-nav carousel-prev" aria-label="Previous character">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <div class="carousel-viewport" id="carousel-viewport">
+                <div class="carousel-card is-active" data-index="0">
+                    <div class="carousel-card-portrait"><img src="images/aden111.png" alt="Aden"></div>
+                    <p class="carousel-card-name">Aden</p>
+                </div>
+                <div class="carousel-card" data-index="1">
+                    <div class="carousel-card-portrait"><img src="images/ronan11.png" alt="Ronan"></div>
+                    <p class="carousel-card-name">Ronan</p>
+                </div>
+                <div class="carousel-card" data-index="2">
+                    <div class="carousel-card-portrait"><img src="images/vladimir1.png" alt="Vladimir"></div>
+                    <p class="carousel-card-name">Vladimir</p>
+                </div>
+                <div class="carousel-card" data-index="3">
+                    <div class="carousel-card-portrait"><img src="images/Rune1.png" alt="Rune"></div>
+                    <p class="carousel-card-name">Rune</p>
+                </div>
+                <div class="carousel-card" data-index="4">
+                    <div class="carousel-card-portrait"><img src="images/Sarra1.png" alt="Sarra"></div>
+                    <p class="carousel-card-name">Sarra</p>
+                </div>
+                <div class="carousel-card" data-index="5">
+                    <div class="carousel-card-portrait"><img src="images/javi1.png" alt="Javi"></div>
+                    <p class="carousel-card-name">Javi</p>
+                </div>
+                <div class="carousel-card" data-index="6">
+                    <div class="carousel-card-portrait"><img src="images/corvus1.png" alt="Corvus"></div>
+                    <p class="carousel-card-name">Corvus</p>
+                </div>
+            </div>
+            <button class="carousel-nav carousel-next" aria-label="Next character">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="9 6 15 12 9 18"></polyline></svg>
+            </button>
+        </div>
+
+        <div class="carousel-dots" id="carousel-dots">
+            <button class="carousel-dot is-active" data-index="0" aria-label="Aden"></button>
+            <button class="carousel-dot" data-index="1" aria-label="Ronan"></button>
+            <button class="carousel-dot" data-index="2" aria-label="Vladimir"></button>
+            <button class="carousel-dot" data-index="3" aria-label="Rune"></button>
+            <button class="carousel-dot" data-index="4" aria-label="Sarra"></button>
+            <button class="carousel-dot" data-index="5" aria-label="Javi"></button>
+            <button class="carousel-dot" data-index="6" aria-label="Corvus"></button>
         </div>
     </section>
 
     <!-- ============================================ -->
-    <!-- CHARACTER CARDS -->
+    <!-- CHARACTER DETAIL -->
     <!-- ============================================ -->
-    <section class="section characters-page-section">
-        <div class="scroll-nudge scroll-nudge-left" aria-hidden="true">
-            <span class="nudge-arrow">&#8964;</span>
-        </div>
-        <div class="scroll-nudge scroll-nudge-right" aria-hidden="true">
-            <span class="nudge-arrow">&#8964;</span>
-        </div>
-        <div class="characters-page-grid">
+    <section class="char-detail-section">
+        <div class="char-detail-inner">
+            <a class="char-social-link" href="https://linktr.ee/darkscribe" target="_blank" rel="noopener">@darkscribe</a>
 
-            <div class="char-page-card">
-                <div class="char-page-portrait">
-                    <div class="char-page-images">
-                        <img src="images/aden111.png" alt="Aden - Portrait 1" class="char-page-img active">
-                        <img src="images/adenoffical22.png" alt="Aden - Portrait 2" class="char-page-img">
-                        <img src="images/Aden3.png" alt="Aden - Portrait 3" class="char-page-img">
+            <div class="char-detail-grid" id="char-detail-grid">
+                <!-- Left Column: Lore -->
+                <div class="char-col-lore">
+                    <h2 class="char-lore-heading">Background</h2>
+                    <div class="char-lore-body" id="char-lore-body">
+                        <p id="char-lore-text"></p>
                     </div>
-                    <div class="char-page-dots">
-                        <button class="char-dot active" aria-label="Image 1"></button>
-                        <button class="char-dot" aria-label="Image 2"></button>
-                        <button class="char-dot" aria-label="Image 3"></button>
+                    <div class="char-read-more-wrap" id="char-read-more-wrap">
+                        <span class="read-more-line"></span>
+                        <button class="char-read-more-btn" id="char-read-more-btn">Read more</button>
                     </div>
-                    <button class="char-page-arrow char-arrow-left" aria-label="Previous image">&#8249;</button>
-                    <button class="char-page-arrow char-arrow-right" aria-label="Next image">&#8250;</button>
                 </div>
-                <div class="char-page-info">
-                    <h3>Aden</h3>
-                    <p class="char-page-desc">Description coming soon.</p>
+
+                <!-- Center Column: Artwork -->
+                <div class="char-col-artwork">
+                    <div class="char-art-frame" id="char-art-frame">
+                        <img id="char-art-img" src="" alt="">
+                    </div>
+                    <h2 class="char-art-name" id="char-art-name"></h2>
+                </div>
+
+                <!-- Right Column: Attributes & Info -->
+                <div class="char-col-attrs">
+                    <div class="char-callouts" id="char-callouts"></div>
+                    <div class="char-extra-art" id="char-extra-art">
+                        <img id="char-extra-img" src="" alt="">
+                    </div>
                 </div>
             </div>
 
-            <div class="char-page-card">
-                <div class="char-page-portrait">
-                    <div class="char-page-images">
-                        <img src="images/ronan11.png" alt="Ronan - Portrait 1" class="char-page-img active">
-                        <img src="images/ronan2.png" alt="Ronan - Portrait 2" class="char-page-img">
-                        <img src="images/ronan3.png" alt="Ronan - Portrait 3" class="char-page-img">
-                    </div>
-                    <div class="char-page-dots">
-                        <button class="char-dot active" aria-label="Image 1"></button>
-                        <button class="char-dot" aria-label="Image 2"></button>
-                        <button class="char-dot" aria-label="Image 3"></button>
-                    </div>
-                    <button class="char-page-arrow char-arrow-left" aria-label="Previous image">&#8249;</button>
-                    <button class="char-page-arrow char-arrow-right" aria-label="Next image">&#8250;</button>
-                </div>
-                <div class="char-page-info">
-                    <h3>Ronan</h3>
-                    <p class="char-page-desc">Description coming soon.</p>
-                </div>
+            <div class="char-detail-brand">
+                <span class="brand-logo-e">E</span>
+                <span class="brand-logo-title">Eternity's End</span>
             </div>
-
-            <div class="char-page-card">
-                <div class="char-page-portrait">
-                    <div class="char-page-images">
-                        <img src="images/vladimir1.png" alt="Vladimir - Portrait 1" class="char-page-img active">
-                        <img src="images/vladimir2.png" alt="Vladimir - Portrait 2" class="char-page-img">
-                        <img src="images/vladimir3.png" alt="Vladimir - Portrait 3" class="char-page-img">
-                    </div>
-                    <div class="char-page-dots">
-                        <button class="char-dot active" aria-label="Image 1"></button>
-                        <button class="char-dot" aria-label="Image 2"></button>
-                        <button class="char-dot" aria-label="Image 3"></button>
-                    </div>
-                    <button class="char-page-arrow char-arrow-left" aria-label="Previous image">&#8249;</button>
-                    <button class="char-page-arrow char-arrow-right" aria-label="Next image">&#8250;</button>
-                </div>
-                <div class="char-page-info">
-                    <h3>Vladimir</h3>
-                    <p class="char-page-desc">Description coming soon.</p>
-                </div>
-            </div>
-
-            <div class="char-page-card">
-                <div class="char-page-portrait">
-                    <div class="char-page-images">
-                        <img src="images/Rune1.png" alt="Rune - Portrait 1" class="char-page-img active">
-                        <img src="images/rune2.png" alt="Rune - Portrait 2" class="char-page-img">
-                        <img src="images/rune4.png" alt="Rune - Portrait 3" class="char-page-img">
-                    </div>
-                    <div class="char-page-dots">
-                        <button class="char-dot active" aria-label="Image 1"></button>
-                        <button class="char-dot" aria-label="Image 2"></button>
-                        <button class="char-dot" aria-label="Image 3"></button>
-                    </div>
-                    <button class="char-page-arrow char-arrow-left" aria-label="Previous image">&#8249;</button>
-                    <button class="char-page-arrow char-arrow-right" aria-label="Next image">&#8250;</button>
-                </div>
-                <div class="char-page-info">
-                    <h3>Rune</h3>
-                    <p class="char-page-desc">Description coming soon.</p>
-                </div>
-            </div>
-
-            <div class="char-page-card">
-                <div class="char-page-portrait">
-                    <div class="char-page-images">
-                        <img src="images/Sarra1.png" alt="Sarra - Portrait 1" class="char-page-img active">
-                        <img src="images/sarra2.png" alt="Sarra - Portrait 2" class="char-page-img">
-                        <img src="images/sarra4.png" alt="Sarra - Portrait 3" class="char-page-img">
-                    </div>
-                    <div class="char-page-dots">
-                        <button class="char-dot active" aria-label="Image 1"></button>
-                        <button class="char-dot" aria-label="Image 2"></button>
-                        <button class="char-dot" aria-label="Image 3"></button>
-                    </div>
-                    <button class="char-page-arrow char-arrow-left" aria-label="Previous image">&#8249;</button>
-                    <button class="char-page-arrow char-arrow-right" aria-label="Next image">&#8250;</button>
-                </div>
-                <div class="char-page-info">
-                    <h3>Sarra</h3>
-                    <p class="char-page-desc">Description coming soon.</p>
-                </div>
-            </div>
-
-            <div class="char-page-card">
-                <div class="char-page-portrait">
-                    <div class="char-page-images">
-                        <img src="images/javi1.png" alt="Javi - Portrait 1" class="char-page-img active">
-                        <img src="images/javi2.png" alt="Javi - Portrait 2" class="char-page-img">
-                        <img src="images/javi3.png" alt="Javi - Portrait 3" class="char-page-img">
-                    </div>
-                    <div class="char-page-dots">
-                        <button class="char-dot active" aria-label="Image 1"></button>
-                        <button class="char-dot" aria-label="Image 2"></button>
-                        <button class="char-dot" aria-label="Image 3"></button>
-                    </div>
-                    <button class="char-page-arrow char-arrow-left" aria-label="Previous image">&#8249;</button>
-                    <button class="char-page-arrow char-arrow-right" aria-label="Next image">&#8250;</button>
-                </div>
-                <div class="char-page-info">
-                    <h3>Javi</h3>
-                    <p class="char-page-desc">Description coming soon.</p>
-                </div>
-            </div>
-
-            <div class="char-page-card">
-                <div class="char-page-portrait">
-                    <div class="char-page-images">
-                        <img src="images/corvus1.png" alt="Corvus - Portrait 1" class="char-page-img active">
-                        <img src="images/corvus2.png" alt="Corvus - Portrait 2" class="char-page-img">
-                        <img src="images/corvus3.png" alt="Corvus - Portrait 3" class="char-page-img">
-                    </div>
-                    <div class="char-page-dots">
-                        <button class="char-dot active" aria-label="Image 1"></button>
-                        <button class="char-dot" aria-label="Image 2"></button>
-                        <button class="char-dot" aria-label="Image 3"></button>
-                    </div>
-                    <button class="char-page-arrow char-arrow-left" aria-label="Previous image">&#8249;</button>
-                    <button class="char-page-arrow char-arrow-right" aria-label="Next image">&#8250;</button>
-                </div>
-                <div class="char-page-info">
-                    <h3>Corvus</h3>
-                    <p class="char-page-desc">Description coming soon.</p>
-                </div>
-            </div>
-
-        </div>
-
-        <div style="text-align: center; margin-top: 60px;">
-            <a href="index.html#characters" class="other-locations-link">&larr; Back to Characters</a>
         </div>
     </section>
 

@@ -393,37 +393,271 @@
         });
     });
 
-    // ---- Character Portrait Carousel ----
-    var charCards = document.querySelectorAll('.char-page-card');
-    charCards.forEach(function (card) {
-        var imgs = card.querySelectorAll('.char-page-img');
-        var dots = card.querySelectorAll('.char-dot');
-        var leftBtn = card.querySelector('.char-arrow-left');
-        var rightBtn = card.querySelector('.char-arrow-right');
-        var current = 0;
+    // ---- Character Page: Carousel & Detail ----
+    var carouselViewport = document.getElementById('carousel-viewport');
+    if (carouselViewport) {
+        var characterData = [
+            {
+                name: 'Aden',
+                portrait: 'images/aden111.png',
+                artwork: 'images/adenoffical22.png',
+                extraArt: 'images/Aden3.png',
+                lore: 'Aden walks a path not chosen but thrust upon him \u2014 a journey born from loss and forged in the fires of a world unraveling. Raised in the quiet margins of ZeilGalia, far from the machinations of kings and sorcerers, he lived a life of obscurity until the Celestial Scar carved its wound across the heavens. Now burdened with a purpose he barely understands, Aden must navigate a realm where trust is a currency few can afford and survival demands more than courage alone. His story is one of transformation \u2014 from reluctant wanderer to the fulcrum upon which the fate of an age may turn.',
+                attributes: [
+                    { label: 'Title', value: 'The Wanderer' },
+                    { label: 'Origin', value: 'Outskirts of ZeilGalia' },
+                    { label: 'Affiliation', value: 'The Alliance' },
+                    { label: 'Ethergem', value: '\u2014' },
+                    { label: 'Status', value: 'Active' }
+                ]
+            },
+            {
+                name: 'Ronan',
+                portrait: 'images/ronan11.png',
+                artwork: 'images/ronan2.png',
+                extraArt: 'images/ronan3.png',
+                lore: 'Ronan is steel given form \u2014 a warrior whose reputation was forged long before the world began its descent into chaos. Battle-hardened and unflinching, he carries the scars of conflicts most men would not survive, and the weight of loyalties that have been tested beyond breaking. Behind the armor and the blade lies a man haunted by the choices that led him here, fighting not just the enemies before him but the ghosts that follow in his wake.',
+                attributes: [
+                    { label: 'Title', value: 'The Ironclad' },
+                    { label: 'Origin', value: 'Northern Reaches' },
+                    { label: 'Affiliation', value: 'The Alliance' },
+                    { label: 'Ethergem', value: '\u2014' },
+                    { label: 'Status', value: 'Active' }
+                ]
+            },
+            {
+                name: 'Vladimir',
+                portrait: 'images/vladimir1.png',
+                artwork: 'images/vladimir2.png',
+                extraArt: 'images/vladimir3.png',
+                lore: 'Vladimir exists in the space between light and shadow \u2014 a figure of immense power whose true allegiances remain an enigma even to those closest to him. His name is spoken in whispers across ZeilGalia, equal parts reverence and dread. A master of manipulation and arcane knowledge, Vladimir moves through the world like a chess player who sees twelve moves ahead, and every piece on the board is expendable.',
+                attributes: [
+                    { label: 'Title', value: 'The Unseen Hand' },
+                    { label: 'Origin', value: 'Classified' },
+                    { label: 'Affiliation', value: 'Unknown' },
+                    { label: 'Ethergem', value: '\u2014' },
+                    { label: 'Status', value: 'Active' }
+                ]
+            },
+            {
+                name: 'Rune',
+                portrait: 'images/Rune1.png',
+                artwork: 'images/rune2.png',
+                extraArt: 'images/rune4.png',
+                lore: 'Rune is a paradox wrapped in mystery \u2014 a being whose very existence defies the natural order of ZeilGalia. Tied to forces older than the realm itself, Rune possesses abilities that blur the line between miracle and catastrophe. Few understand the true nature of this power, and fewer still can comprehend the burden it carries. In a world where magic flows like a river through fractured stone, Rune stands as both its greatest vessel and its most vulnerable keeper.',
+                attributes: [
+                    { label: 'Title', value: 'The Conduit' },
+                    { label: 'Origin', value: 'Unknown' },
+                    { label: 'Affiliation', value: 'The Alliance' },
+                    { label: 'Ethergem', value: '\u2014' },
+                    { label: 'Status', value: 'Active' }
+                ]
+            },
+            {
+                name: 'Sarra',
+                portrait: 'images/Sarra1.png',
+                artwork: 'images/sarra2.png',
+                extraArt: 'images/sarra4.png',
+                lore: 'Sarra carries herself with the quiet ferocity of someone who has learned that the world will not be gentle, and so she will not be gentle with it. Skilled, sharp-tongued, and fiercely independent, she has carved her own path through a realm that offers little mercy to those who walk alone. Beneath her guarded exterior lies a depth of conviction that few ever glimpse \u2014 a loyalty that, once earned, is absolute and unyielding.',
+                attributes: [
+                    { label: 'Title', value: 'The Blade' },
+                    { label: 'Origin', value: 'Grey-Haven' },
+                    { label: 'Affiliation', value: 'The Alliance' },
+                    { label: 'Ethergem', value: '\u2014' },
+                    { label: 'Status', value: 'Active' }
+                ]
+            },
+            {
+                name: 'Javi',
+                portrait: 'images/javi1.png',
+                artwork: 'images/javi2.png',
+                extraArt: 'images/javi3.png',
+                lore: 'Javi brings light to the darkest corners \u2014 not through naivety, but through a stubborn, almost defiant refusal to let the darkness win. In a company of warriors, mystics, and morally grey operatives, Javi serves as the unexpected heart. Quick-witted and resourceful, there is a talent for finding solutions where others see only dead ends, and for keeping hope alive when the world seems determined to extinguish it.',
+                attributes: [
+                    { label: 'Title', value: 'The Spark' },
+                    { label: 'Origin', value: 'Aleslydon' },
+                    { label: 'Affiliation', value: 'The Alliance' },
+                    { label: 'Ethergem', value: '\u2014' },
+                    { label: 'Status', value: 'Active' }
+                ]
+            },
+            {
+                name: 'Corvus',
+                portrait: 'images/corvus1.png',
+                artwork: 'images/corvus2.png',
+                extraArt: 'images/corvus3.png',
+                lore: 'Corvus is shadow incarnate \u2014 a presence felt more than seen, whose motives are as inscrutable as the darkness from which he draws his power. Named for the raven, he is an omen in living form, appearing at the crossroads of fate with an uncanny sense of timing. Whether he serves a higher purpose or merely his own unfathomable agenda, none can say with certainty. What is known is this: where Corvus treads, the world changes \u2014 and rarely for the better.',
+                attributes: [
+                    { label: 'Title', value: 'The Omen' },
+                    { label: 'Origin', value: 'Unknown' },
+                    { label: 'Affiliation', value: 'Unaligned' },
+                    { label: 'Ethergem', value: '\u2014' },
+                    { label: 'Status', value: 'Unknown' }
+                ]
+            }
+        ];
 
-        function showImage(idx) {
-            imgs[current].classList.remove('active');
-            dots[current].classList.remove('active');
-            current = (idx + imgs.length) % imgs.length;
-            imgs[current].classList.add('active');
-            dots[current].classList.add('active');
+        var cCards = carouselViewport.querySelectorAll('.carousel-card');
+        var cDots = document.querySelectorAll('.carousel-dot');
+        var prevBtn = document.querySelector('.carousel-prev');
+        var nextBtn = document.querySelector('.carousel-next');
+        var activeIdx = 0;
+
+        function positionCards() {
+            var spacing = window.innerWidth < 480 ? 150 : (window.innerWidth < 768 ? 175 : 220);
+            cCards.forEach(function (card, i) {
+                var offset = i - activeIdx;
+                var absOffset = Math.abs(offset);
+
+                if (absOffset > 3) {
+                    card.style.opacity = '0';
+                    card.style.pointerEvents = 'none';
+                    card.classList.remove('is-active');
+                    return;
+                }
+
+                var tx = offset * spacing;
+                var scale = Math.max(0.5, 1 - absOffset * 0.16);
+                var opa = Math.max(0.15, 1 - absOffset * 0.3);
+                var z = 10 - absOffset;
+                var bright = absOffset > 0 ? Math.max(0.4, 1 - absOffset * 0.2) : 1;
+
+                card.style.transform = 'translate(calc(-50% + ' + tx + 'px), -50%) scale(' + scale + ')';
+                card.style.opacity = opa;
+                card.style.zIndex = z;
+                card.style.filter = 'brightness(' + bright + ')';
+                card.style.pointerEvents = 'auto';
+
+                if (absOffset === 0) {
+                    card.classList.add('is-active');
+                } else {
+                    card.classList.remove('is-active');
+                }
+            });
         }
 
-        if (leftBtn) {
-            leftBtn.addEventListener('click', function () { showImage(current - 1); });
+        function updateCarouselDots() {
+            cDots.forEach(function (dot, i) {
+                dot.classList.toggle('is-active', i === activeIdx);
+            });
         }
-        if (rightBtn) {
-            rightBtn.addEventListener('click', function () { showImage(current + 1); });
+
+        function updateCharDetail() {
+            var charData = characterData[activeIdx];
+            var grid = document.getElementById('char-detail-grid');
+            grid.classList.add('is-transitioning');
+
+            setTimeout(function () {
+                document.getElementById('char-lore-text').textContent = charData.lore;
+                document.getElementById('char-art-img').src = charData.artwork;
+                document.getElementById('char-art-img').alt = charData.name;
+                document.getElementById('char-art-name').textContent = charData.name;
+                document.getElementById('char-extra-img').src = charData.extraArt;
+                document.getElementById('char-extra-img').alt = charData.name + ' \u2014 Additional Art';
+
+                var loreBody = document.getElementById('char-lore-body');
+                loreBody.classList.remove('is-expanded');
+                var rmBtn = document.getElementById('char-read-more-btn');
+                if (rmBtn) rmBtn.textContent = 'Read more';
+
+                var calloutsEl = document.getElementById('char-callouts');
+                calloutsEl.innerHTML = '';
+                charData.attributes.forEach(function (attr) {
+                    var item = document.createElement('div');
+                    item.className = 'callout-item';
+                    item.innerHTML =
+                        '<div class="callout-content">' +
+                        '<span class="callout-label">' + attr.label + '</span>' +
+                        '<span class="callout-value">' + attr.value + '</span>' +
+                        '</div>';
+                    calloutsEl.appendChild(item);
+                });
+
+                grid.classList.remove('is-transitioning');
+
+                setTimeout(function () {
+                    var items = document.querySelectorAll('.callout-item');
+                    items.forEach(function (item, idx) {
+                        setTimeout(function () {
+                            item.classList.add('is-visible');
+                        }, idx * 80);
+                    });
+                }, 50);
+            }, 300);
         }
-        dots.forEach(function (dot, i) {
-            dot.addEventListener('click', function () { showImage(i); });
+
+        function selectChar(index) {
+            if (index < 0 || index >= characterData.length || index === activeIdx) return;
+            activeIdx = index;
+            positionCards();
+            updateCarouselDots();
+            updateCharDetail();
+        }
+
+        prevBtn.addEventListener('click', function () {
+            if (activeIdx > 0) selectChar(activeIdx - 1);
         });
-    });
+        nextBtn.addEventListener('click', function () {
+            if (activeIdx < characterData.length - 1) selectChar(activeIdx + 1);
+        });
+
+        cCards.forEach(function (card) {
+            card.addEventListener('click', function () {
+                var idx = parseInt(card.getAttribute('data-index'), 10);
+                selectChar(idx);
+            });
+        });
+
+        cDots.forEach(function (dot) {
+            dot.addEventListener('click', function () {
+                var idx = parseInt(dot.getAttribute('data-index'), 10);
+                selectChar(idx);
+            });
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (!carouselViewport) return;
+            if (e.key === 'ArrowLeft' && activeIdx > 0) {
+                selectChar(activeIdx - 1);
+            } else if (e.key === 'ArrowRight' && activeIdx < characterData.length - 1) {
+                selectChar(activeIdx + 1);
+            }
+        });
+
+        var touchStartX = 0;
+        carouselViewport.addEventListener('touchstart', function (e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        carouselViewport.addEventListener('touchend', function (e) {
+            var diff = touchStartX - e.changedTouches[0].screenX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0 && activeIdx < characterData.length - 1) {
+                    selectChar(activeIdx + 1);
+                } else if (diff < 0 && activeIdx > 0) {
+                    selectChar(activeIdx - 1);
+                }
+            }
+        }, { passive: true });
+
+        var charReadMoreBtn = document.getElementById('char-read-more-btn');
+        if (charReadMoreBtn) {
+            charReadMoreBtn.addEventListener('click', function () {
+                var loreBody = document.getElementById('char-lore-body');
+                var expanded = loreBody.classList.toggle('is-expanded');
+                charReadMoreBtn.textContent = expanded ? 'Read less' : 'Read more';
+            });
+        }
+
+        window.addEventListener('resize', function () { positionCards(); });
+
+        positionCards();
+        updateCarouselDots();
+        updateCharDetail();
+    }
 
     // ---- Scroll Reveal ----
     var revealElements = document.querySelectorAll(
-        '.location-card, .creature-card, .character-card, .char-page-card, ' +
+        '.location-card, .creature-card, .character-card, .char-col-lore, .char-col-artwork, .char-col-attrs, ' +
         '.world-intro, .author-content, .book-card.active, .lore-block, .lore-image'
     );
 
