@@ -3167,7 +3167,14 @@ a.btn.arcane-btn .arcane-subtitle {
 /* -- Desktop/Mobile timeline split -- */
 /* Desktop: show inline timeline, hide mobile link */
 .gw-mobile-link { display: none; }
-.gw-desktop-timeline { display: block; }
+.gw-desktop-timeline {
+    display: block;
+    /* Break out of the constrained .world-content container to use full viewport width */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+}
 
 @media (max-width: 768px) {
     .gw-mobile-link { display: block; }
