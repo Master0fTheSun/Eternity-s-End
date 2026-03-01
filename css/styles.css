@@ -3514,16 +3514,58 @@ a.btn.arcane-btn .arcane-subtitle {
         font-size: 5rem;
     }
 
-    .gw-entry {
-        margin-bottom: 10px;
+    /* Convert timeline from alternating vertical to 2-column card grid */
+    .gw-timeline-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        padding: 8px 20px 12px;
     }
 
+    .gw-timeline-section::before {
+        display: none;
+    }
+
+    .gw-entry {
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .gw-entry-node,
+    .gw-entry-filler {
+        display: none;
+    }
+
+    .gw-entry.gw-left .gw-entry-content,
+    .gw-entry.gw-right .gw-entry-content {
+        grid-column: unset;
+        grid-row: unset;
+        text-align: left;
+        padding: 14px 16px;
+        padding-right: 16px;
+        border: 1px solid rgba(201, 168, 76, 0.07);
+        border-radius: 6px;
+        background: rgba(20, 20, 30, 0.35);
+    }
+
+    /* Override slide directions — all fade up uniformly */
+    .gw-entry.gw-left.reveal,
+    .gw-entry.gw-right.reveal {
+        transform: translateY(20px);
+    }
+
+    .gw-entry.reveal.revealed {
+        transform: translateY(0);
+    }
+
+    /* Images: show full aspect ratio, no cropping */
     .gw-entry-img {
         margin: 6px 0;
     }
 
     .gw-entry-img img {
-        max-height: 180px;
+        max-height: none;
+        object-fit: contain;
     }
 
     .gw-entry-text {
@@ -3549,10 +3591,6 @@ a.btn.arcane-btn .arcane-subtitle {
     .gw-epilogue-text {
         margin-bottom: 16px;
     }
-
-    .gw-timeline-section {
-        padding: 5px 20px 8px;
-    }
 }
 
 /* -- Great War Responsive -- */
@@ -3560,10 +3598,6 @@ a.btn.arcane-btn .arcane-subtitle {
     .gw-hero-title {
         font-size: 3.2rem;
         letter-spacing: 8px;
-    }
-
-    .gw-entry {
-        grid-template-columns: 1fr 50px 1fr;
     }
 
     .gw-entry-title {
