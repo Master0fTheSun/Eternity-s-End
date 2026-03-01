@@ -658,7 +658,8 @@
     // ---- Scroll Reveal ----
     var revealElements = document.querySelectorAll(
         '.location-card, .creature-card, .character-card, .char-col-lore, .char-col-artwork, .char-col-attrs, ' +
-        '.world-intro, .author-content, .book-card.active, .lore-block, .lore-image'
+        '.world-intro, .author-content, .book-card.active, .lore-block, .lore-image, ' +
+        '.gw-entry, .gw-era-header'
     );
 
     // Add reveal class to elements

@@ -3044,6 +3044,614 @@ a.btn.arcane-btn .arcane-subtitle {
 }
 
 /* ============================================
+   GREAT WAR PAGE
+   ============================================ */
+
+/* -- Hero -- */
+.gw-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.gw-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+}
+
+.gw-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(10, 10, 15, 0.35) 0%,
+        rgba(10, 10, 15, 0.5) 40%,
+        rgba(10, 10, 15, 0.75) 70%,
+        var(--void) 100%
+    );
+}
+
+.gw-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.gw-hero-eyebrow {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 20px;
+}
+
+.gw-hero-title {
+    font-family: var(--font-display);
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: 14px;
+    text-transform: uppercase;
+    color: var(--bone);
+    line-height: 1.1;
+    animation: gw-title-glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes gw-title-glow {
+    from { text-shadow: 0 0 40px rgba(201, 168, 76, 0.15), 0 0 80px rgba(201, 168, 76, 0.05); }
+    to   { text-shadow: 0 0 60px rgba(201, 168, 76, 0.3), 0 0 100px rgba(201, 168, 76, 0.1); }
+}
+
+.gw-hero-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 28px auto;
+    width: 160px;
+}
+
+.gw-hero-rule-line {
+    flex: 1;
+    height: 1px;
+    background: var(--gold-dim);
+}
+
+.gw-hero-rule-diamond {
+    width: 8px;
+    height: 8px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+    margin: 0 10px;
+}
+
+.gw-hero-subtitle {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--ash);
+    letter-spacing: 2px;
+}
+
+.gw-hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: var(--gold-dim);
+    animation: gw-scroll-bob 2.5s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes gw-scroll-bob {
+    0%, 100% { opacity: 0.3; transform: translateX(-50%) translateY(0); }
+    50%      { opacity: 0.8; transform: translateX(-50%) translateY(10px); }
+}
+
+/* -- Prologue -- */
+.gw-prologue {
+    padding: 80px 20px 90px;
+    background: var(--void);
+    text-align: center;
+}
+
+.gw-prologue-inner {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.gw-prologue-text {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    line-height: 2;
+    color: var(--ash);
+    margin-bottom: 30px;
+}
+
+.gw-prologue-hook {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+/* -- Era Headers -- */
+.gw-era-header {
+    position: relative;
+    padding: 90px 20px;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--void) 0%, rgba(26, 26, 46, 0.35) 50%, var(--void) 100%);
+}
+
+.gw-era-header.era-i {
+    background: linear-gradient(180deg, var(--void) 0%, rgba(120, 50, 20, 0.1) 50%, var(--void) 100%);
+}
+
+.gw-era-header.era-ii {
+    background: linear-gradient(180deg, var(--void) 0%, rgba(70, 20, 60, 0.12) 50%, var(--void) 100%);
+}
+
+.gw-era-header.era-iii {
+    background: linear-gradient(180deg, var(--void) 0%, rgba(20, 35, 70, 0.12) 50%, var(--void) 100%);
+}
+
+.gw-era-header.era-iv {
+    background: linear-gradient(180deg, var(--void) 0%, rgba(100, 30, 10, 0.12) 50%, var(--void) 100%);
+}
+
+.gw-era-numeral {
+    font-family: var(--font-display);
+    font-size: 12rem;
+    font-weight: 900;
+    color: rgba(201, 168, 76, 0.035);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    line-height: 1;
+    letter-spacing: 20px;
+}
+
+.gw-era-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.gw-era-line {
+    width: 50px;
+    height: 1px;
+    background: var(--gold-dim);
+}
+
+.gw-era-diamond {
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+    margin: 0 14px;
+}
+
+.gw-era-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.gw-era-years {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--ash);
+    letter-spacing: 4px;
+    position: relative;
+    z-index: 1;
+}
+
+/* -- Timeline Section -- */
+.gw-timeline-section {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+.gw-timeline-section::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg,
+        rgba(201, 168, 76, 0.05) 0%,
+        var(--gold-dim) 8%,
+        var(--gold-dim) 92%,
+        rgba(201, 168, 76, 0.05) 100%
+    );
+}
+
+/* -- Timeline Entry -- */
+.gw-entry {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.gw-entry:last-child {
+    margin-bottom: 0;
+}
+
+/* Node (center column) */
+.gw-entry-node {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.gw-entry-node span {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    background: var(--void);
+    box-shadow: 0 0 12px rgba(201, 168, 76, 0.25);
+    flex-shrink: 0;
+}
+
+/* Content alignment */
+.gw-entry.gw-left .gw-entry-content {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: right;
+    padding-right: 35px;
+}
+
+.gw-entry.gw-left .gw-entry-filler {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.gw-entry.gw-right .gw-entry-content {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: left;
+    padding-left: 35px;
+}
+
+.gw-entry.gw-right .gw-entry-filler {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* Date */
+.gw-date {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+/* Entry title */
+.gw-entry-title {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--bone);
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    line-height: 1.3;
+}
+
+/* Entry text */
+.gw-entry-text {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: var(--ash);
+    margin-bottom: 10px;
+}
+
+.gw-entry-text:last-child {
+    margin-bottom: 0;
+}
+
+/* Entry image */
+.gw-entry-img {
+    margin: 16px 0;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(201, 168, 76, 0.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+.gw-entry-img img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.gw-entry-img:hover img {
+    transform: scale(1.03);
+}
+
+/* Horizontal connecting arm from node to content */
+.gw-entry.gw-left .gw-entry-node::before {
+    content: '';
+    position: absolute;
+    top: 11px;
+    right: -2px;
+    width: 38px;
+    height: 1px;
+    background: var(--gold-dim);
+}
+
+.gw-entry.gw-right .gw-entry-node::after {
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: -2px;
+    width: 38px;
+    height: 1px;
+    background: var(--gold-dim);
+}
+
+/* Slide-in reveal overrides for timeline entries */
+.gw-entry.reveal {
+    transform: translateY(0);
+}
+
+.gw-entry.gw-left.reveal {
+    opacity: 0;
+    transform: translateX(-40px);
+}
+
+.gw-entry.gw-right.reveal {
+    opacity: 0;
+    transform: translateX(40px);
+}
+
+.gw-entry.reveal.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* -- Epilogue -- */
+.gw-epilogue {
+    padding: 80px 20px 100px;
+    text-align: center;
+    background: var(--void);
+}
+
+.gw-epilogue-inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.gw-epilogue-rule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.gw-epilogue-text {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.9;
+    color: var(--ash);
+    margin-bottom: 40px;
+}
+
+.gw-epilogue-link {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.gw-epilogue-link:hover {
+    color: var(--gold);
+}
+
+/* -- Great War Responsive -- */
+@media (max-width: 1024px) {
+    .gw-hero-title {
+        font-size: 3.8rem;
+        letter-spacing: 10px;
+    }
+
+    .gw-entry {
+        grid-template-columns: 1fr 60px 1fr;
+    }
+
+    .gw-entry-title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .gw-hero {
+        min-height: 500px;
+    }
+
+    .gw-hero-title {
+        font-size: 2.6rem;
+        letter-spacing: 6px;
+    }
+
+    .gw-hero-eyebrow {
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+    }
+
+    .gw-hero-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .gw-era-numeral {
+        font-size: 7rem;
+    }
+
+    .gw-era-title {
+        font-size: 1.4rem;
+        letter-spacing: 4px;
+    }
+
+    .gw-era-header {
+        padding: 60px 20px;
+    }
+
+    /* Single-column timeline on mobile */
+    .gw-timeline-section::before {
+        left: 25px;
+        transform: none;
+    }
+
+    .gw-entry {
+        grid-template-columns: 50px 1fr;
+        margin-bottom: 50px;
+    }
+
+    .gw-entry-node {
+        grid-column: 1;
+        justify-content: flex-start;
+        padding-left: 12px;
+    }
+
+    .gw-entry.gw-left .gw-entry-content,
+    .gw-entry.gw-right .gw-entry-content {
+        grid-column: 2;
+        grid-row: 1;
+        text-align: left;
+        padding-left: 15px;
+        padding-right: 0;
+    }
+
+    .gw-entry.gw-left .gw-entry-filler,
+    .gw-entry.gw-right .gw-entry-filler {
+        display: none;
+    }
+
+    /* Adjust connecting arm for mobile */
+    .gw-entry.gw-left .gw-entry-node::before {
+        display: none;
+    }
+
+    .gw-entry.gw-right .gw-entry-node::after {
+        right: -2px;
+        left: auto;
+        width: 20px;
+    }
+
+    .gw-entry.gw-left .gw-entry-node::after {
+        content: '';
+        position: absolute;
+        top: 11px;
+        right: -2px;
+        left: auto;
+        width: 20px;
+        height: 1px;
+        background: var(--gold-dim);
+    }
+
+    /* Override slide direction on mobile — all slide from left */
+    .gw-entry.gw-left.reveal,
+    .gw-entry.gw-right.reveal {
+        transform: translateX(-30px);
+    }
+
+    .gw-entry-img img {
+        max-height: 260px;
+    }
+
+    .gw-prologue {
+        padding: 50px 20px 60px;
+    }
+
+    .gw-prologue-text {
+        font-size: 1.05rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gw-hero-title {
+        font-size: 2rem;
+        letter-spacing: 4px;
+    }
+
+    .gw-era-numeral {
+        font-size: 5rem;
+    }
+
+    .gw-era-title {
+        font-size: 1.15rem;
+        letter-spacing: 3px;
+    }
+
+    .gw-entry-title {
+        font-size: 1.1rem;
+    }
+
+    .gw-entry-text {
+        font-size: 0.9rem;
+    }
+
+    .gw-timeline-section::before {
+        left: 18px;
+    }
+
+    .gw-entry {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .gw-entry-node {
+        padding-left: 8px;
+    }
+
+    .gw-entry-img img {
+        max-height: 200px;
+    }
+}
+
+/* ============================================
    SCROLL REVEAL ANIMATIONS
    ============================================ */
 .reveal {

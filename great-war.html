@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great War &mdash; Eternity's End</title>
+    <meta name="description" content="Chronicle of the Burning Century. The hundred-year conflict that reshaped ZeilGalia forever.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <nav id="main-nav">
+        <div class="logo-nav-container">
+            <button class="logo-nav-trigger" id="nav-logo-btn" aria-label="Toggle navigation menu">
+                <span class="nav-logo-e">E</span>
+            </button>
+            <a href="index.html" class="logo-nav-title">Eternity's End</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li style="--i:0"><a href="index.html">Home</a></li>
+                <li style="--i:1"><a href="index.html#books">The Trilogy</a></li>
+                <li style="--i:2"><a href="index.html#world">The World</a></li>
+                <li style="--i:3"><a href="index.html#creatures">Creatures</a></li>
+                <li style="--i:4"><a href="index.html#characters">Characters</a></li>
+                <li style="--i:5"><a href="index.html#reviews">Reviews</a></li>
+                <li style="--i:6"><a href="index.html#author">Author</a></li>
+                <li style="--i:7"><a href="index.html#" class="nav-cta">Join the Alliance</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================ -->
+    <!-- HERO -->
+    <!-- ============================================ -->
+    <section class="gw-hero">
+        <div class="gw-hero-bg" style="background-image: url('images/war.png')"></div>
+        <div class="gw-hero-overlay"></div>
+        <div class="gw-hero-content">
+            <span class="gw-hero-eyebrow">The History of ZeilGalia</span>
+            <h1 class="gw-hero-title">The Great War</h1>
+            <div class="gw-hero-rule">
+                <span class="gw-hero-rule-line"></span>
+                <span class="gw-hero-rule-diamond"></span>
+                <span class="gw-hero-rule-line"></span>
+            </div>
+            <p class="gw-hero-subtitle">Chronicle of the Burning Century</p>
+        </div>
+        <div class="gw-hero-scroll" aria-hidden="true">
+            <span>&#8964;</span>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- PROLOGUE -->
+    <!-- ============================================ -->
+    <section class="gw-prologue">
+        <div class="gw-prologue-inner">
+            <p class="gw-prologue-text">Tensions simmered between the East and West for hundreds of years before the Great War between them officially took hold. The conflict spanned a century of slaughter, devouring generations. It would force an industrial evolution fueled by blood and magic.</p>
+            <p class="gw-prologue-hook">Here is the chronicle of the burning century.</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- ERA I — THE SPARK AND BLAZE -->
+    <!-- ============================================ -->
+    <section class="gw-era-header era-i reveal">
+        <span class="gw-era-numeral" aria-hidden="true">I</span>
+        <div class="gw-era-divider">
+            <span class="gw-era-line"></span>
+            <span class="gw-era-diamond"></span>
+            <span class="gw-era-line"></span>
+        </div>
+        <h2 class="gw-era-title">The Spark and Blaze</h2>
+        <span class="gw-era-years">4890 &mdash; 4900</span>
+    </section>
+
+    <section class="gw-timeline-section">
+        <!-- 4890 — The Apex Incident -->
+        <div class="gw-entry gw-left reveal">
+            <div class="gw-entry-content">
+                <span class="gw-date">4890</span>
+                <h3 class="gw-entry-title">The Apex Incident</h3>
+                <p class="gw-entry-text">Catastrophe birthed itself in the breathless altitude of a Western high-tower vault. Vitaspark, unsheathed and ripe for the taking, flared with volatile power. The perfect prize for sixteen-year-old Lady Mynssa, who always had a hand for thieving. The niece of the King reached for the forbidden stone.</p>
+                <p class="gw-entry-text">Fate would betray them all.</p>
+                <p class="gw-entry-text">It was Magul Ragmal, an Eastern operative, who intercepted her grasp. Why he was there will forever remain a mystery&mdash;but the kinetic blast that ruptured the chamber was heard on the streets far below. Colored-glass rained over courtyard stones. Magul could only watch as Mynssa's plummeting body shattered against the masonry.</p>
+                <p class="gw-entry-text">Within the day, Western magistrates branded him an assassin, and public outcry ensured the executioner's axe swiftly followed. The beheading of Magul Ragmal would spark a century-long conflict.</p>
+            </div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-filler"></div>
+        </div>
+
+        <!-- 4891 — The Eastern Retaliation -->
+        <div class="gw-entry gw-right reveal">
+            <div class="gw-entry-filler"></div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-content">
+                <span class="gw-date">4891</span>
+                <h3 class="gw-entry-title">The Eastern Retaliation</h3>
+                <div class="gw-entry-img">
+                    <img src="images/eastarmy.png" alt="The Eastern armada descending on Western shores">
+                </div>
+                <p class="gw-entry-text">Vindication demanded salt and ash. A massive Eastern armada crested the horizon, bringing fire to the Western shores. Rapid, punitive blockades choked the ports, and raiding parties left coastal fortresses burning against the night sky.</p>
+            </div>
+        </div>
+
+        <!-- 4895 — The First Convergence -->
+        <div class="gw-entry gw-left reveal">
+            <div class="gw-entry-content">
+                <span class="gw-date">4895</span>
+                <h3 class="gw-entry-title">The First Convergence</h3>
+                <div class="gw-entry-img">
+                    <img src="images/skirmish.png" alt="The first large-scale battle of the Great War">
+                </div>
+                <p class="gw-entry-text">The shadow war dragged into the light. Thousands clashed in the first large-scale military engagement of the era. Boots churned the soil into a thick, red mud. Heavy casualties on both sides proved that the skirmishes had mutated into a continental meat grinder.</p>
+            </div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-filler"></div>
+        </div>
+
+        <!-- 4900 — The Formal Declaration -->
+        <div class="gw-entry gw-right reveal">
+            <div class="gw-entry-filler"></div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-content">
+                <span class="gw-date">4900</span>
+                <h3 class="gw-entry-title">The Formal Declaration</h3>
+                <p class="gw-entry-text">The East officially declared total war. The realms locked their jaws around one another. Foundries roared to life, heavily militarizing the extraction and refinement of Ethergems to feed the insatiable engines of their expanding armies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- ERA II — DEMONIC ESCALATION -->
+    <!-- ============================================ -->
+    <section class="gw-era-header era-ii reveal">
+        <span class="gw-era-numeral" aria-hidden="true">II</span>
+        <div class="gw-era-divider">
+            <span class="gw-era-line"></span>
+            <span class="gw-era-diamond"></span>
+            <span class="gw-era-line"></span>
+        </div>
+        <h2 class="gw-era-title">Demonic Escalation</h2>
+        <span class="gw-era-years">4930 &mdash; 4950</span>
+    </section>
+
+    <section class="gw-timeline-section">
+        <!-- 4930 — The Assault on Tombstone Crossing -->
+        <div class="gw-entry gw-left reveal">
+            <div class="gw-entry-content">
+                <span class="gw-date">4930</span>
+                <h3 class="gw-entry-title">The Assault on Tombstone Crossing</h3>
+                <div class="gw-entry-img">
+                    <img src="images/tulari.png" alt="The Tulari drawn into the siege at Tombstone Crossing">
+                </div>
+                <p class="gw-entry-text">Seeking to crack a decades-long stalemate, Eastern legions launched a brutal, grinding offensive against the Tulari. The strategic chokepoint of Tombstone Crossing ran red, dragging neutral factions into the widening gyre of slaughter.</p>
+            </div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-filler"></div>
+        </div>
+
+        <!-- 4941 — The Rise of Tur'Kang -->
+        <div class="gw-entry gw-right reveal">
+            <div class="gw-entry-filler"></div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-content">
+                <span class="gw-date">4941</span>
+                <h3 class="gw-entry-title">The Rise of Tur'Kang</h3>
+                <div class="gw-entry-img">
+                    <img src="images/tur'kangrise.png" alt="The warlord Tur'Kang seizes power">
+                </div>
+                <p class="gw-entry-text">Internal Eastern political strife culminated in a violent coup. The ruthless warlord Tur'Kang seized the Eastern throne. Scorning traditional military doctrine, he turned his gaze toward forbidden, apocalyptic arcana.</p>
+            </div>
+        </div>
+
+        <!-- 4945 — The Unsealing of Killenden -->
+        <div class="gw-entry gw-left reveal">
+            <div class="gw-entry-content">
+                <span class="gw-date">4945</span>
+                <h3 class="gw-entry-title">The Unsealing of Killenden</h3>
+                <div class="gw-entry-img">
+                    <img src="images/killenden.png" alt="The ancient wards at Killenden shatter, tearing reality open">
+                </div>
+                <p class="gw-entry-text">Tur'Kang's vanguard smashed the ancient, glowing wards at Killenden. The earth shrieked as reality tore open, bridging the material plane with the Lower Realm. Dark, unpredictable energy flooded the surrounding valleys, wilting the flora and poisoning the aquifers.</p>
+            </div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-filler"></div>
+        </div>
+
+        <!-- 4950 — The Hell'Shuddin Pact -->
+        <div class="gw-entry gw-right reveal">
+            <div class="gw-entry-filler"></div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-content">
+                <span class="gw-date">4950</span>
+                <h3 class="gw-entry-title">The Hell'Shuddin Pact</h3>
+                <div class="gw-entry-img">
+                    <img src="images/tur'kangarmy.png" alt="Tur'Kang's demonic legions unleashed on the battlefield">
+                </div>
+                <p class="gw-entry-text">The Eastern warlord finalized a covenant with the abyss. Tur'Kang unleashed the Hell'Shuddin and swarms of Imps&mdash;relentless, demonic foot soldiers boasting unnatural resilience. His nightmare legions spilled onto the battlefields, dramatically breaking the Western lines.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- ERA III — THE CANNIBAL CROWN -->
+    <!-- ============================================ -->
+    <section class="gw-era-header era-iii reveal">
+        <span class="gw-era-numeral" aria-hidden="true">III</span>
+        <div class="gw-era-divider">
+            <span class="gw-era-line"></span>
+            <span class="gw-era-diamond"></span>
+            <span class="gw-era-line"></span>
+        </div>
+        <h2 class="gw-era-title">The Cannibal Crown</h2>
+        <span class="gw-era-years">4971 &mdash; 4985</span>
+    </section>
+
+    <section class="gw-timeline-section">
+        <!-- 4971 — The Ascension of King Rufus Stalius -->
+        <div class="gw-entry gw-left reveal">
+            <div class="gw-entry-content">
+                <span class="gw-date">4971</span>
+                <h3 class="gw-entry-title">The Ascension of King Rufus Stalius</h3>
+                <p class="gw-entry-text">Rufus Stalius claimed the throne of Aleslydon. Pragmatic and utterly merciless, he immediately centralized all Western military authority under his direct command, forging a rigid iron shield against the demonic tide.</p>
+            </div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-filler"></div>
+        </div>
+
+        <!-- 4972 — The Naval Shift -->
+        <div class="gw-entry gw-right reveal">
+            <div class="gw-entry-filler"></div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-content">
+                <span class="gw-date">4972</span>
+                <h3 class="gw-entry-title">The Naval Shift</h3>
+                <div class="gw-entry-img">
+                    <img src="images/ship.png" alt="Naval warfare between East and West">
+                </div>
+                <p class="gw-entry-text">Aleslydon's superior galleons crushed the Eastern fleet, sending burning timber to the ocean floor. In response, Eastern artificers deployed copper-plated submersibles and genetically warped aquatic beasts, dragging Western ships into the crushing depths.</p>
+            </div>
+        </div>
+
+        <!-- 4975 — The Umbralith Siphon -->
+        <div class="gw-entry gw-left reveal">
+            <div class="gw-entry-content">
+                <span class="gw-date">4975</span>
+                <h3 class="gw-entry-title">The Umbralith Siphon</h3>
+                <div class="gw-entry-img">
+                    <img src="images/mining.png" alt="Umbralith being extracted from Grey-Haven's mountains">
+                </div>
+                <p class="gw-entry-text">Rufus required massive magical reserves to repel Tur'Kang's demons. He tightened a parasitic grip on Grey-Haven, manipulating trade routes to funnel their precious Umbralith directly into his own war machine. Varrhelm's high sages tracked the drain but swallowed their protests to preserve the fragile Western alliance.</p>
+            </div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-filler"></div>
+        </div>
+
+        <!-- 4980 — The Vanguard's Appointment -->
+        <div class="gw-entry gw-right reveal">
+            <div class="gw-entry-filler"></div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-content">
+                <span class="gw-date">4980</span>
+                <h3 class="gw-entry-title">The Vanguard's Appointment</h3>
+                <div class="gw-entry-img">
+                    <img src="images/captainziav.png" alt="Captain Arthel Ziav">
+                </div>
+                <p class="gw-entry-text">Captain Arthel Ziav, a brilliant and scarred tactician, assumed supreme command of the Aleslydon front. His mandate required holding the bleeding edge against the Hell'Shuddin.</p>
+            </div>
+        </div>
+
+        <!-- 4984 — Arrival of The Seer -->
+        <div class="gw-entry gw-left reveal">
+            <div class="gw-entry-content">
+                <span class="gw-date">4984</span>
+                <h3 class="gw-entry-title">Arrival of The Seer</h3>
+                <div class="gw-entry-img">
+                    <img src="images/anchorkey.png" alt="The Blood-Weaver's Anchor Key">
+                </div>
+                <p class="gw-entry-text">The Lower Realm birthed another nightmare. A shadowy entity known only as The Seer bypassed Tur'Kang, slipping into the Western courts to offer King Rufus dark counsel and the intoxicating poison of forbidden foresight.</p>
+            </div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-filler"></div>
+        </div>
+
+        <!-- 4985 — The Urion Rebellion -->
+        <div class="gw-entry gw-right reveal">
+            <div class="gw-entry-filler"></div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-content">
+                <span class="gw-date">4985</span>
+                <h3 class="gw-entry-title">The Urion Rebellion</h3>
+                <div class="gw-entry-img">
+                    <img src="images/bloodweavers.png" alt="The Blood-Weaver uprising in Urion">
+                </div>
+                <p class="gw-entry-text">Drunk on the Seer's whispers, Rufus orchestrated the theft of the Blood-Weaver's Anchor Key. This catastrophic overreach triggered a violent uprising in Urion. The West began cannibalizing itself, bleeding out in civil war while simultaneously holding the Eastern front.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- ERA IV — CLIMAX AND ASH -->
+    <!-- ============================================ -->
+    <section class="gw-era-header era-iv reveal">
+        <span class="gw-era-numeral" aria-hidden="true">IV</span>
+        <div class="gw-era-divider">
+            <span class="gw-era-line"></span>
+            <span class="gw-era-diamond"></span>
+            <span class="gw-era-line"></span>
+        </div>
+        <h2 class="gw-era-title">Climax and Ash</h2>
+        <span class="gw-era-years">4988 &mdash; 4995</span>
+    </section>
+
+    <section class="gw-timeline-section">
+        <!-- 4988 — The March to Tombstone -->
+        <div class="gw-entry gw-left reveal">
+            <div class="gw-entry-content">
+                <span class="gw-date">4988</span>
+                <h3 class="gw-entry-title">The March to Tombstone</h3>
+                <div class="gw-entry-img">
+                    <img src="images/marchtobattle.png" alt="The Western armies march to Tombstone Crossing">
+                </div>
+                <p class="gw-entry-text">Having crushed the Blood-Weaver rebellion under iron boot, the West unleashed its full might. Captain Ziav marched on Tur'Kang. The legendary Archknights of Kreelavee rode alongside them, joined by the resilient Tulari and the massive, scale-plated bulk of their giant desert serpent.</p>
+            </div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-filler"></div>
+        </div>
+
+        <!-- 4989 — The Battle of Tombstone Crossing -->
+        <div class="gw-entry gw-right reveal">
+            <div class="gw-entry-filler"></div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-content">
+                <span class="gw-date">4989</span>
+                <h3 class="gw-entry-title">The Battle of Tombstone Crossing</h3>
+                <div class="gw-entry-img">
+                    <img src="images/battle.png" alt="The climactic battle at Tombstone Crossing">
+                </div>
+                <p class="gw-entry-text">Magic and steel collided with demonic flesh in a world-shaking clash. Captain Ziav broke Tur'Kang's vanguard, sending the Eastern remnants crawling back toward the horizon. Amidst the carnage, a massive shadow eclipsed the sun. A dragon&mdash;the first seen in over three centuries&mdash;tore through the clouds, searing its legend into the surviving minds.</p>
+            </div>
+        </div>
+
+        <!-- 4990 — The Chokehold on Grey-Haven -->
+        <div class="gw-entry gw-left reveal">
+            <div class="gw-entry-content">
+                <span class="gw-date">4990</span>
+                <h3 class="gw-entry-title">The Chokehold on Grey-Haven</h3>
+                <div class="gw-entry-img">
+                    <img src="images/surround.png" alt="Battalions encircle the mountains of Varrhelm">
+                </div>
+                <p class="gw-entry-text">With the East broken, Rufus turned his hungry gaze inward. He deployed heavily armed battalions to encircle the mountains of Varrhelm, a silent threat suppressing any thought of post-war resistance.</p>
+            </div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-filler"></div>
+        </div>
+
+        <!-- 4991 — Ash Winter -->
+        <div class="gw-entry gw-right reveal">
+            <div class="gw-entry-filler"></div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-content">
+                <span class="gw-date">4991</span>
+                <h3 class="gw-entry-title">Ash Winter</h3>
+                <div class="gw-entry-img">
+                    <img src="images/fall.png" alt="Famine and frost grip the high altitudes">
+                </div>
+                <p class="gw-entry-text">Aleslydon's aggressive blockades severed vital mountain supply lines. A devastating, year-long famine gripped the high altitudes. Frost and starvation hollowed out the region, a tragedy etched into history as the Ash Winter.</p>
+            </div>
+        </div>
+
+        <!-- 4994 — The Subjugation -->
+        <div class="gw-entry gw-left reveal">
+            <div class="gw-entry-content">
+                <span class="gw-date">4994</span>
+                <h3 class="gw-entry-title">The Subjugation</h3>
+                <p class="gw-entry-text">Guided by The Seer, King Stalius completed his total dominance. Grey-Haven's Umbralith was strip-mined completely. The region withered into a husk, surviving solely on the charity of Varrhelm. Aleslydon rose from the ashes of its allies, glittering with unchallenged supremacy.</p>
+            </div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-filler"></div>
+        </div>
+
+        <!-- 4995 — The New Era -->
+        <div class="gw-entry gw-right reveal">
+            <div class="gw-entry-filler"></div>
+            <div class="gw-entry-node"><span></span></div>
+            <div class="gw-entry-content">
+                <span class="gw-date">4995</span>
+                <h3 class="gw-entry-title">The New Era</h3>
+                <p class="gw-entry-text">A full year bled away without a single Eastern soldier crossing the Tombstone borders. The Great War concluded. There was no grand celebration&mdash;only the heavy, mechanical grind of Aleslydon cementing its empire.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- EPILOGUE -->
+    <!-- ============================================ -->
+    <section class="gw-epilogue">
+        <div class="gw-epilogue-inner">
+            <div class="gw-epilogue-rule">
+                <span class="gw-era-line"></span>
+                <span class="gw-era-diamond"></span>
+                <span class="gw-era-line"></span>
+            </div>
+            <p class="gw-epilogue-text">One hundred and five years. Four eras of blood. One empire standing on the bones of its allies.</p>
+            <a href="index.html#world" class="gw-epilogue-link">&larr; Return to the World of ZeilGalia</a>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- FOOTER -->
+    <!-- ============================================ -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">E</span>
+                <span class="footer-title">Eternity's End</span>
+                <p class="footer-tagline">A Dark Fantasy Trilogy by Bryce Charette</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <a href="index.html#books">The Trilogy</a>
+                    <a href="index.html#world">The World</a>
+                    <a href="index.html#creatures">Creatures</a>
+                    <a href="index.html#characters">Characters</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Buy the Book</h4>
+                    <a href="https://www.amazon.com/Eternitys-End-ZeilGalia-Bryce-Charette/dp/B0FKSRVHNC" target="_blank" rel="noopener">Amazon (Paperback)</a>
+                    <a href="https://www.amazon.com/Eternitys-End-ZeilGalia-Bryce-Charette-ebook/dp/B0FJPN883L" target="_blank" rel="noopener">Kindle Edition</a>
+                    <a href="https://www.goodreads.com/book/show/239228520-eternity-s-end" target="_blank" rel="noopener">Goodreads</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <a href="index.html#reviews">Reader Reviews</a>
+                    <a href="index.html#author">About the Author</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bryce Charette. All rights reserved. Eternity's End is a trademark of Bryce Charette.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
