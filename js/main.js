@@ -659,7 +659,7 @@
     var revealElements = document.querySelectorAll(
         '.location-card, .creature-card, .character-card, .char-col-lore, .char-col-artwork, .char-col-attrs, ' +
         '.world-intro, .author-content, .book-card.active, .lore-block, .lore-image, ' +
-        '.gw-h-entry, .gw-era-header'
+        '.gw-h-entry, .gw-era-marker'
     );
 
     // Add reveal class to elements
