@@ -3061,6 +3061,10 @@ a.btn.arcane-btn .arcane-subtitle {
 .gw-hero-bg {
     position: absolute;
     inset: 0;
+    background: radial-gradient(ellipse at 50% 30%, rgba(80, 30, 15, 0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 30% 60%, rgba(60, 20, 40, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 70%, rgba(20, 30, 60, 0.15) 0%, transparent 50%),
+                var(--void);
     background-size: cover;
     background-position: center 30%;
     background-repeat: no-repeat;
@@ -3489,6 +3493,34 @@ a.btn.arcane-btn .arcane-subtitle {
 
 .gw-epilogue-link:hover {
     color: var(--gold);
+}
+
+/* -- Great War Desktop Compact -- */
+@media (min-width: 769px) {
+    .gw-hero {
+        height: 50vh;
+        min-height: 350px;
+    }
+
+    .gw-prologue {
+        padding: 25px 20px 28px;
+    }
+
+    .gw-era-header {
+        padding: 28px 20px;
+    }
+
+    .gw-entry {
+        margin-bottom: 22px;
+    }
+
+    .gw-epilogue {
+        padding: 28px 20px 35px;
+    }
+
+    .gw-timeline-section {
+        padding: 10px 20px 18px;
+    }
 }
 
 /* -- Great War Responsive -- */
