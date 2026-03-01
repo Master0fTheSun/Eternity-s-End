@@ -3278,7 +3278,6 @@ a.btn.arcane-btn .arcane-subtitle {
 .gw-timeline-wrapper {
     position: relative;
     background: var(--void);
-    overflow: hidden;
 }
 
 /* Edge fade overlays */
@@ -3308,7 +3307,6 @@ a.btn.arcane-btn .arcane-subtitle {
     align-items: stretch;
     gap: 0;
     overflow-x: auto;
-    overflow-y: hidden;
     position: relative;
     padding: 30px 80px;
     scrollbar-width: none;
@@ -3348,7 +3346,7 @@ a.btn.arcane-btn .arcane-subtitle {
     grid-template-rows: 1fr 20px 1fr;
     justify-items: center;
     position: relative;
-    min-height: 480px;
+    height: 480px;
 }
 
 /* Node (center row) */
@@ -3477,11 +3475,11 @@ a.btn.arcane-btn .arcane-subtitle {
 }
 
 /* Cards without images get a top accent line */
-.gw-h-card:not(:has(.gw-h-img)) {
+.gw-h-card.gw-no-img {
     border-top: 2px solid rgba(201, 168, 76, 0.2);
 }
 
-.gw-h-entry.gw-below .gw-h-card:not(:has(.gw-h-img)) {
+.gw-h-entry.gw-below .gw-h-card.gw-no-img {
     border-top: none;
     border-bottom: 2px solid rgba(201, 168, 76, 0.2);
 }
@@ -3755,26 +3753,154 @@ a.btn.arcane-btn .arcane-subtitle {
         padding: 35px 20px;
     }
 
-    .gw-h-entry {
-        flex: 0 0 200px;
-        min-height: 380px;
-    }
-
-    .gw-h-card {
-        width: 170px;
-    }
-
-    .gw-h-title {
-        font-size: 0.78rem;
+    /* ---- Mobile: convert to vertical timeline ---- */
+    .gw-timeline-wrapper::before,
+    .gw-timeline-wrapper::after {
+        display: none;
     }
 
     .gw-timeline-track {
-        padding: 20px 50px;
+        display: block;
+        overflow-x: visible;
+        padding: 15px 20px 25px;
+        cursor: auto;
+        position: relative;
     }
 
-    .gw-timeline-wrapper::before,
-    .gw-timeline-wrapper::after {
-        width: 40px;
+    .gw-timeline-track::before {
+        top: 0;
+        bottom: 0;
+        left: 25px;
+        right: auto;
+        width: 2px;
+        height: auto;
+        background: linear-gradient(180deg,
+            rgba(201, 168, 76, 0.05) 0%,
+            var(--gold-dim) 8%,
+            var(--gold-dim) 92%,
+            rgba(201, 168, 76, 0.05) 100%
+        );
+    }
+
+    .gw-h-entry {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 40px 1fr;
+        height: auto;
+        flex: none;
+        margin-bottom: 32px;
+    }
+
+    .gw-h-entry:last-child {
+        margin-bottom: 0;
+    }
+
+    .gw-h-node {
+        grid-row: 1;
+        grid-column: 1;
+        justify-content: flex-start;
+        padding-left: 12px;
+        padding-top: 5px;
+    }
+
+    /* All cards go to column 2 regardless of above/below */
+    .gw-h-entry.gw-above .gw-h-card,
+    .gw-h-entry.gw-below .gw-h-card {
+        grid-row: 1;
+        grid-column: 2;
+        align-self: start;
+        margin: 0;
+        padding-left: 15px;
+        width: auto;
+    }
+
+    /* Remove stem connectors on mobile */
+    .gw-h-entry.gw-above .gw-h-card::after,
+    .gw-h-entry.gw-below .gw-h-card::before {
+        display: none;
+    }
+
+    /* Horizontal connector arm from node to content */
+    .gw-h-node::after {
+        content: '';
+        position: absolute;
+        top: 11px;
+        right: -2px;
+        width: 20px;
+        height: 1px;
+        background: var(--gold-dim);
+    }
+
+    /* Mobile card styling */
+    .gw-h-card {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+    }
+
+    .gw-h-entry:hover .gw-h-card {
+        transform: none;
+        box-shadow: none;
+        border-color: transparent;
+    }
+
+    .gw-h-img {
+        border-radius: 6px;
+        border: 1px solid rgba(201, 168, 76, 0.1);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+        margin-bottom: 6px;
+    }
+
+    .gw-h-img img {
+        max-height: 200px;
+        object-fit: cover;
+    }
+
+    .gw-h-date {
+        padding: 0;
+        margin-bottom: 4px;
+    }
+
+    .gw-h-title {
+        padding: 0;
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+
+    /* Show detail text inline on mobile instead of overlay */
+    .gw-h-detail[hidden] {
+        display: block !important;
+    }
+
+    .gw-h-detail p {
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        line-height: 1.7;
+        color: var(--ash);
+        margin-bottom: 6px;
+    }
+
+    .gw-h-detail p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* No-image card border accent on mobile */
+    .gw-h-card.gw-no-img {
+        border-top: none;
+    }
+
+    .gw-h-entry.gw-below .gw-h-card.gw-no-img {
+        border-bottom: none;
+    }
+
+    /* Override slide direction on mobile — all slide from left */
+    .gw-h-entry.gw-above.reveal,
+    .gw-h-entry.gw-below.reveal {
+        transform: translateX(-30px);
+    }
+
+    .gw-h-entry.reveal.revealed {
+        transform: translateX(0);
     }
 
     .gw-prologue {
@@ -3823,32 +3949,20 @@ a.btn.arcane-btn .arcane-subtitle {
         padding: 28px 20px;
     }
 
+    .gw-timeline-track::before {
+        left: 15px;
+    }
+
     .gw-h-entry {
-        flex: 0 0 180px;
-        min-height: 340px;
+        grid-template-columns: 32px 1fr;
     }
 
-    .gw-h-card {
-        width: 155px;
+    .gw-h-node {
+        padding-left: 5px;
     }
 
-    .gw-h-title {
-        font-size: 0.72rem;
-        padding: 4px 10px 10px;
-    }
-
-    .gw-h-date {
-        padding: 8px 10px 0;
-        font-size: 0.6rem;
-    }
-
-    .gw-timeline-track {
-        padding: 16px 40px;
-    }
-
-    .gw-timeline-wrapper::before,
-    .gw-timeline-wrapper::after {
-        width: 30px;
+    .gw-h-img img {
+        max-height: 160px;
     }
 }
 
