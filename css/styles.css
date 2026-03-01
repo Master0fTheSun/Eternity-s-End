@@ -3297,18 +3297,18 @@ a.btn.arcane-btn .arcane-subtitle {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     position: relative;
     height: 260px;
-    padding: 0 4px;
+    padding: 4px 4px 0;
 }
 
 /* Invisible spacer pushes era content into the top half, above the timeline line */
 .gw-era-marker::after {
     content: '';
     flex-shrink: 0;
-    height: 137px;
+    flex-grow: 1;
 }
 
 .gw-era-marker .gw-era-numeral {
