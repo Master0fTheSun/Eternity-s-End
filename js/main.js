@@ -721,13 +721,13 @@
     var detailPanel = detailOverlay ? detailOverlay.querySelector('.gw-detail-panel') : null;
     var gwDragging = false;
     var lastClickedEntry = null;
-    var isMobile = window.matchMedia('(max-width: 768px)');
+    var gwMobileQuery = window.matchMedia('(max-width: 768px)');
 
     // Gather all entries per track for progressive reveal
     var allTracks = document.querySelectorAll('.gw-timeline-track');
 
     function initProgressiveReveal() {
-        if (isMobile.matches) return;
+        if (gwMobileQuery.matches) return;
         allTracks.forEach(function (track) {
             var entries = track.querySelectorAll('.gw-h-entry');
             entries.forEach(function (entry, i) {
@@ -753,8 +753,8 @@
     initProgressiveReveal();
 
     // Handle viewport changes (e.g. rotating tablet)
-    isMobile.addEventListener('change', function () {
-        if (isMobile.matches) {
+    gwMobileQuery.addEventListener('change', function () {
+        if (gwMobileQuery.matches) {
             teardownProgressiveReveal();
         } else {
             // Re-init: unlock entries that were previously viewed, lock the rest
@@ -812,7 +812,7 @@
         document.body.style.overflow = '';
 
         // Progressive unlock on desktop
-        if (!isMobile.matches && lastClickedEntry) {
+        if (!gwMobileQuery.matches && lastClickedEntry) {
             var wasActive = lastClickedEntry.classList.contains('gw-active');
             if (wasActive) {
                 // Unlock the clicked entry (shows its image on the card)
@@ -853,7 +853,7 @@
         entry.addEventListener('click', function () {
             if (gwDragging) return;
             // On desktop, only allow clicks on active or unlocked entries
-            if (!isMobile.matches) {
+            if (!gwMobileQuery.matches) {
                 if (entry.classList.contains('gw-locked')) return;
             }
             openDetailOverlay(entry);
@@ -866,7 +866,7 @@
         var startX, scrollLeft, startXPos;
 
         track.addEventListener('mousedown', function (e) {
-            if (isMobile.matches) return;
+            if (gwMobileQuery.matches) return;
             isDown = true;
             gwDragging = false;
             track.classList.add('gw-grabbing');

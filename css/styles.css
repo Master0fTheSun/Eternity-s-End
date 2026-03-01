@@ -3418,41 +3418,36 @@ a.btn.arcane-btn .arcane-subtitle {
     transform: scale(1.3);
 }
 
-/* Card */
+/* -- Timeline Entry Content -- */
+/* No card box — just text and optional thumbnail */
 .gw-h-card {
     width: 100%;
     max-width: 100%;
-    background: rgba(15, 15, 25, 0.7);
-    border: 1px solid rgba(201, 168, 76, 0.1);
-    border-radius: 6px;
-    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
     cursor: pointer;
-    transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
     position: relative;
+    text-align: center;
+    padding: 0 2px;
 }
 
-.gw-h-entry:hover .gw-h-card {
-    border-color: rgba(201, 168, 76, 0.3);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 12px rgba(201, 168, 76, 0.08);
-    transform: translateY(-2px);
-}
-
-.gw-h-entry.gw-below:hover .gw-h-card {
-    transform: translateY(2px);
-}
-
-/* Above: card in top row */
+/* Above: content in top row */
 .gw-h-entry.gw-above .gw-h-card {
     grid-row: 1;
     align-self: end;
     margin-bottom: 8px;
+    justify-content: flex-end;
 }
 
-/* Below: card in bottom row */
+/* Below: content in bottom row */
 .gw-h-entry.gw-below .gw-h-card {
     grid-row: 3;
     align-self: start;
     margin-top: 8px;
+    justify-content: flex-start;
 }
 
 /* Vertical stem connector */
@@ -3478,20 +3473,47 @@ a.btn.arcane-btn .arcane-subtitle {
     background: var(--gold-dim);
 }
 
-/* Card image — hidden on desktop (compact view) */
+/* Hover glow on the text group */
+.gw-h-entry:hover .gw-h-card {
+    filter: drop-shadow(0 0 6px rgba(201, 168, 76, 0.3));
+}
+
+/* Timeline thumbnail — hidden until unlocked */
 .gw-h-img {
-    width: 100%;
+    width: 48px;
+    height: 48px;
     overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid rgba(201, 168, 76, 0.2);
     display: none;
+    flex-shrink: 0;
+    margin-bottom: 4px;
+}
+
+.gw-h-entry.gw-below .gw-h-img {
+    margin-bottom: 0;
+    margin-top: 4px;
+    order: 3;
+}
+
+.gw-h-entry.gw-unlocked .gw-h-img {
+    display: block;
+    animation: gw-thumb-appear 0.4s ease;
 }
 
 .gw-h-img img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
-/* Card text */
+@keyframes gw-thumb-appear {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Text — glowing gold */
 .gw-h-date {
     display: block;
     font-family: var(--font-display);
@@ -3499,33 +3521,29 @@ a.btn.arcane-btn .arcane-subtitle {
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--gold);
-    padding: 6px 6px 0;
+    text-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
+    padding: 0;
 }
 
 .gw-h-title {
     font-family: var(--font-display);
-    font-size: 0.55rem;
+    font-size: 0.5rem;
     font-weight: 600;
-    color: var(--bone);
+    color: var(--gold);
+    text-shadow: 0 0 8px rgba(201, 168, 76, 0.25);
     letter-spacing: 0.5px;
-    line-height: 1.25;
-    padding: 2px 6px 6px;
+    line-height: 1.2;
+    padding: 1px 0 0;
     margin: 0;
+}
+
+.gw-h-entry:hover .gw-h-title {
+    text-shadow: 0 0 14px rgba(201, 168, 76, 0.6);
 }
 
 /* Detail text — always hidden on desktop (shown in overlay) */
 .gw-h-detail {
     display: none;
-}
-
-/* No-image card accent */
-.gw-h-card.gw-no-img {
-    border-top: 2px solid rgba(201, 168, 76, 0.2);
-}
-
-.gw-h-entry.gw-below .gw-h-card.gw-no-img {
-    border-top: none;
-    border-bottom: 2px solid rgba(201, 168, 76, 0.2);
 }
 
 /* -- Progressive reveal states (desktop only) -- */
@@ -3900,12 +3918,15 @@ a.btn.arcane-btn .arcane-subtitle {
         border: none;
         border-radius: 0;
         overflow: visible;
+        text-align: left;
+        align-items: flex-start;
     }
 
     .gw-h-entry:hover .gw-h-card {
         transform: none;
         box-shadow: none;
         border-color: transparent;
+        filter: none;
     }
 
     .gw-h-card.gw-no-img {
@@ -3916,17 +3937,22 @@ a.btn.arcane-btn .arcane-subtitle {
         border: none;
     }
 
-    /* Show images on mobile (override desktop hide) */
+    /* Show images on mobile (override desktop thumbnail) */
     .gw-h-img {
         display: block !important;
         animation: none !important;
+        width: 100%;
+        height: auto;
         border-radius: 6px;
         border: 1px solid rgba(201, 168, 76, 0.1);
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
         margin: 10px 0;
+        order: unset;
     }
 
     .gw-h-img img {
+        width: 100%;
+        height: auto;
         max-height: 200px;
         object-fit: cover;
         border-radius: 6px;
@@ -3955,6 +3981,7 @@ a.btn.arcane-btn .arcane-subtitle {
         letter-spacing: 4px;
         padding: 0;
         margin-bottom: 6px;
+        text-shadow: none;
     }
 
     .gw-h-title {
@@ -3962,6 +3989,8 @@ a.btn.arcane-btn .arcane-subtitle {
         letter-spacing: 1.5px;
         padding: 0;
         margin-bottom: 8px;
+        color: var(--bone);
+        text-shadow: none;
     }
 
     /* Scroll reveal on mobile — slide from left */
