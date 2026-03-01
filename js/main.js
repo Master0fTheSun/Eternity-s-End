@@ -659,7 +659,7 @@
     var revealElements = document.querySelectorAll(
         '.location-card, .creature-card, .character-card, .char-col-lore, .char-col-artwork, .char-col-attrs, ' +
         '.world-intro, .author-content, .book-card.active, .lore-block, .lore-image, ' +
-        '.gw-entry, .gw-era-header'
+        '.gw-h-entry, .gw-era-header'
     );
 
     // Add reveal class to elements
@@ -716,10 +716,105 @@
         });
     }
 
-    // Close modal/lightbox on Escape key
+    // ---- Horizontal Timeline: Click-to-Expand & Drag-to-Scroll ----
+    var detailOverlay = document.getElementById('gw-detail-overlay');
+    var detailPanel = detailOverlay ? detailOverlay.querySelector('.gw-detail-panel') : null;
+    var gwDragging = false;
+
+    function closeDetailOverlay() {
+        if (detailOverlay) {
+            detailOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+
+    if (detailOverlay) {
+        var detailCloseBtn = detailOverlay.querySelector('.gw-detail-close');
+        if (detailCloseBtn) {
+            detailCloseBtn.addEventListener('click', closeDetailOverlay);
+        }
+        detailOverlay.addEventListener('click', function (e) {
+            if (e.target === detailOverlay) closeDetailOverlay();
+        });
+    }
+
+    // Click handler for timeline entries
+    var timelineEntries = document.querySelectorAll('.gw-h-entry');
+    timelineEntries.forEach(function (entry) {
+        entry.addEventListener('click', function () {
+            if (gwDragging) return;
+            if (!detailOverlay || !detailPanel) return;
+
+            var detail = entry.querySelector('.gw-h-detail');
+            var img = entry.querySelector('.gw-h-img img');
+            var dateEl = entry.querySelector('.gw-h-date');
+            var titleEl = entry.querySelector('.gw-h-title');
+
+            var dateTarget = detailPanel.querySelector('.gw-detail-date');
+            var titleTarget = detailPanel.querySelector('.gw-detail-title');
+            var bodyTarget = detailPanel.querySelector('.gw-detail-body');
+            var imgWrap = detailPanel.querySelector('.gw-detail-img-wrap');
+
+            if (dateTarget) dateTarget.textContent = dateEl ? dateEl.textContent : '';
+            if (titleTarget) titleTarget.textContent = titleEl ? titleEl.textContent : '';
+            if (bodyTarget) bodyTarget.innerHTML = detail ? detail.innerHTML : '';
+
+            if (imgWrap) {
+                if (img) {
+                    imgWrap.innerHTML = '<img src="' + img.getAttribute('src') + '" alt="' + (img.getAttribute('alt') || '') + '">';
+                } else {
+                    imgWrap.innerHTML = '';
+                }
+            }
+
+            detailOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Drag-to-scroll for timeline tracks
+    var tracks = document.querySelectorAll('.gw-timeline-track');
+    tracks.forEach(function (track) {
+        var isDown = false;
+        var startX, scrollLeft, startXPos;
+
+        track.addEventListener('mousedown', function (e) {
+            isDown = true;
+            gwDragging = false;
+            track.classList.add('gw-grabbing');
+            startX = e.pageX - track.offsetLeft;
+            startXPos = e.pageX;
+            scrollLeft = track.scrollLeft;
+        });
+
+        track.addEventListener('mouseleave', function () {
+            isDown = false;
+            track.classList.remove('gw-grabbing');
+        });
+
+        track.addEventListener('mouseup', function () {
+            isDown = false;
+            track.classList.remove('gw-grabbing');
+            setTimeout(function () { gwDragging = false; }, 50);
+        });
+
+        track.addEventListener('mousemove', function (e) {
+            if (!isDown) return;
+            e.preventDefault();
+            if (Math.abs(e.pageX - startXPos) > 5) {
+                gwDragging = true;
+            }
+            var x = e.pageX - track.offsetLeft;
+            var walk = (x - startX) * 1.5;
+            track.scrollLeft = scrollLeft - walk;
+        });
+    });
+
+    // Close modal/lightbox/detail overlay on Escape key
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
             closeModal();
+            closeDetailOverlay();
             if (mapLightbox && mapLightbox.classList.contains('active')) {
                 mapLightbox.classList.remove('active');
                 document.body.style.overflow = '';
