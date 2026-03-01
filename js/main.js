@@ -716,16 +716,128 @@
         });
     }
 
-    // ---- Horizontal Timeline: Click-to-Expand & Drag-to-Scroll ----
+    // ---- Horizontal Timeline: Progressive Reveal & Click-to-Expand ----
     var detailOverlay = document.getElementById('gw-detail-overlay');
     var detailPanel = detailOverlay ? detailOverlay.querySelector('.gw-detail-panel') : null;
     var gwDragging = false;
+    var lastClickedEntry = null;
+    var isMobile = window.matchMedia('(max-width: 768px)');
+
+    // Gather all entries per track for progressive reveal
+    var allTracks = document.querySelectorAll('.gw-timeline-track');
+
+    function initProgressiveReveal() {
+        if (isMobile.matches) return;
+        allTracks.forEach(function (track) {
+            var entries = track.querySelectorAll('.gw-h-entry');
+            entries.forEach(function (entry, i) {
+                if (i === 0) {
+                    entry.classList.add('gw-active');
+                } else {
+                    entry.classList.add('gw-locked');
+                }
+            });
+        });
+    }
+
+    function teardownProgressiveReveal() {
+        allTracks.forEach(function (track) {
+            var entries = track.querySelectorAll('.gw-h-entry');
+            entries.forEach(function (entry) {
+                entry.classList.remove('gw-locked', 'gw-active', 'gw-unlocked');
+            });
+        });
+    }
+
+    // Initialize on load
+    initProgressiveReveal();
+
+    // Handle viewport changes (e.g. rotating tablet)
+    isMobile.addEventListener('change', function () {
+        if (isMobile.matches) {
+            teardownProgressiveReveal();
+        } else {
+            // Re-init: unlock entries that were previously viewed, lock the rest
+            allTracks.forEach(function (track) {
+                var entries = track.querySelectorAll('.gw-h-entry');
+                var foundFirstLocked = false;
+                entries.forEach(function (entry) {
+                    if (entry.classList.contains('gw-unlocked')) return;
+                    if (!foundFirstLocked) {
+                        foundFirstLocked = true;
+                        entry.classList.remove('gw-locked');
+                        entry.classList.add('gw-active');
+                    } else {
+                        entry.classList.remove('gw-active');
+                        entry.classList.add('gw-locked');
+                    }
+                });
+            });
+        }
+    });
+
+    function openDetailOverlay(entry) {
+        if (!detailOverlay || !detailPanel) return;
+
+        var detail = entry.querySelector('.gw-h-detail');
+        var img = entry.querySelector('.gw-h-img img');
+        var dateEl = entry.querySelector('.gw-h-date');
+        var titleEl = entry.querySelector('.gw-h-title');
+
+        var dateTarget = detailPanel.querySelector('.gw-detail-date');
+        var titleTarget = detailPanel.querySelector('.gw-detail-title');
+        var bodyTarget = detailPanel.querySelector('.gw-detail-body');
+        var imgWrap = detailPanel.querySelector('.gw-detail-img-wrap');
+
+        if (dateTarget) dateTarget.textContent = dateEl ? dateEl.textContent : '';
+        if (titleTarget) titleTarget.textContent = titleEl ? titleEl.textContent : '';
+        if (bodyTarget) bodyTarget.innerHTML = detail ? detail.innerHTML : '';
+
+        if (imgWrap) {
+            if (img) {
+                imgWrap.innerHTML = '<img src="' + img.getAttribute('src') + '" alt="' + (img.getAttribute('alt') || '') + '">';
+            } else {
+                imgWrap.innerHTML = '';
+            }
+        }
+
+        lastClickedEntry = entry;
+        detailOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
 
     function closeDetailOverlay() {
-        if (detailOverlay) {
-            detailOverlay.classList.remove('active');
-            document.body.style.overflow = '';
+        if (!detailOverlay) return;
+        detailOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+
+        // Progressive unlock on desktop
+        if (!isMobile.matches && lastClickedEntry) {
+            var wasActive = lastClickedEntry.classList.contains('gw-active');
+            if (wasActive) {
+                // Unlock the clicked entry (shows its image on the card)
+                lastClickedEntry.classList.remove('gw-active');
+                lastClickedEntry.classList.add('gw-unlocked');
+
+                // Find and reveal the next entry in the same track
+                var track = lastClickedEntry.closest('.gw-timeline-track');
+                if (track) {
+                    var entries = track.querySelectorAll('.gw-h-entry');
+                    var entriesArr = Array.prototype.slice.call(entries);
+                    var idx = entriesArr.indexOf(lastClickedEntry);
+                    var nextEntry = entriesArr[idx + 1];
+                    if (nextEntry && nextEntry.classList.contains('gw-locked')) {
+                        nextEntry.classList.remove('gw-locked');
+                        nextEntry.classList.add('gw-active');
+                        // Auto-scroll the track to show the new entry
+                        setTimeout(function () {
+                            nextEntry.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        }, 100);
+                    }
+                }
+            }
         }
+        lastClickedEntry = null;
     }
 
     if (detailOverlay) {
@@ -743,42 +855,21 @@
     timelineEntries.forEach(function (entry) {
         entry.addEventListener('click', function () {
             if (gwDragging) return;
-            if (!detailOverlay || !detailPanel) return;
-
-            var detail = entry.querySelector('.gw-h-detail');
-            var img = entry.querySelector('.gw-h-img img');
-            var dateEl = entry.querySelector('.gw-h-date');
-            var titleEl = entry.querySelector('.gw-h-title');
-
-            var dateTarget = detailPanel.querySelector('.gw-detail-date');
-            var titleTarget = detailPanel.querySelector('.gw-detail-title');
-            var bodyTarget = detailPanel.querySelector('.gw-detail-body');
-            var imgWrap = detailPanel.querySelector('.gw-detail-img-wrap');
-
-            if (dateTarget) dateTarget.textContent = dateEl ? dateEl.textContent : '';
-            if (titleTarget) titleTarget.textContent = titleEl ? titleEl.textContent : '';
-            if (bodyTarget) bodyTarget.innerHTML = detail ? detail.innerHTML : '';
-
-            if (imgWrap) {
-                if (img) {
-                    imgWrap.innerHTML = '<img src="' + img.getAttribute('src') + '" alt="' + (img.getAttribute('alt') || '') + '">';
-                } else {
-                    imgWrap.innerHTML = '';
-                }
+            // On desktop, only allow clicks on active or unlocked entries
+            if (!isMobile.matches) {
+                if (entry.classList.contains('gw-locked')) return;
             }
-
-            detailOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            openDetailOverlay(entry);
         });
     });
 
-    // Drag-to-scroll for timeline tracks
-    var tracks = document.querySelectorAll('.gw-timeline-track');
-    tracks.forEach(function (track) {
+    // Drag-to-scroll for timeline tracks (desktop only)
+    allTracks.forEach(function (track) {
         var isDown = false;
         var startX, scrollLeft, startXPos;
 
         track.addEventListener('mousedown', function (e) {
+            if (isMobile.matches) return;
             isDown = true;
             gwDragging = false;
             track.classList.add('gw-grabbing');

@@ -3274,13 +3274,12 @@ a.btn.arcane-btn .arcane-subtitle {
     z-index: 1;
 }
 
-/* -- Horizontal Timeline -- */
+/* -- Horizontal Timeline (Desktop) -- */
 .gw-timeline-wrapper {
     position: relative;
     background: var(--void);
 }
 
-/* Edge fade overlays */
 .gw-timeline-wrapper::before,
 .gw-timeline-wrapper::after {
     content: '';
@@ -3305,7 +3304,7 @@ a.btn.arcane-btn .arcane-subtitle {
 .gw-timeline-track {
     display: flex;
     align-items: stretch;
-    gap: 0;
+    flex-wrap: nowrap;
     overflow-x: auto;
     position: relative;
     padding: 30px 80px;
@@ -3346,10 +3345,10 @@ a.btn.arcane-btn .arcane-subtitle {
     grid-template-rows: 1fr 20px 1fr;
     justify-items: center;
     position: relative;
-    height: 480px;
+    height: 420px;
 }
 
-/* Node (center row) */
+/* Node */
 .gw-h-node {
     grid-row: 2;
     display: flex;
@@ -3376,7 +3375,7 @@ a.btn.arcane-btn .arcane-subtitle {
     transform: scale(1.3);
 }
 
-/* Card placement */
+/* Card */
 .gw-h-card {
     width: 220px;
     background: rgba(15, 15, 25, 0.7);
@@ -3398,14 +3397,14 @@ a.btn.arcane-btn .arcane-subtitle {
     transform: translateY(3px);
 }
 
-/* Above entry: card in top row, pushed to bottom */
+/* Above: card in top row */
 .gw-h-entry.gw-above .gw-h-card {
     grid-row: 1;
     align-self: end;
     margin-bottom: 12px;
 }
 
-/* Below entry: card in bottom row, pushed to top */
+/* Below: card in bottom row */
 .gw-h-entry.gw-below .gw-h-card {
     grid-row: 3;
     align-self: start;
@@ -3435,21 +3434,27 @@ a.btn.arcane-btn .arcane-subtitle {
     background: var(--gold-dim);
 }
 
-/* Card image */
+/* Card image — hidden until unlocked on desktop */
 .gw-h-img {
     width: 100%;
     overflow: hidden;
+    display: none;
+}
+
+.gw-h-entry.gw-unlocked .gw-h-img {
+    display: block;
+    animation: gw-img-appear 0.5s ease;
 }
 
 .gw-h-img img {
     width: 100%;
     height: auto;
     display: block;
-    transition: transform 0.5s ease;
 }
 
-.gw-h-entry:hover .gw-h-img img {
-    transform: scale(1.05);
+@keyframes gw-img-appear {
+    from { opacity: 0; max-height: 0; }
+    to { opacity: 1; max-height: 300px; }
 }
 
 /* Card text */
@@ -3474,7 +3479,12 @@ a.btn.arcane-btn .arcane-subtitle {
     margin: 0;
 }
 
-/* Cards without images get a top accent line */
+/* Detail text — always hidden on desktop (shown in overlay) */
+.gw-h-detail {
+    display: none;
+}
+
+/* No-image card accent */
 .gw-h-card.gw-no-img {
     border-top: 2px solid rgba(201, 168, 76, 0.2);
 }
@@ -3484,9 +3494,18 @@ a.btn.arcane-btn .arcane-subtitle {
     border-bottom: 2px solid rgba(201, 168, 76, 0.2);
 }
 
-/* Hidden detail text (read by JS) */
-.gw-h-detail[hidden] {
+/* -- Progressive reveal states (desktop only) -- */
+.gw-h-entry.gw-locked {
     display: none;
+}
+
+.gw-h-entry.gw-active {
+    animation: gw-entry-appear 0.6s ease forwards;
+}
+
+@keyframes gw-entry-appear {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 /* -- Detail Overlay -- */
@@ -3610,26 +3629,6 @@ a.btn.arcane-btn .arcane-subtitle {
     margin-bottom: 0;
 }
 
-/* Scroll reveal for horizontal entries */
-.gw-h-entry.reveal {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.gw-h-entry.gw-above.reveal {
-    transform: translateY(-25px);
-}
-
-.gw-h-entry.gw-below.reveal {
-    transform: translateY(25px);
-}
-
-.gw-h-entry.reveal.revealed {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 /* -- Epilogue -- */
 .gw-epilogue {
     padding: 45px 20px 60px;
@@ -3710,17 +3709,9 @@ a.btn.arcane-btn .arcane-subtitle {
         font-size: 3.2rem;
         letter-spacing: 8px;
     }
-
-    .gw-h-entry {
-        flex: 0 0 220px;
-        min-height: 420px;
-    }
-
-    .gw-h-card {
-        width: 190px;
-    }
 }
 
+/* -- Mobile: full revert to original vertical scrolling timeline -- */
 @media (max-width: 768px) {
     .gw-hero {
         min-height: 360px;
@@ -3753,20 +3744,30 @@ a.btn.arcane-btn .arcane-subtitle {
         padding: 35px 20px;
     }
 
-    /* ---- Mobile: convert to vertical timeline ---- */
+    /* Disable progressive reveal on mobile — show everything */
+    .gw-h-entry.gw-locked {
+        display: grid !important;
+    }
+
+    .gw-h-entry.gw-active {
+        animation: none;
+    }
+
+    /* Remove edge fades */
     .gw-timeline-wrapper::before,
     .gw-timeline-wrapper::after {
         display: none;
     }
 
+    /* Vertical timeline track */
     .gw-timeline-track {
         display: block;
         overflow-x: visible;
         padding: 15px 20px 25px;
         cursor: auto;
-        position: relative;
     }
 
+    /* Vertical line on left */
     .gw-timeline-track::before {
         top: 0;
         bottom: 0;
@@ -3782,10 +3783,11 @@ a.btn.arcane-btn .arcane-subtitle {
         );
     }
 
+    /* Vertical stacking entries */
     .gw-h-entry {
         display: grid;
-        grid-template-rows: auto;
         grid-template-columns: 40px 1fr;
+        grid-template-rows: auto;
         height: auto;
         flex: none;
         margin-bottom: 32px;
@@ -3795,6 +3797,7 @@ a.btn.arcane-btn .arcane-subtitle {
         margin-bottom: 0;
     }
 
+    /* Node on left */
     .gw-h-node {
         grid-row: 1;
         grid-column: 1;
@@ -3803,24 +3806,7 @@ a.btn.arcane-btn .arcane-subtitle {
         padding-top: 5px;
     }
 
-    /* All cards go to column 2 regardless of above/below */
-    .gw-h-entry.gw-above .gw-h-card,
-    .gw-h-entry.gw-below .gw-h-card {
-        grid-row: 1;
-        grid-column: 2;
-        align-self: start;
-        margin: 0;
-        padding-left: 15px;
-        width: auto;
-    }
-
-    /* Remove stem connectors on mobile */
-    .gw-h-entry.gw-above .gw-h-card::after,
-    .gw-h-entry.gw-below .gw-h-card::before {
-        display: none;
-    }
-
-    /* Horizontal connector arm from node to content */
+    /* Horizontal connector arm */
     .gw-h-node::after {
         content: '';
         position: absolute;
@@ -3831,11 +3817,28 @@ a.btn.arcane-btn .arcane-subtitle {
         background: var(--gold-dim);
     }
 
-    /* Mobile card styling */
+    /* All cards in column 2 */
+    .gw-h-entry.gw-above .gw-h-card,
+    .gw-h-entry.gw-below .gw-h-card {
+        grid-row: 1;
+        grid-column: 2;
+        align-self: start;
+        margin: 0;
+        width: auto;
+    }
+
+    /* Remove desktop stem connectors */
+    .gw-h-entry.gw-above .gw-h-card::after,
+    .gw-h-entry.gw-below .gw-h-card::before {
+        display: none;
+    }
+
+    /* Card: transparent, no box styling */
     .gw-h-card {
         background: transparent;
         border: none;
         border-radius: 0;
+        overflow: visible;
     }
 
     .gw-h-entry:hover .gw-h-card {
@@ -3844,31 +3847,32 @@ a.btn.arcane-btn .arcane-subtitle {
         border-color: transparent;
     }
 
+    .gw-h-card.gw-no-img {
+        border: none;
+    }
+
+    .gw-h-entry.gw-below .gw-h-card.gw-no-img {
+        border: none;
+    }
+
+    /* Show images on mobile (override desktop hide) */
     .gw-h-img {
+        display: block !important;
+        animation: none !important;
         border-radius: 6px;
         border: 1px solid rgba(201, 168, 76, 0.1);
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
-        margin-bottom: 6px;
+        margin: 10px 0;
     }
 
     .gw-h-img img {
         max-height: 200px;
         object-fit: cover;
+        border-radius: 6px;
     }
 
-    .gw-h-date {
-        padding: 0;
-        margin-bottom: 4px;
-    }
-
-    .gw-h-title {
-        padding: 0;
-        font-size: 0.95rem;
-        margin-bottom: 6px;
-    }
-
-    /* Show detail text inline on mobile instead of overlay */
-    .gw-h-detail[hidden] {
+    /* Show detail text inline on mobile */
+    .gw-h-detail {
         display: block !important;
     }
 
@@ -3884,22 +3888,30 @@ a.btn.arcane-btn .arcane-subtitle {
         margin-bottom: 0;
     }
 
-    /* No-image card border accent on mobile */
-    .gw-h-card.gw-no-img {
-        border-top: none;
+    /* Card text: remove padding for mobile flow */
+    .gw-h-date {
+        font-size: 0.72rem;
+        letter-spacing: 4px;
+        padding: 0;
+        margin-bottom: 6px;
     }
 
-    .gw-h-entry.gw-below .gw-h-card.gw-no-img {
-        border-bottom: none;
+    .gw-h-title {
+        font-size: 1.15rem;
+        letter-spacing: 1.5px;
+        padding: 0;
+        margin-bottom: 8px;
     }
 
-    /* Override slide direction on mobile — all slide from left */
-    .gw-h-entry.gw-above.reveal,
-    .gw-h-entry.gw-below.reveal {
+    /* Scroll reveal on mobile — slide from left */
+    .gw-h-entry.reveal {
+        opacity: 0;
         transform: translateX(-30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
     }
 
     .gw-h-entry.reveal.revealed {
+        opacity: 1;
         transform: translateX(0);
     }
 
@@ -3911,7 +3923,7 @@ a.btn.arcane-btn .arcane-subtitle {
         font-size: 0.95rem;
     }
 
-    /* Detail overlay mobile */
+    /* Detail overlay mobile adjustments */
     .gw-detail-panel {
         max-height: 90vh;
     }
