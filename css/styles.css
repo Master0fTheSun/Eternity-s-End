@@ -3297,11 +3297,12 @@ a.btn.arcane-btn .arcane-subtitle {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     text-align: center;
     position: relative;
     height: 260px;
     padding: 0 4px;
+    padding-bottom: 140px;
 }
 
 .gw-era-marker .gw-era-numeral {
@@ -3342,7 +3343,7 @@ a.btn.arcane-btn .arcane-subtitle {
 /* -- Horizontal Timeline (Desktop) -- */
 .gw-timeline-wrapper {
     position: relative;
-    background: var(--void);
+    background: transparent;
     overflow: hidden;
 }
 
