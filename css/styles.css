@@ -3498,28 +3498,60 @@ a.btn.arcane-btn .arcane-subtitle {
 /* -- Great War Desktop Compact -- */
 @media (min-width: 769px) {
     .gw-hero {
-        height: 50vh;
-        min-height: 350px;
+        height: 35vh;
+        min-height: 260px;
     }
 
     .gw-prologue {
-        padding: 25px 20px 28px;
+        padding: 16px 20px 18px;
     }
 
     .gw-era-header {
-        padding: 28px 20px;
+        padding: 16px 20px;
+    }
+
+    .gw-era-numeral {
+        font-size: 5rem;
     }
 
     .gw-entry {
-        margin-bottom: 22px;
+        margin-bottom: 10px;
+    }
+
+    .gw-entry-img {
+        margin: 6px 0;
+    }
+
+    .gw-entry-img img {
+        max-height: 180px;
+    }
+
+    .gw-entry-text {
+        margin-bottom: 3px;
+    }
+
+    .gw-entry-title {
+        margin-bottom: 4px;
+    }
+
+    .gw-date {
+        margin-bottom: 3px;
     }
 
     .gw-epilogue {
-        padding: 28px 20px 35px;
+        padding: 18px 20px 25px;
+    }
+
+    .gw-epilogue-rule {
+        margin-bottom: 16px;
+    }
+
+    .gw-epilogue-text {
+        margin-bottom: 16px;
     }
 
     .gw-timeline-section {
-        padding: 10px 20px 18px;
+        padding: 5px 20px 8px;
     }
 }
 
