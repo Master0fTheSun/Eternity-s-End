@@ -719,7 +719,6 @@
     // ---- Horizontal Timeline: Progressive Reveal & Click-to-Expand ----
     var detailOverlay = document.getElementById('gw-detail-overlay');
     var detailPanel = detailOverlay ? detailOverlay.querySelector('.gw-detail-panel') : null;
-    var gwDragging = false;
     var lastClickedEntry = null;
     var gwMobileQuery = window.matchMedia('(max-width: 768px)');
 
@@ -851,7 +850,6 @@
     var timelineEntries = document.querySelectorAll('.gw-h-entry');
     timelineEntries.forEach(function (entry) {
         entry.addEventListener('click', function () {
-            if (gwDragging) return;
             // On desktop, only allow clicks on active or unlocked entries
             if (!gwMobileQuery.matches) {
                 if (entry.classList.contains('gw-locked')) return;
@@ -860,43 +858,7 @@
         });
     });
 
-    // Drag-to-scroll for timeline tracks (desktop only)
-    allTracks.forEach(function (track) {
-        var isDown = false;
-        var startX, scrollLeft, startXPos;
-
-        track.addEventListener('mousedown', function (e) {
-            if (gwMobileQuery.matches) return;
-            isDown = true;
-            gwDragging = false;
-            track.classList.add('gw-grabbing');
-            startX = e.pageX - track.offsetLeft;
-            startXPos = e.pageX;
-            scrollLeft = track.scrollLeft;
-        });
-
-        track.addEventListener('mouseleave', function () {
-            isDown = false;
-            track.classList.remove('gw-grabbing');
-        });
-
-        track.addEventListener('mouseup', function () {
-            isDown = false;
-            track.classList.remove('gw-grabbing');
-            setTimeout(function () { gwDragging = false; }, 50);
-        });
-
-        track.addEventListener('mousemove', function (e) {
-            if (!isDown) return;
-            e.preventDefault();
-            if (Math.abs(e.pageX - startXPos) > 5) {
-                gwDragging = true;
-            }
-            var x = e.pageX - track.offsetLeft;
-            var walk = (x - startX) * 1.5;
-            track.scrollLeft = scrollLeft - walk;
-        });
-    });
+    // Drag-to-scroll removed — track fits within viewport, no scrolling needed
 
     // Close modal/lightbox/detail overlay on Escape key
     document.addEventListener('keydown', function (e) {
