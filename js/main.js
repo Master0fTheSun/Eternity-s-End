@@ -829,10 +829,7 @@
                     if (nextEntry && nextEntry.classList.contains('gw-locked')) {
                         nextEntry.classList.remove('gw-locked');
                         nextEntry.classList.add('gw-active');
-                        // Auto-scroll the track to show the new entry
-                        setTimeout(function () {
-                            nextEntry.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-                        }, 100);
+                        // All entries fit in viewport — no scroll needed
                     }
                 }
             }

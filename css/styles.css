@@ -3276,24 +3276,24 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Inline Era Markers (inside the horizontal track) -- */
 .gw-era-marker {
-    flex: 0 0 140px;
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
-    height: 420px;
-    padding: 0 10px;
+    height: 260px;
+    padding: 0 4px;
 }
 
 .gw-era-marker .gw-era-numeral {
     font-family: var(--font-display);
-    font-size: 3.5rem;
+    font-size: 2rem;
     font-weight: 900;
     color: rgba(201, 168, 76, 0.08);
     line-height: 1;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     position: static;
     transform: none;
     pointer-events: none;
@@ -3301,22 +3301,23 @@ a.btn.arcane-btn .arcane-subtitle {
 
 .gw-era-marker .gw-era-title {
     font-family: var(--font-display);
-    font-size: 0.65rem;
+    font-size: 0.5rem;
     font-weight: 700;
     color: var(--gold);
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    margin: 6px 0 4px;
+    margin: 4px 0 2px;
     line-height: 1.3;
+    white-space: nowrap;
     position: static;
     z-index: auto;
 }
 
 .gw-era-marker .gw-era-years {
     font-family: var(--font-body);
-    font-size: 0.6rem;
+    font-size: 0.5rem;
     color: var(--ash);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     position: static;
     z-index: auto;
 }
@@ -3325,6 +3326,7 @@ a.btn.arcane-btn .arcane-subtitle {
 .gw-timeline-wrapper {
     position: relative;
     background: var(--void);
+    overflow: hidden;
 }
 
 .gw-timeline-wrapper::before,
@@ -3333,7 +3335,7 @@ a.btn.arcane-btn .arcane-subtitle {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 60px;
+    width: 30px;
     z-index: 5;
     pointer-events: none;
 }
@@ -3352,20 +3354,13 @@ a.btn.arcane-btn .arcane-subtitle {
     display: flex;
     align-items: stretch;
     flex-wrap: nowrap;
-    overflow-x: auto;
+    overflow: hidden;
     position: relative;
-    padding: 30px 80px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    cursor: grab;
+    padding: 20px 30px;
 }
 
 .gw-timeline-track::-webkit-scrollbar {
     display: none;
-}
-
-.gw-timeline-track.gw-grabbing {
-    cursor: grabbing;
 }
 
 /* Horizontal line through the center */
@@ -3378,8 +3373,8 @@ a.btn.arcane-btn .arcane-subtitle {
     height: 2px;
     background: linear-gradient(90deg,
         rgba(201, 168, 76, 0.05) 0%,
-        var(--gold-dim) 5%,
-        var(--gold-dim) 95%,
+        var(--gold-dim) 3%,
+        var(--gold-dim) 97%,
         rgba(201, 168, 76, 0.05) 100%
     );
     z-index: 1;
@@ -3387,12 +3382,13 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Timeline Entry -- */
 .gw-h-entry {
-    flex: 0 0 260px;
+    flex: 1 1 0;
+    min-width: 0;
     display: grid;
-    grid-template-rows: 1fr 20px 1fr;
+    grid-template-rows: 1fr 14px 1fr;
     justify-items: center;
     position: relative;
-    height: 420px;
+    height: 260px;
 }
 
 /* Node */
@@ -3407,27 +3403,28 @@ a.btn.arcane-btn .arcane-subtitle {
 }
 
 .gw-h-node span {
-    width: 16px;
-    height: 16px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     border: 2px solid var(--gold);
     background: var(--void);
-    box-shadow: 0 0 12px rgba(201, 168, 76, 0.25);
+    box-shadow: 0 0 8px rgba(201, 168, 76, 0.25);
     transition: all 0.35s ease;
 }
 
 .gw-h-entry:hover .gw-h-node span {
     background: var(--gold);
-    box-shadow: 0 0 24px rgba(201, 168, 76, 0.6);
+    box-shadow: 0 0 16px rgba(201, 168, 76, 0.6);
     transform: scale(1.3);
 }
 
 /* Card */
 .gw-h-card {
-    width: 220px;
+    width: 100%;
+    max-width: 100%;
     background: rgba(15, 15, 25, 0.7);
     border: 1px solid rgba(201, 168, 76, 0.1);
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
     cursor: pointer;
     transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
@@ -3436,61 +3433,56 @@ a.btn.arcane-btn .arcane-subtitle {
 
 .gw-h-entry:hover .gw-h-card {
     border-color: rgba(201, 168, 76, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(201, 168, 76, 0.08);
-    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 12px rgba(201, 168, 76, 0.08);
+    transform: translateY(-2px);
 }
 
 .gw-h-entry.gw-below:hover .gw-h-card {
-    transform: translateY(3px);
+    transform: translateY(2px);
 }
 
 /* Above: card in top row */
 .gw-h-entry.gw-above .gw-h-card {
     grid-row: 1;
     align-self: end;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 /* Below: card in bottom row */
 .gw-h-entry.gw-below .gw-h-card {
     grid-row: 3;
     align-self: start;
-    margin-top: 12px;
+    margin-top: 8px;
 }
 
 /* Vertical stem connector */
 .gw-h-entry.gw-above .gw-h-card::after {
     content: '';
     position: absolute;
-    bottom: -13px;
+    bottom: -9px;
     left: 50%;
     transform: translateX(-50%);
     width: 1px;
-    height: 13px;
+    height: 9px;
     background: var(--gold-dim);
 }
 
 .gw-h-entry.gw-below .gw-h-card::before {
     content: '';
     position: absolute;
-    top: -13px;
+    top: -9px;
     left: 50%;
     transform: translateX(-50%);
     width: 1px;
-    height: 13px;
+    height: 9px;
     background: var(--gold-dim);
 }
 
-/* Card image — hidden until unlocked on desktop */
+/* Card image — hidden on desktop (compact view) */
 .gw-h-img {
     width: 100%;
     overflow: hidden;
     display: none;
-}
-
-.gw-h-entry.gw-unlocked .gw-h-img {
-    display: block;
-    animation: gw-img-appear 0.5s ease;
 }
 
 .gw-h-img img {
@@ -3499,30 +3491,25 @@ a.btn.arcane-btn .arcane-subtitle {
     display: block;
 }
 
-@keyframes gw-img-appear {
-    from { opacity: 0; max-height: 0; }
-    to { opacity: 1; max-height: 300px; }
-}
-
 /* Card text */
 .gw-h-date {
     display: block;
     font-family: var(--font-display);
-    font-size: 0.65rem;
+    font-size: 0.5rem;
     font-weight: 700;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     color: var(--gold);
-    padding: 10px 14px 0;
+    padding: 6px 6px 0;
 }
 
 .gw-h-title {
     font-family: var(--font-display);
-    font-size: 0.85rem;
+    font-size: 0.55rem;
     font-weight: 600;
     color: var(--bone);
-    letter-spacing: 1px;
-    line-height: 1.3;
-    padding: 4px 14px 12px;
+    letter-spacing: 0.5px;
+    line-height: 1.25;
+    padding: 2px 6px 6px;
     margin: 0;
 }
 
@@ -3543,7 +3530,8 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Progressive reveal states (desktop only) -- */
 .gw-h-entry.gw-locked {
-    display: none;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 .gw-h-entry.gw-active {
@@ -3551,8 +3539,8 @@ a.btn.arcane-btn .arcane-subtitle {
 }
 
 @keyframes gw-entry-appear {
-    from { opacity: 0; transform: translateX(40px); }
-    to { opacity: 1; transform: translateX(0); }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* -- Detail Overlay -- */
