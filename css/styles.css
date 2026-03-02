@@ -3301,7 +3301,9 @@ a.btn.arcane-btn .arcane-subtitle {
     text-align: center;
     position: relative;
     height: 260px;
-    padding: 4px 4px 0;
+    padding: 0 4px 0;
+    margin-top: -20px;
+    margin-left: 18px;
 }
 
 /* Invisible spacer pushes era content into the top half, above the timeline line */
@@ -3353,26 +3355,7 @@ a.btn.arcane-btn .arcane-subtitle {
     overflow: hidden;
 }
 
-.gw-timeline-wrapper::before,
-.gw-timeline-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 30px;
-    z-index: 5;
-    pointer-events: none;
-}
-
-.gw-timeline-wrapper::before {
-    left: 0;
-    background: linear-gradient(90deg, var(--void), transparent);
-}
-
-.gw-timeline-wrapper::after {
-    right: 0;
-    background: linear-gradient(270deg, var(--void), transparent);
-}
+/* Edge shadows removed */
 
 .gw-timeline-track {
     display: flex;
@@ -3380,7 +3363,7 @@ a.btn.arcane-btn .arcane-subtitle {
     flex-wrap: nowrap;
     overflow: hidden;
     position: relative;
-    padding: 20px 30px;
+    padding: 20px 10px 20px 4px;
 }
 
 .gw-timeline-track::-webkit-scrollbar {
@@ -3710,7 +3693,7 @@ a.btn.arcane-btn .arcane-subtitle {
 .gw-epilogue {
     padding: 45px 20px 60px;
     text-align: center;
-    background: var(--void);
+    background: transparent;
 }
 
 .gw-epilogue-inner {
