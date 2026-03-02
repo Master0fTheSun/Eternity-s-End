@@ -3305,7 +3305,7 @@ a.btn.arcane-btn .arcane-subtitle {
     margin-top: -20px;
     margin-left: 18px;
     top: -25px;
-    left: 80px;
+    left: 140px;
 }
 
 /* Invisible spacer pushes era content into the top half, above the timeline line */
@@ -3398,7 +3398,7 @@ a.btn.arcane-btn .arcane-subtitle {
     justify-items: center;
     position: relative;
     height: 260px;
-    margin-left: -6px;
+    margin-left: -20px;
 }
 
 /* Node */
