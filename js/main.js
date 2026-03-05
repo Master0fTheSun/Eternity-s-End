@@ -580,8 +580,8 @@
             },
             {
                 name: 'Sarra',
-                portrait: 'images/Sarra1.png',
-                artwork: 'images/sarra2.png',
+                portrait: 'images/sarra2.png',
+                artwork: 'images/Sarra1.png',
                 extraArt: 'images/sarra4.png',
                 lore: 'Sarra carries herself with the quiet ferocity of someone who has learned that the world will not be gentle, and so she will not be gentle with it. Skilled, sharp-tongued, and fiercely independent, she has carved her own path through a realm that offers little mercy to those who walk alone. Beneath her guarded exterior lies a depth of conviction that few ever glimpse \u2014 a loyalty that, once earned, is absolute and unyielding.',
                 attributes: [
