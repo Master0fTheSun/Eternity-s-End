@@ -524,9 +524,9 @@
         var characterData = [
             {
                 name: 'Aden',
-                portrait: 'images/aden111.png',
-                artwork: 'images/adenoffical22.png',
-                extraArt: 'images/Aden3.png',
+                portrait: 'images/Aden3.png',
+                artwork: 'images/aden111.png',
+                extraArt: 'images/adenoffical22.png',
                 lore: 'Aden walks a path not chosen but thrust upon him \u2014 a journey born from loss and forged in the fires of a world unraveling. Raised in the quiet margins of ZeilGalia, far from the machinations of kings and sorcerers, he lived a life of obscurity until the Celestial Scar carved its wound across the heavens. Now burdened with a purpose he barely understands, Aden must navigate a realm where trust is a currency few can afford and survival demands more than courage alone. His story is one of transformation \u2014 from reluctant wanderer to the fulcrum upon which the fate of an age may turn.',
                 attributes: [
                     { label: 'Title', value: 'The Wanderer' },
@@ -594,9 +594,9 @@
             },
             {
                 name: 'Javi',
-                portrait: 'images/javi1.png',
-                artwork: 'images/javi2.png',
-                extraArt: 'images/javi3.png',
+                portrait: 'images/javi3.png',
+                artwork: 'images/javi1.png',
+                extraArt: 'images/javi2.png',
                 lore: 'Javi brings light to the darkest corners \u2014 not through naivety, but through a stubborn, almost defiant refusal to let the darkness win. In a company of warriors, mystics, and morally grey operatives, Javi serves as the unexpected heart. Quick-witted and resourceful, there is a talent for finding solutions where others see only dead ends, and for keeping hope alive when the world seems determined to extinguish it.',
                 attributes: [
                     { label: 'Title', value: 'The Spark' },
@@ -609,8 +609,8 @@
             {
                 name: 'Corvus',
                 portrait: 'images/corvus1.png',
-                artwork: 'images/corvus2.png',
-                extraArt: 'images/corvus3.png',
+                artwork: 'images/corvus3.png',
+                extraArt: 'images/corvus2.png',
                 lore: 'Corvus is shadow incarnate \u2014 a presence felt more than seen, whose motives are as inscrutable as the darkness from which he draws his power. Named for the raven, he is an omen in living form, appearing at the crossroads of fate with an uncanny sense of timing. Whether he serves a higher purpose or merely his own unfathomable agenda, none can say with certainty. What is known is this: where Corvus treads, the world changes \u2014 and rarely for the better.',
                 attributes: [
                     { label: 'Title', value: 'The Omen' },
