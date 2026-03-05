@@ -3459,7 +3459,8 @@ a.btn.arcane-btn .arcane-subtitle {
 .gw-timeline-wrapper {
     position: relative;
     background: transparent;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
     width: 100%;
     box-sizing: border-box;
 }
@@ -3470,7 +3471,8 @@ a.btn.arcane-btn .arcane-subtitle {
     display: flex;
     align-items: stretch;
     flex-wrap: nowrap;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
     position: relative;
     padding: 20px 10px;
     width: 100%;
