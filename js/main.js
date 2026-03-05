@@ -566,9 +566,9 @@
             },
             {
                 name: 'Rune',
-                portrait: 'images/Rune1.png',
-                artwork: 'images/rune2.png',
-                extraArt: 'images/rune4.png',
+                portrait: 'images/rune4.png',
+                artwork: 'images/Rune1.png',
+                extraArt: 'images/rune2.png',
                 lore: 'Rune is a paradox wrapped in mystery \u2014 a being whose very existence defies the natural order of ZeilGalia. Tied to forces older than the realm itself, Rune possesses abilities that blur the line between miracle and catastrophe. Few understand the true nature of this power, and fewer still can comprehend the burden it carries. In a world where magic flows like a river through fractured stone, Rune stands as both its greatest vessel and its most vulnerable keeper.',
                 attributes: [
                     { label: 'Title', value: 'The Conduit' },
