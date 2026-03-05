@@ -594,9 +594,9 @@
             },
             {
                 name: 'Javi',
-                portrait: 'images/javi1.png',
-                artwork: 'images/javi2.png',
-                extraArt: 'images/javi3.png',
+                portrait: 'images/javi3.png',
+                artwork: 'images/javi1.png',
+                extraArt: 'images/javi2.png',
                 lore: 'Javi brings light to the darkest corners \u2014 not through naivety, but through a stubborn, almost defiant refusal to let the darkness win. In a company of warriors, mystics, and morally grey operatives, Javi serves as the unexpected heart. Quick-witted and resourceful, there is a talent for finding solutions where others see only dead ends, and for keeping hope alive when the world seems determined to extinguish it.',
                 attributes: [
                     { label: 'Title', value: 'The Spark' },
