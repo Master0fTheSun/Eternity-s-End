@@ -3162,8 +3162,8 @@ a.btn.arcane-btn .arcane-subtitle {
 /* -- Hero -- */
 .gw-hero {
     position: relative;
-    height: 30vh;
-    min-height: 220px;
+    height: 65vh;
+    min-height: 420px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3295,7 +3295,7 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Prologue -- */
 .gw-prologue {
-    padding: 10px 20px 5px;
+    padding: 5px 20px 2px;
     background: transparent;
     text-align: center;
 }
@@ -3310,7 +3310,7 @@ a.btn.arcane-btn .arcane-subtitle {
     font-size: 1.05rem;
     line-height: 1.75;
     color: var(--ash);
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
 .gw-prologue-hook {
@@ -3409,20 +3409,14 @@ a.btn.arcane-btn .arcane-subtitle {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
     text-align: center;
     position: relative;
     height: 260px;
-    padding: 0 6px;
-    padding-left: 20px;
+    padding: 0 6px 0 16px;
     z-index: 2;
-}
-
-/* Bottom spacer — pushes era content up into the top half, above the center line */
-.gw-era-marker::after {
-    content: '';
-    flex-shrink: 0;
-    height: 160px;
+    /* Push content to top, aligned with "above" event images/text */
+    justify-content: flex-start;
+    padding-top: 10px;
 }
 
 .gw-era-marker .gw-era-numeral {
