@@ -3295,7 +3295,7 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Prologue -- */
 .gw-prologue {
-    padding: 80px 20px 60px;
+    padding: 30px 20px 30px;
     background: transparent;
     text-align: center;
 }
@@ -3418,6 +3418,7 @@ a.btn.arcane-btn .arcane-subtitle {
     margin-left: 18px;
     top: -25px;
     left: 140px;
+    z-index: 2;
 }
 
 /* Invisible spacer pushes era content into the top half, above the timeline line */
@@ -3466,7 +3467,7 @@ a.btn.arcane-btn .arcane-subtitle {
 .gw-timeline-wrapper {
     position: relative;
     background: transparent;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Edge shadows removed */
@@ -3843,7 +3844,7 @@ a.btn.arcane-btn .arcane-subtitle {
     }
 
     .gw-prologue {
-        padding: 70px 20px 50px;
+        padding: 30px 20px 30px;
     }
 
     .gw-era-header {
