@@ -553,7 +553,7 @@
             {
                 name: 'Vladimir',
                 portrait: 'images/vladimir1.png',
-                artwork: 'images/vladimir2.png',
+                artwork: 'images/vladimir3.png',
                 extraArt: 'images/vladimir3.png',
                 lore: 'Vladimir exists in the space between light and shadow \u2014 a figure of immense power whose true allegiances remain an enigma even to those closest to him. His name is spoken in whispers across ZeilGalia, equal parts reverence and dread. A master of manipulation and arcane knowledge, Vladimir moves through the world like a chess player who sees twelve moves ahead, and every piece on the board is expendable.',
                 attributes: [
