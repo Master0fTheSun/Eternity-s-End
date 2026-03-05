@@ -3476,7 +3476,7 @@ a.btn.arcane-btn .arcane-subtitle {
     display: flex;
     align-items: stretch;
     flex-wrap: nowrap;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
     padding: 20px 10px 20px 0;
 }
@@ -3634,7 +3634,7 @@ a.btn.arcane-btn .arcane-subtitle {
 .gw-h-date {
     display: block;
     font-family: var(--font-display);
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--gold);
@@ -3644,7 +3644,7 @@ a.btn.arcane-btn .arcane-subtitle {
 
 .gw-h-title {
     font-family: var(--font-display);
-    font-size: 0.5rem;
+    font-size: 0.65rem;
     font-weight: 600;
     color: var(--gold);
     text-shadow: 0 0 8px rgba(201, 168, 76, 0.25);
