@@ -434,6 +434,34 @@ img {
     letter-spacing: 8px;
 }
 
+/* Diamond divider between sections */
+.section-diamond-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
+}
+.section-diamond-divider::before,
+.section-diamond-divider::after {
+    content: '';
+    flex: 1;
+    max-width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.4), transparent);
+}
+.section-diamond-divider span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    margin: 0 16px;
+    opacity: 0.7;
+    box-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
+}
+
 .section-header h2 {
     font-family: var(--font-display);
     font-size: 2.8rem;
