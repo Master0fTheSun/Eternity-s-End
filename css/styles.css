@@ -200,6 +200,46 @@ img {
     flex-direction: column;
     align-items: center;
     pointer-events: auto;
+    position: relative;
+}
+
+/* ---- Drag Hint (desktop only) ---- */
+.nav-drag-hint {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    font-family: var(--font-display);
+    font-size: 0.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    background: rgba(10, 10, 15, 0.9);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 3px 8px;
+    border-radius: 3px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 20;
+}
+
+.logo-nav-container:hover .nav-drag-hint {
+    opacity: 1;
+}
+
+/* While dragging, hide the hint and use grab cursor */
+.logo-nav-container.is-dragging .nav-drag-hint {
+    opacity: 0;
+}
+
+.logo-nav-container.is-dragging {
+    cursor: grabbing;
+}
+
+.logo-nav-container.is-dragging .logo-nav-trigger:hover {
+    transform: none;
+    box-shadow: none;
 }
 
 /* ---- The "E" Trigger Button ---- */
@@ -4131,6 +4171,10 @@ a.btn.arcane-btn .arcane-subtitle {
         align-items: center;
         width: 100%;
         padding: 0 20px;
+    }
+
+    .nav-drag-hint {
+        display: none;
     }
 
     .logo-nav-trigger {

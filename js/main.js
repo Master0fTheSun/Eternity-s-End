@@ -124,6 +124,99 @@
     // No-op — kept so the combined scroll handler doesn't break
     function updateNav() {}
 
+    // ---- Draggable Nav (desktop only) ----
+    var logoNavContainer = document.querySelector('.logo-nav-container');
+    if (logoNavContainer && nav) {
+        var dragState = {
+            active: false,
+            startX: 0,
+            startY: 0,
+            offsetX: 0,
+            offsetY: 0,
+            moved: false,
+            holdTimer: null
+        };
+
+        // On mousedown, start tracking — drag begins after small movement
+        logoNavContainer.addEventListener('mousedown', function (e) {
+            if (isMobile()) return;
+            // Don't interfere with link/button clicks unless they drag
+            dragState.startX = e.clientX;
+            dragState.startY = e.clientY;
+            dragState.moved = false;
+
+            // Get current position of the container
+            var rect = logoNavContainer.getBoundingClientRect();
+            dragState.offsetX = e.clientX - rect.left - rect.width / 2;
+            dragState.offsetY = e.clientY - rect.top - rect.height / 2;
+
+            // Listen for move to decide if it's a drag
+            document.addEventListener('mousemove', onDragMove);
+            document.addEventListener('mouseup', onDragEnd);
+        });
+
+        function onDragMove(e) {
+            var dx = e.clientX - dragState.startX;
+            var dy = e.clientY - dragState.startY;
+
+            // Only activate drag after moving at least 5px (avoids hijacking clicks)
+            if (!dragState.active && (Math.abs(dx) > 5 || Math.abs(dy) > 5)) {
+                dragState.active = true;
+                dragState.moved = true;
+                logoNavContainer.classList.add('is-dragging');
+
+                // Switch nav from right-aligned to position-based
+                nav.style.right = 'auto';
+                nav.style.top = 'auto';
+                nav.style.left = '0';
+                nav.style.height = 'auto';
+                nav.style.width = '100%';
+                nav.style.pointerEvents = 'none';
+                nav.style.position = 'fixed';
+                nav.style.display = 'block';
+                nav.style.justifyContent = '';
+                nav.style.alignItems = '';
+            }
+
+            if (dragState.active) {
+                e.preventDefault();
+                var x = e.clientX - dragState.offsetX;
+                var y = e.clientY - dragState.offsetY;
+
+                // Clamp within viewport
+                var cw = logoNavContainer.offsetWidth;
+                var ch = logoNavContainer.offsetHeight;
+                x = Math.max(cw / 2, Math.min(window.innerWidth - cw / 2, x));
+                y = Math.max(ch / 2, Math.min(window.innerHeight - ch / 2, y));
+
+                logoNavContainer.style.position = 'fixed';
+                logoNavContainer.style.left = x + 'px';
+                logoNavContainer.style.top = y + 'px';
+                logoNavContainer.style.transform = 'translate(-50%, -50%)';
+            }
+        }
+
+        function onDragEnd() {
+            document.removeEventListener('mousemove', onDragMove);
+            document.removeEventListener('mouseup', onDragEnd);
+
+            if (dragState.active) {
+                dragState.active = false;
+                logoNavContainer.classList.remove('is-dragging');
+            }
+        }
+
+        // Suppress click on the E button if we just finished dragging
+        if (navLogoBtn) {
+            navLogoBtn.addEventListener('click', function (e) {
+                if (dragState.moved) {
+                    e.stopImmediatePropagation();
+                    dragState.moved = false;
+                }
+            }, true); // capture phase to run before the toggle handler
+        }
+    }
+
     // ---- Desktop: logo-hub expand/collapse ----
     function expandNav() {
         if (!navLinks) return;
