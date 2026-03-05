@@ -3295,7 +3295,8 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Prologue -- */
 .gw-prologue {
-    padding: 5px 20px 2px;
+    padding: 0 20px 0;
+    margin-top: -20px;
     background: transparent;
     text-align: center;
 }
@@ -3310,7 +3311,7 @@ a.btn.arcane-btn .arcane-subtitle {
     font-size: 1.05rem;
     line-height: 1.75;
     color: var(--ash);
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .gw-prologue-hook {
@@ -3412,11 +3413,10 @@ a.btn.arcane-btn .arcane-subtitle {
     text-align: center;
     position: relative;
     height: 260px;
-    padding: 0 6px 0 16px;
+    padding: 0 6px 0 30px;
     z-index: 2;
-    /* Push content to top, aligned with "above" event images/text */
     justify-content: flex-start;
-    padding-top: 10px;
+    top: -40px;
 }
 
 .gw-era-marker .gw-era-numeral {
