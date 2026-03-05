@@ -3162,8 +3162,8 @@ a.btn.arcane-btn .arcane-subtitle {
 /* -- Hero -- */
 .gw-hero {
     position: relative;
-    height: 65vh;
-    min-height: 420px;
+    height: 45vh;
+    min-height: 320px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3295,7 +3295,7 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Prologue -- */
 .gw-prologue {
-    padding: 20px 20px 15px;
+    padding: 15px 20px 10px;
     background: transparent;
     text-align: center;
 }
@@ -3409,21 +3409,20 @@ a.btn.arcane-btn .arcane-subtitle {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
     text-align: center;
     position: relative;
     height: 260px;
     padding: 0 6px;
-    margin-top: 0;
-    top: -25px;
     z-index: 2;
 }
 
-/* Invisible spacer pushes era content into the top half, above the timeline line */
+/* Bottom spacer matches the entry grid: 14px node row + 1fr bottom half (≈123px) */
 .gw-era-marker::after {
     content: '';
     flex-shrink: 0;
-    flex-grow: 1;
+    /* half of (260px - 14px) = 123px, plus the 14px node row = 137px */
+    height: 137px;
 }
 
 .gw-era-marker .gw-era-numeral {
@@ -3459,6 +3458,7 @@ a.btn.arcane-btn .arcane-subtitle {
     letter-spacing: 1px;
     position: static;
     z-index: auto;
+    margin-bottom: 8px;
 }
 
 /* -- Horizontal Timeline (Desktop) -- */
