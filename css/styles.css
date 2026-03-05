@@ -2514,8 +2514,8 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Carousel Section -- */
 .char-carousel-section {
-    padding: 120px 0 40px;
-    background: linear-gradient(180deg, var(--void) 0%, var(--void-purple) 40%, var(--midnight) 80%, var(--charcoal) 100%);
+    padding: 20px 0 30px;
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--void) 100%);
     overflow: hidden;
 }
 
@@ -2532,7 +2532,7 @@ a.btn.arcane-btn .arcane-subtitle {
 .carousel-viewport {
     position: relative;
     width: 100%;
-    height: 370px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -2540,7 +2540,7 @@ a.btn.arcane-btn .arcane-subtitle {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 200px;
+    width: 120px;
     cursor: pointer;
     transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
                 opacity 0.6s ease,
@@ -2573,13 +2573,13 @@ a.btn.arcane-btn .arcane-subtitle {
 
 .carousel-card-name {
     font-family: var(--font-display);
-    font-size: 0.7rem;
+    font-size: 0.55rem;
     font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--ash);
     text-align: center;
-    margin-top: 14px;
+    margin-top: 8px;
     transition: color 0.5s ease;
 }
 
@@ -2596,8 +2596,8 @@ a.btn.arcane-btn .arcane-subtitle {
     background: rgba(10, 10, 15, 0.5);
     border: 1px solid rgba(201, 168, 76, 0.15);
     border-radius: 50%;
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2624,9 +2624,9 @@ a.btn.arcane-btn .arcane-subtitle {
 .carousel-dots {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
-    padding-bottom: 10px;
+    gap: 8px;
+    margin-top: 15px;
+    padding-bottom: 5px;
 }
 
 .carousel-dot {
@@ -2648,9 +2648,25 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Detail Section -- */
 .char-detail-section {
-    background: linear-gradient(180deg, var(--charcoal) 0%, var(--void) 15%, var(--void) 100%);
-    padding: 60px 0 80px;
+    background: linear-gradient(180deg, var(--void) 0%, var(--void-purple) 40%, var(--midnight) 80%, var(--charcoal) 100%);
+    padding: 120px 0 30px;
     position: relative;
+}
+
+.char-detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.char-detail-header .char-intro {
+    padding: 0;
+    background: none;
+}
+
+.char-detail-header .char-social-link {
+    margin-bottom: 0;
 }
 
 .char-detail-inner {
@@ -2668,7 +2684,7 @@ a.btn.arcane-btn .arcane-subtitle {
     color: var(--ash);
     text-decoration: none;
     letter-spacing: 0.5px;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     transition: color 0.3s ease;
 }
 
@@ -2679,8 +2695,8 @@ a.btn.arcane-btn .arcane-subtitle {
 /* -- Detail Grid (Three Columns) -- */
 .char-detail-grid {
     display: grid;
-    grid-template-columns: 280px 1fr 280px;
-    gap: 50px;
+    grid-template-columns: 260px 1fr 260px;
+    gap: 35px;
     transition: opacity 0.3s ease;
 }
 
@@ -2703,7 +2719,7 @@ a.btn.arcane-btn .arcane-subtitle {
 }
 
 .char-lore-body {
-    max-height: 280px;
+    max-height: 200px;
     overflow: hidden;
     position: relative;
     transition: max-height 0.5s ease;
@@ -2775,7 +2791,7 @@ a.btn.arcane-btn .arcane-subtitle {
 
 .char-art-frame {
     width: 100%;
-    max-width: 420px;
+    max-width: 320px;
     aspect-ratio: 3 / 4;
     border-radius: 8px;
     overflow: hidden;
@@ -2794,13 +2810,13 @@ a.btn.arcane-btn .arcane-subtitle {
 
 .char-art-name {
     font-family: var(--font-display);
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 6px;
     text-transform: uppercase;
     color: var(--gold);
     text-align: center;
-    margin-top: 20px;
+    margin-top: 12px;
     text-shadow: 0 0 30px rgba(201, 168, 76, 0.3);
 }
 
@@ -2816,7 +2832,7 @@ a.btn.arcane-btn .arcane-subtitle {
 .callout-item {
     position: relative;
     padding-left: 55px;
-    margin-bottom: 28px;
+    margin-bottom: 18px;
     opacity: 0;
     transform: translateX(15px);
     transition: opacity 0.4s ease, transform 0.4s ease;
@@ -2895,7 +2911,7 @@ a.btn.arcane-btn .arcane-subtitle {
     align-items: center;
     justify-content: flex-end;
     gap: 10px;
-    margin-top: 60px;
+    margin-top: 25px;
 }
 
 .brand-logo-e {
@@ -2944,24 +2960,30 @@ a.btn.arcane-btn .arcane-subtitle {
 
 @media (max-width: 768px) {
     .char-carousel-section {
-        padding: 100px 0 30px;
+        padding: 15px 0 20px;
     }
 
     .carousel-viewport {
-        height: 320px;
+        height: 170px;
     }
 
     .carousel-card {
-        width: 160px;
+        width: 100px;
     }
 
     .carousel-nav {
-        width: 36px;
-        height: 36px;
+        width: 30px;
+        height: 30px;
     }
 
     .char-detail-section {
-        padding: 40px 0 60px;
+        padding: 90px 0 20px;
+    }
+
+    .char-detail-header {
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 15px;
     }
 
     .char-detail-inner {
@@ -3012,7 +3034,7 @@ a.btn.arcane-btn .arcane-subtitle {
 
 @media (max-width: 480px) {
     .char-carousel-section {
-        padding: 90px 0 25px;
+        padding: 10px 0 15px;
     }
 
     .char-intro-title {
@@ -3021,27 +3043,27 @@ a.btn.arcane-btn .arcane-subtitle {
     }
 
     .carousel-viewport {
-        height: 280px;
+        height: 150px;
     }
 
     .carousel-card {
-        width: 140px;
+        width: 85px;
     }
 
     .char-carousel-wrap {
-        padding: 0 40px;
+        padding: 0 35px;
     }
 
     .carousel-nav {
-        width: 32px;
-        height: 32px;
+        width: 28px;
+        height: 28px;
     }
 
     .carousel-prev { left: 5px; }
     .carousel-next { right: 5px; }
 
     .char-art-frame {
-        max-width: 300px;
+        max-width: 250px;
     }
 }
 

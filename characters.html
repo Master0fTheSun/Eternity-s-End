@@ -37,14 +37,59 @@
     </nav>
 
     <!-- ============================================ -->
+    <!-- CHARACTER DETAIL -->
+    <!-- ============================================ -->
+    <section class="char-detail-section">
+        <div class="char-detail-inner">
+            <div class="char-detail-header">
+                <div class="char-intro">
+                    <h1 class="char-intro-title">Characters</h1>
+                    <p class="char-intro-sub">Heroes, Villains &amp; the Shadows Between</p>
+                </div>
+                <a class="char-social-link" href="https://linktr.ee/darkscribe" target="_blank" rel="noopener">@darkscribe</a>
+            </div>
+
+            <div class="char-detail-grid" id="char-detail-grid">
+                <!-- Left Column: Lore -->
+                <div class="char-col-lore">
+                    <h2 class="char-lore-heading">Background</h2>
+                    <div class="char-lore-body" id="char-lore-body">
+                        <p id="char-lore-text"></p>
+                    </div>
+                    <div class="char-read-more-wrap" id="char-read-more-wrap">
+                        <span class="read-more-line"></span>
+                        <button class="char-read-more-btn" id="char-read-more-btn">Read more</button>
+                    </div>
+                </div>
+
+                <!-- Center Column: Artwork -->
+                <div class="char-col-artwork">
+                    <div class="char-art-frame" id="char-art-frame">
+                        <img id="char-art-img" src="" alt="">
+                    </div>
+                    <h2 class="char-art-name" id="char-art-name"></h2>
+                </div>
+
+                <!-- Right Column: Attributes & Info -->
+                <div class="char-col-attrs">
+                    <div class="char-callouts" id="char-callouts"></div>
+                    <div class="char-extra-art" id="char-extra-art">
+                        <img id="char-extra-img" src="" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="char-detail-brand">
+                <span class="brand-logo-e">E</span>
+                <span class="brand-logo-title">Eternity's End</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
     <!-- CHARACTER CAROUSEL -->
     <!-- ============================================ -->
     <section class="char-carousel-section">
-        <div class="char-intro">
-            <h1 class="char-intro-title">Characters</h1>
-            <p class="char-intro-sub">Heroes, Villains &amp; the Shadows Between</p>
-        </div>
-
         <div class="char-carousel-wrap">
             <button class="carousel-nav carousel-prev" aria-label="Previous character">
                 <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
@@ -92,50 +137,6 @@
             <button class="carousel-dot" data-index="4" aria-label="Sarra"></button>
             <button class="carousel-dot" data-index="5" aria-label="Javi"></button>
             <button class="carousel-dot" data-index="6" aria-label="Corvus"></button>
-        </div>
-    </section>
-
-    <!-- ============================================ -->
-    <!-- CHARACTER DETAIL -->
-    <!-- ============================================ -->
-    <section class="char-detail-section">
-        <div class="char-detail-inner">
-            <a class="char-social-link" href="https://linktr.ee/darkscribe" target="_blank" rel="noopener">@darkscribe</a>
-
-            <div class="char-detail-grid" id="char-detail-grid">
-                <!-- Left Column: Lore -->
-                <div class="char-col-lore">
-                    <h2 class="char-lore-heading">Background</h2>
-                    <div class="char-lore-body" id="char-lore-body">
-                        <p id="char-lore-text"></p>
-                    </div>
-                    <div class="char-read-more-wrap" id="char-read-more-wrap">
-                        <span class="read-more-line"></span>
-                        <button class="char-read-more-btn" id="char-read-more-btn">Read more</button>
-                    </div>
-                </div>
-
-                <!-- Center Column: Artwork -->
-                <div class="char-col-artwork">
-                    <div class="char-art-frame" id="char-art-frame">
-                        <img id="char-art-img" src="" alt="">
-                    </div>
-                    <h2 class="char-art-name" id="char-art-name"></h2>
-                </div>
-
-                <!-- Right Column: Attributes & Info -->
-                <div class="char-col-attrs">
-                    <div class="char-callouts" id="char-callouts"></div>
-                    <div class="char-extra-art" id="char-extra-art">
-                        <img id="char-extra-img" src="" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <div class="char-detail-brand">
-                <span class="brand-logo-e">E</span>
-                <span class="brand-logo-title">Eternity's End</span>
-            </div>
         </div>
     </section>
 

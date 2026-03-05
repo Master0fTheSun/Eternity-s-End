@@ -629,7 +629,7 @@
         var activeIdx = 0;
 
         function positionCards() {
-            var spacing = window.innerWidth < 480 ? 150 : (window.innerWidth < 768 ? 175 : 220);
+            var spacing = window.innerWidth < 480 ? 110 : (window.innerWidth < 768 ? 130 : 150);
             cCards.forEach(function (card, i) {
                 var offset = i - activeIdx;
                 var absOffset = Math.abs(offset);
