@@ -18,7 +18,7 @@
 
     function createParticles() {
         particles = [];
-        const count = Math.floor((canvas.width * canvas.height) / 18000);
+        const count = Math.min(120, Math.floor((canvas.width * canvas.height) / 25000));
         for (let i = 0; i < count; i++) {
             particles.push({
                 x: Math.random() * canvas.width,
@@ -66,15 +66,29 @@
     createParticles();
     drawParticles();
 
-    // Pause particle animation when tab is hidden to save CPU
+    // Pause particle animation when tab is hidden or scrolled past hero to save CPU
+    var particlesPaused = false;
+
+    function pauseParticles() {
+        if (animationId) {
+            cancelAnimationFrame(animationId);
+            animationId = null;
+        }
+        particlesPaused = true;
+    }
+
+    function resumeParticles() {
+        if (!animationId && !document.hidden) {
+            particlesPaused = false;
+            drawParticles();
+        }
+    }
+
     document.addEventListener('visibilitychange', function () {
         if (document.hidden) {
-            if (animationId) {
-                cancelAnimationFrame(animationId);
-                animationId = null;
-            }
-        } else {
-            if (!animationId) drawParticles();
+            pauseParticles();
+        } else if (!particlesPaused) {
+            resumeParticles();
         }
     });
 
@@ -310,20 +324,22 @@
     // Active nav link tracking
     var sections = document.querySelectorAll('section[id]');
 
+    var lastActiveId = '';
     function updateActiveLink() {
         var scrollPos = window.scrollY + 150;
-        sections.forEach(function (section) {
+        var currentId = '';
+        for (var i = 0; i < sections.length; i++) {
+            var section = sections[i];
             var top = section.offsetTop;
-            var height = section.offsetHeight;
-            var id = section.getAttribute('id');
-            if (scrollPos >= top && scrollPos < top + height) {
-                navAnchors.forEach(function (a) {
-                    a.classList.remove('active');
-                    if (a.getAttribute('href') === '#' + id) {
-                        a.classList.add('active');
-                    }
-                });
+            if (scrollPos >= top && scrollPos < top + section.offsetHeight) {
+                currentId = section.getAttribute('id');
+                break;
             }
+        }
+        if (currentId === lastActiveId) return;
+        lastActiveId = currentId;
+        navAnchors.forEach(function (a) {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
         });
     }
 
@@ -1018,6 +1034,15 @@
                 if (revealElements.length > 0) checkReveal();
                 if (!statsAnimated) animateStats();
                 updateBackToTop();
+
+                // Pause particle animation when scrolled well past the hero
+                var heroThreshold = window.innerHeight * 2;
+                if (window.scrollY > heroThreshold && !particlesPaused) {
+                    pauseParticles();
+                } else if (window.scrollY <= heroThreshold && particlesPaused && !document.hidden) {
+                    resumeParticles();
+                }
+
                 ticking = false;
             });
             ticking = true;

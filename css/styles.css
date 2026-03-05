@@ -51,7 +51,6 @@
 }
 
 html {
-    scroll-behavior: smooth;
     font-size: 16px;
     scrollbar-width: thin;
     scrollbar-color: var(--gold-dim) var(--void);
@@ -105,6 +104,8 @@ img {
     height: 100%;
     pointer-events: none;
     z-index: 0;
+    will-change: transform;
+    contain: strict;
 }
 
 /* ---- Buttons ---- */
@@ -1186,6 +1187,7 @@ img {
     color: var(--gold);
     letter-spacing: 3px;
     text-align: center;
+    margin-top: 60px;
     margin-bottom: 10px;
 }
 
@@ -3219,7 +3221,7 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Prologue -- */
 .gw-prologue {
-    padding: 40px 20px 45px;
+    padding: 80px 20px 60px;
     background: transparent;
     text-align: center;
 }
@@ -3719,7 +3721,7 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Epilogue -- */
 .gw-epilogue {
-    padding: 45px 20px 60px;
+    padding: 60px 20px 90px;
     text-align: center;
     background: transparent;
 }
@@ -3767,7 +3769,7 @@ a.btn.arcane-btn .arcane-subtitle {
     }
 
     .gw-prologue {
-        padding: 16px 20px 18px;
+        padding: 70px 20px 50px;
     }
 
     .gw-era-header {
@@ -3779,7 +3781,7 @@ a.btn.arcane-btn .arcane-subtitle {
     }
 
     .gw-epilogue {
-        padding: 18px 20px 25px;
+        padding: 50px 20px 80px;
     }
 
     .gw-epilogue-rule {
@@ -4124,6 +4126,31 @@ a.btn.arcane-btn .arcane-subtitle {
 }
 .reveal.revealed {
     opacity: 1;
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+/* content-visibility: auto lets the browser skip rendering for off-screen sections */
+section {
+    contain: layout style;
+}
+
+.gw-desktop-timeline {
+    contain: layout style;
+}
+
+.gw-h-img img {
+    content-visibility: auto;
+}
+
+/* Reduce compositing cost on fixed/animated elements */
+.parallax-layer {
+    transform: translateZ(0);
+}
+
+.logo-nav-container {
+    will-change: transform;
 }
 
 /* ============================================
