@@ -2514,9 +2514,11 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Carousel Section -- */
 .char-carousel-section {
-    padding: 20px 0 30px;
+    padding: 10px 0 10px;
     background: linear-gradient(180deg, var(--charcoal) 0%, var(--void) 100%);
     overflow: hidden;
+    height: 220px;
+    box-sizing: border-box;
 }
 
 .char-carousel-wrap {
@@ -2532,7 +2534,7 @@ a.btn.arcane-btn .arcane-subtitle {
 .carousel-viewport {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 165px;
     overflow: hidden;
 }
 
@@ -2625,8 +2627,8 @@ a.btn.arcane-btn .arcane-subtitle {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin-top: 15px;
-    padding-bottom: 5px;
+    margin-top: 8px;
+    padding-bottom: 0;
 }
 
 .carousel-dot {
@@ -2649,19 +2651,26 @@ a.btn.arcane-btn .arcane-subtitle {
 /* -- Detail Section -- */
 .char-detail-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--void-purple) 40%, var(--midnight) 80%, var(--charcoal) 100%);
-    padding: 120px 0 30px;
+    padding-top: 80px;
+    padding-bottom: 10px;
     position: relative;
+    min-height: 0;
+    box-sizing: border-box;
+    height: calc(100vh - 220px);
+    display: flex;
+    align-items: stretch;
 }
 
 .char-detail-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .char-detail-header .char-intro {
     padding: 0;
+    margin-bottom: 0;
     background: none;
 }
 
@@ -2674,6 +2683,9 @@ a.btn.arcane-btn .arcane-subtitle {
     margin: 0 auto;
     padding: 0 40px;
     position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .char-social-link {
@@ -2695,9 +2707,11 @@ a.btn.arcane-btn .arcane-subtitle {
 /* -- Detail Grid (Three Columns) -- */
 .char-detail-grid {
     display: grid;
-    grid-template-columns: 260px 1fr 260px;
-    gap: 35px;
+    grid-template-columns: 250px 1fr 240px;
+    gap: 30px;
     transition: opacity 0.3s ease;
+    flex: 1;
+    min-height: 0;
 }
 
 .char-detail-grid.is-transitioning {
@@ -2707,19 +2721,21 @@ a.btn.arcane-btn .arcane-subtitle {
 /* -- Left Column: Lore -- */
 .char-col-lore {
     padding-top: 10px;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .char-lore-heading {
     font-family: var(--font-display);
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--bone);
     letter-spacing: 2px;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
 }
 
 .char-lore-body {
-    max-height: 200px;
+    max-height: 160px;
     overflow: hidden;
     position: relative;
     transition: max-height 0.5s ease;
@@ -2756,7 +2772,7 @@ a.btn.arcane-btn .arcane-subtitle {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .read-more-line {
@@ -2787,11 +2803,14 @@ a.btn.arcane-btn .arcane-subtitle {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 0;
 }
 
 .char-art-frame {
-    width: 100%;
-    max-width: 320px;
+    width: auto;
+    max-width: 100%;
+    flex: 1;
+    min-height: 0;
     aspect-ratio: 3 / 4;
     border-radius: 8px;
     overflow: hidden;
@@ -2810,29 +2829,31 @@ a.btn.arcane-btn .arcane-subtitle {
 
 .char-art-name {
     font-family: var(--font-display);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 6px;
     text-transform: uppercase;
     color: var(--gold);
     text-align: center;
-    margin-top: 12px;
+    margin-top: 8px;
     text-shadow: 0 0 30px rgba(201, 168, 76, 0.3);
 }
 
 /* -- Right Column: Attributes -- */
 .char-col-attrs {
     padding-top: 10px;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .char-callouts {
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 
 .callout-item {
     position: relative;
     padding-left: 55px;
-    margin-bottom: 18px;
+    margin-bottom: 12px;
     opacity: 0;
     transform: translateX(15px);
     transition: opacity 0.4s ease, transform 0.4s ease;
@@ -2911,7 +2932,8 @@ a.btn.arcane-btn .arcane-subtitle {
     align-items: center;
     justify-content: flex-end;
     gap: 10px;
-    margin-top: 25px;
+    margin-top: 10px;
+    flex-shrink: 0;
 }
 
 .brand-logo-e {
@@ -2961,6 +2983,7 @@ a.btn.arcane-btn .arcane-subtitle {
 @media (max-width: 768px) {
     .char-carousel-section {
         padding: 15px 0 20px;
+        height: auto;
     }
 
     .carousel-viewport {
@@ -2978,6 +3001,7 @@ a.btn.arcane-btn .arcane-subtitle {
 
     .char-detail-section {
         padding: 90px 0 20px;
+        height: auto;
     }
 
     .char-detail-header {
