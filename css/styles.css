@@ -3296,7 +3296,7 @@ a.btn.arcane-btn .arcane-subtitle {
 /* -- Prologue -- */
 .gw-prologue {
     padding: 0 20px 0;
-    margin-top: -250px;
+    margin-top: -350px;
     background: transparent;
     text-align: center;
 }
@@ -3413,10 +3413,11 @@ a.btn.arcane-btn .arcane-subtitle {
     text-align: center;
     position: relative;
     height: 260px;
-    padding: 0 6px 0 120px;
+    padding: 0 6px 0 20px;
     z-index: 2;
     justify-content: flex-start;
-    top: -200px;
+    top: 0;
+    transform: translateY(-70px);
 }
 
 .gw-era-marker .gw-era-numeral {
@@ -3474,7 +3475,7 @@ a.btn.arcane-btn .arcane-subtitle {
     overflow-x: hidden;
     overflow-y: visible;
     position: relative;
-    padding: 20px 10px;
+    padding: 80px 10px 20px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -3483,11 +3484,11 @@ a.btn.arcane-btn .arcane-subtitle {
     display: none;
 }
 
-/* Horizontal line through the center */
+/* Horizontal line through the center of entries */
 .gw-timeline-track::before {
     content: '';
     position: absolute;
-    top: 50%;
+    top: calc(50% + 30px);
     left: 0;
     right: 0;
     height: 2px;
@@ -3975,6 +3976,7 @@ a.btn.arcane-btn .arcane-subtitle {
         margin-bottom: 24px;
         top: 0;
         left: 0;
+        transform: none;
     }
 
     .gw-era-marker .gw-era-numeral {
