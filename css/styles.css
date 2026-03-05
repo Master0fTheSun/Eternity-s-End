@@ -3295,7 +3295,7 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Prologue -- */
 .gw-prologue {
-    padding: 30px 20px 30px;
+    padding: 20px 20px 15px;
     background: transparent;
     text-align: center;
 }
@@ -3413,11 +3413,11 @@ a.btn.arcane-btn .arcane-subtitle {
     text-align: center;
     position: relative;
     height: 260px;
-    padding: 0 4px 0;
+    padding: 0 14px;
     margin-top: -20px;
-    margin-left: 18px;
+    margin-left: 0;
     top: -25px;
-    left: 140px;
+    left: 0;
     z-index: 2;
 }
 
@@ -3478,7 +3478,7 @@ a.btn.arcane-btn .arcane-subtitle {
     flex-wrap: nowrap;
     overflow: visible;
     position: relative;
-    padding: 20px 10px 20px 0;
+    padding: 20px 20px 20px 10px;
 }
 
 .gw-timeline-track::-webkit-scrollbar {
@@ -3511,7 +3511,7 @@ a.btn.arcane-btn .arcane-subtitle {
     justify-items: center;
     position: relative;
     height: 260px;
-    margin-left: -20px;
+    margin-left: -10px;
     overflow: visible;
 }
 
@@ -3801,7 +3801,7 @@ a.btn.arcane-btn .arcane-subtitle {
 
 /* -- Epilogue -- */
 .gw-epilogue {
-    padding: 60px 20px 90px;
+    padding: 40px 20px 30px;
     text-align: center;
     background: transparent;
 }
@@ -3861,7 +3861,7 @@ a.btn.arcane-btn .arcane-subtitle {
     }
 
     .gw-epilogue {
-        padding: 50px 20px 80px;
+        padding: 30px 20px 20px;
     }
 
     .gw-epilogue-rule {
