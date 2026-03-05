@@ -66,6 +66,18 @@
     createParticles();
     drawParticles();
 
+    // Pause particle animation when tab is hidden to save CPU
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+            if (animationId) {
+                cancelAnimationFrame(animationId);
+                animationId = null;
+            }
+        } else {
+            if (!animationId) drawParticles();
+        }
+    });
+
     window.addEventListener('resize', function () {
         resizeCanvas();
         createParticles();
@@ -77,10 +89,14 @@
 
     function updateParallax() {
         const scrollY = window.scrollY;
-        for (let i = 0; i < parallaxLayers.length; i++) {
-            var layer = parallaxLayers[i];
-            var speed = parseFloat(layer.getAttribute('data-speed')) || 0;
-            layer.style.transform = 'translateY(' + (scrollY * speed * -0.5) + 'px)';
+        // Skip expensive parallax transforms once hero is well off-screen
+        var heroHeight = window.innerHeight * 1.5;
+        if (scrollY < heroHeight) {
+            for (let i = 0; i < parallaxLayers.length; i++) {
+                var layer = parallaxLayers[i];
+                var speed = parseFloat(layer.getAttribute('data-speed')) || 0;
+                layer.style.transform = 'translateY(' + (scrollY * speed * -0.5) + 'px)';
+            }
         }
 
         // Fade the celestial scar on scroll — fully gone by 50% of viewport
@@ -656,11 +672,11 @@
     }
 
     // ---- Scroll Reveal ----
-    var revealElements = document.querySelectorAll(
+    var revealElements = Array.prototype.slice.call(document.querySelectorAll(
         '.location-card, .creature-card, .character-card, .char-col-lore, .char-col-artwork, .char-col-attrs, ' +
         '.world-intro, .author-content, .book-card.active, .lore-block, .lore-image, ' +
         '.gw-h-entry, .gw-era-marker'
-    );
+    ));
 
     // Add reveal class to elements
     revealElements.forEach(function (el) {
@@ -669,12 +685,15 @@
 
     function checkReveal() {
         var windowHeight = window.innerHeight;
-        revealElements.forEach(function (el) {
+        // Iterate in reverse so we can splice revealed elements out of the array
+        for (var i = revealElements.length - 1; i >= 0; i--) {
+            var el = revealElements[i];
             var rect = el.getBoundingClientRect();
-            if (rect.top < windowHeight - 80) {
+            if (rect.top < windowHeight - 40) {
                 el.classList.add('revealed');
+                revealElements.splice(i, 1);
             }
-        });
+        }
     }
 
     // ---- Alliance Modal ----
@@ -903,8 +922,8 @@
                 updateParallax();
                 updateNav();
                 updateActiveLink();
-                checkReveal();
-                animateStats();
+                if (revealElements.length > 0) checkReveal();
+                if (!statsAnimated) animateStats();
                 updateBackToTop();
                 ticking = false;
             });

@@ -40,7 +40,7 @@
     --font-accent: 'MedievalSharp', cursive;
 
     --nav-height: 70px;
-    --section-padding: 30px 0;
+    --section-padding: 80px 0;
 }
 
 /* ---- Reset & Base ---- */
@@ -372,7 +372,7 @@ img {
 
 .section-header {
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 50px;
     position: relative;
     z-index: 2;
 }
@@ -735,7 +735,7 @@ img {
    ============================================ */
 .books-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--charcoal) 20%, var(--charcoal) 80%, var(--void) 100%);
-    padding-top: 40px;
+    padding-top: 80px;
 }
 
 .books-tabs {
@@ -1034,7 +1034,7 @@ img {
    ============================================ */
 .world-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--midnight) 15%, var(--void-purple) 50%, var(--midnight) 85%, var(--void) 100%);
-    padding-top: 40px;
+    padding-top: 80px;
 }
 
 .world-parallax {
@@ -1056,7 +1056,7 @@ img {
     grid-template-columns: 1fr 1.35fr;
     gap: 50px;
     align-items: start;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
 }
 
 .world-text h3 {
@@ -1284,7 +1284,7 @@ img {
    ============================================ */
 .creatures-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--charcoal) 15%, var(--charcoal) 85%, var(--void) 100%);
-    padding-top: 40px;
+    padding-top: 80px;
 }
 
 .creatures-grid {
@@ -1487,7 +1487,7 @@ img {
    ============================================ */
 .characters-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--void-purple) 30%, var(--midnight) 70%, var(--void) 100%);
-    padding-top: 40px;
+    padding-top: 80px;
 }
 
 .characters-parallax {
@@ -1590,7 +1590,7 @@ img {
    ============================================ */
 .reviews-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--charcoal) 20%, var(--charcoal) 80%, var(--void) 100%);
-    padding-top: 40px;
+    padding-top: 80px;
 }
 
 /* -- Carousel layout -- */
@@ -1769,7 +1769,7 @@ img {
    ============================================ */
 .author-section {
     background: linear-gradient(180deg, var(--void) 0%, var(--midnight) 30%, var(--midnight) 70%, var(--void) 100%);
-    padding-top: 40px;
+    padding-top: 80px;
 }
 
 .author-parallax {
@@ -2283,14 +2283,12 @@ img {
 }
 
 .lore-block {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    opacity: 0.85;
+    transition: opacity 0.6s ease;
 }
 
 .lore-block.revealed {
     opacity: 1;
-    transform: translateY(0);
 }
 
 .lore-block p {
@@ -2304,14 +2302,12 @@ img {
 .lore-image {
     margin: 35px 0;
     text-align: center;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    opacity: 0.85;
+    transition: opacity 0.6s ease;
 }
 
 .lore-image.revealed {
     opacity: 1;
-    transform: translateY(0);
 }
 
 .lore-image img {
@@ -3997,14 +3993,12 @@ a.btn.arcane-btn .arcane-subtitle {
 
     /* Scroll reveal on mobile — slide from left */
     .gw-h-entry.reveal {
-        opacity: 0;
-        transform: translateX(-30px);
-        transition: opacity 0.8s ease, transform 0.8s ease;
+        opacity: 0.85;
+        transition: opacity 0.6s ease;
     }
 
     .gw-h-entry.reveal.revealed {
         opacity: 1;
-        transform: translateX(0);
     }
 
     .gw-prologue {
@@ -4082,14 +4076,14 @@ a.btn.arcane-btn .arcane-subtitle {
 /* ============================================
    SCROLL REVEAL ANIMATIONS
    ============================================ */
+/* Subtle reveal: no layout shift, just a gentle fade.
+   Elements are nearly visible by default to prevent pop-in. */
 .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    opacity: 0.85;
+    transition: opacity 0.6s ease;
 }
 .reveal.revealed {
     opacity: 1;
-    transform: translateY(0);
 }
 
 /* ============================================
@@ -4116,7 +4110,7 @@ a.btn.arcane-btn .arcane-subtitle {
 @media (max-width: 768px) {
     :root {
         --nav-height: 60px;
-        --section-padding: 25px 0;
+        --section-padding: 50px 0;
     }
 
     /* ---- Restore original top-bar mobile nav ---- */
