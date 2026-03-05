@@ -609,8 +609,8 @@
             {
                 name: 'Corvus',
                 portrait: 'images/corvus1.png',
-                artwork: 'images/corvus2.png',
-                extraArt: 'images/corvus3.png',
+                artwork: 'images/corvus3.png',
+                extraArt: 'images/corvus2.png',
                 lore: 'Corvus is shadow incarnate \u2014 a presence felt more than seen, whose motives are as inscrutable as the darkness from which he draws his power. Named for the raven, he is an omen in living form, appearing at the crossroads of fate with an uncanny sense of timing. Whether he serves a higher purpose or merely his own unfathomable agenda, none can say with certainty. What is known is this: where Corvus treads, the world changes \u2014 and rarely for the better.',
                 attributes: [
                     { label: 'Title', value: 'The Omen' },
