@@ -524,9 +524,9 @@
         var characterData = [
             {
                 name: 'Aden',
-                portrait: 'images/aden111.png',
-                artwork: 'images/adenoffical22.png',
-                extraArt: 'images/Aden3.png',
+                portrait: 'images/Aden3.png',
+                artwork: 'images/aden111.png',
+                extraArt: 'images/adenoffical22.png',
                 lore: 'Aden walks a path not chosen but thrust upon him \u2014 a journey born from loss and forged in the fires of a world unraveling. Raised in the quiet margins of ZeilGalia, far from the machinations of kings and sorcerers, he lived a life of obscurity until the Celestial Scar carved its wound across the heavens. Now burdened with a purpose he barely understands, Aden must navigate a realm where trust is a currency few can afford and survival demands more than courage alone. His story is one of transformation \u2014 from reluctant wanderer to the fulcrum upon which the fate of an age may turn.',
                 attributes: [
                     { label: 'Title', value: 'The Wanderer' },
