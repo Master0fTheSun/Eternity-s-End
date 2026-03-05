@@ -3488,14 +3488,14 @@ a.btn.arcane-btn .arcane-subtitle {
     filter: drop-shadow(0 0 6px rgba(201, 168, 76, 0.3));
 }
 
-/* Timeline thumbnail — hidden until unlocked */
+/* Timeline thumbnail — always visible */
 .gw-h-img {
     width: 48px;
     height: 48px;
     overflow: hidden;
     border-radius: 4px;
     border: 1px solid rgba(201, 168, 76, 0.2);
-    display: none;
+    display: block;
     flex-shrink: 0;
     margin-bottom: 4px;
 }
@@ -3508,7 +3508,6 @@ a.btn.arcane-btn .arcane-subtitle {
 
 .gw-h-entry.gw-unlocked .gw-h-img {
     display: block;
-    animation: gw-thumb-appear 0.4s ease;
 }
 
 .gw-h-img img {
@@ -3516,11 +3515,6 @@ a.btn.arcane-btn .arcane-subtitle {
     height: 100%;
     object-fit: cover;
     display: block;
-}
-
-@keyframes gw-thumb-appear {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
 }
 
 /* Text — glowing gold */
@@ -3556,19 +3550,14 @@ a.btn.arcane-btn .arcane-subtitle {
     display: none;
 }
 
-/* -- Progressive reveal states (desktop only) -- */
+/* -- Entry states (desktop) -- */
 .gw-h-entry.gw-locked {
-    visibility: hidden;
-    pointer-events: none;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .gw-h-entry.gw-active {
-    animation: gw-entry-appear 0.6s ease forwards;
-}
-
-@keyframes gw-entry-appear {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    /* no special animation needed */
 }
 
 /* -- Detail Overlay -- */
