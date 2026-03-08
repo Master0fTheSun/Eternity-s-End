@@ -3413,7 +3413,7 @@ a.btn.arcane-btn .arcane-subtitle {
     text-align: center;
     position: relative;
     height: 260px;
-    padding: 0 6px 0 20px;
+    padding: 0 20px;
     z-index: 2;
     justify-content: flex-start;
     top: 0;
@@ -3472,6 +3472,7 @@ a.btn.arcane-btn .arcane-subtitle {
     display: flex;
     align-items: stretch;
     flex-wrap: nowrap;
+    justify-content: center;
     overflow-x: hidden;
     overflow-y: visible;
     position: relative;
