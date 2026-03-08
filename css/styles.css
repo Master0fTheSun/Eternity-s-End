@@ -3417,7 +3417,7 @@ a.btn.arcane-btn .arcane-subtitle {
     z-index: 2;
     justify-content: flex-start;
     top: 0;
-    transform: translateY(-70px);
+    transform: translate(-5px, -70px);
 }
 
 .gw-era-marker .gw-era-numeral {
@@ -3512,6 +3512,7 @@ a.btn.arcane-btn .arcane-subtitle {
     position: relative;
     height: 260px;
     overflow: visible;
+    transform: translateX(3px);
 }
 
 /* Node */
