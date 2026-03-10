@@ -3522,7 +3522,7 @@ a.btn.arcane-btn .arcane-subtitle {
     position: relative;
     height: 260px;
     overflow: visible;
-    transform: translateX(8px);
+    transform: translateX(14px);
 }
 
 /* Node */
