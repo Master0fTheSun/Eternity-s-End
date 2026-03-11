@@ -3812,6 +3812,7 @@ a.btn.arcane-btn .arcane-subtitle {
 /* -- Epilogue -- */
 .gw-epilogue {
     padding: 40px 20px 30px;
+    padding-top: 112px;
     text-align: center;
     background: transparent;
 }
