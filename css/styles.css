@@ -3499,7 +3499,7 @@ a.btn.arcane-btn .arcane-subtitle {
 .gw-timeline-track::before {
     content: '';
     position: absolute;
-    top: calc(50% + 30px);
+    top: calc(50% + 78px);
     left: 0;
     right: 0;
     height: 2px;
@@ -3522,7 +3522,7 @@ a.btn.arcane-btn .arcane-subtitle {
     position: relative;
     height: 260px;
     overflow: visible;
-    transform: translateX(110px);
+    transform: translate(110px, 48px);
 }
 
 /* Node */
