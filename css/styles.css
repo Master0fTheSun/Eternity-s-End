@@ -3836,6 +3836,7 @@ a.btn.arcane-btn .arcane-subtitle {
     font-style: italic;
     line-height: 1.8;
     color: var(--ash);
+    margin-top: 72px;
     margin-bottom: 28px;
 }
 
