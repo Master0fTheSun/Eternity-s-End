@@ -3825,6 +3825,7 @@ a.btn.arcane-btn .arcane-subtitle {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 54px;
     margin-bottom: 28px;
 }
 
